@@ -62,11 +62,15 @@ def public_image(value):
     return value.strip() if parsed.scheme in ('http', 'https') and parsed.netloc else ''
 def paragraphs(text): return ''.join(f'<p>{escape(chunk.strip()).replace(chr(10), "<br>")}</p>' for chunk in (text or '').split('\n\n') if chunk.strip())
 def position_key(row):
-    try: return (0, float(row.get('age')))
+    try: return (0, float(row.get('position', row.get('age'))))
     except (TypeError, ValueError): return (1, 0)
 def match_project(label):
-    key = label.casefold().strip()
-    return next((p for p in local_projects() if p['name'].casefold() == key or p['slug'].casefold() == key or p.get('name_de', '').casefold() == key), None)
+    key = re.sub(r'[^a-z0-9]+', '', label.casefold())
+    return next((p for p in local_projects() if key in {
+        re.sub(r'[^a-z0-9]+', '', p['name'].casefold()),
+        re.sub(r'[^a-z0-9]+', '', p['slug'].casefold()),
+        re.sub(r'[^a-z0-9]+', '', p.get('name_de', '').casefold()),
+    }), None)
 def dollar(text): return text.replace('$', '$$')
 def fetch_feed_rows(endpoint):
     rows = []; page = 1
@@ -99,7 +103,11 @@ def support_cards(lang):
         cards.append(f'<a class="support-card" href="{root}/Support/{escape(project["slug"])}/">{icon(project)}<h2>{escape(project["name"])}</h2></a>')
     return '\n'.join(cards)
 def support_page_html(project, articles, copy, lang):
-    rows = [r for r in articles if match_project(str(r.get('application') or '').strip()) == project]
+    rows = []
+    for row in articles:
+        matched = match_project(str(row.get('application') or '').strip())
+        if matched == project or str(row.get('application') or '').strip().casefold() in {project['name'].casefold(), project['slug'].casefold()}:
+            rows.append(row)
     rows.sort(key=lambda r: (position_key(r), (r.get('name') or '').casefold()))
     email = escape(SITE['email'])
     if rows: answers = ''.join(article_html(r) for r in rows)
