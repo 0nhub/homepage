@@ -192,18 +192,24 @@ if (gallerySection) {
   }
 }
 
-const supportSearch = document.querySelector('[data-support-search]');
-if (supportSearch) {
-  supportSearch.addEventListener('input', (event) => {
-    const input = event.currentTarget;
-    const query = input.value.trim().toLowerCase();
+document.querySelectorAll('[data-support-search]').forEach((input) => {
+  input.addEventListener('input', () => {
+    const query = input.value.trim().toLocaleLowerCase();
     const wrap = input.closest('.wrap');
     if (!wrap) return;
-    wrap.querySelectorAll('.answer-group details').forEach((item) => {
-      item.hidden = Boolean(query) && !item.textContent.toLowerCase().includes(query);
+
+    wrap.querySelectorAll('.answer-group').forEach((group) => {
+      const items = group.querySelectorAll('details');
+      let visibleCount = 0;
+      items.forEach((item) => {
+        const matches = !query || item.textContent.toLocaleLowerCase().includes(query);
+        item.hidden = !matches;
+        if (matches) visibleCount += 1;
+      });
+      group.classList.toggle('is-open', !query || visibleCount > 0);
     });
   });
-}
+});
 
 const supportFeed = document.querySelector('[data-support-feed]');
 
