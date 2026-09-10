@@ -194,7 +194,8 @@ if (gallerySection) {
 
 const filterSupportAnswers = (input) => {
   const query = input.value.trim().toLocaleLowerCase();
-  const container = input.closest('.support-page-header')?.parentElement || input.closest('main') || document;
+  const container = input.closest('main')?.querySelector('.support-answers');
+  if (!container) return;
 
   container.querySelectorAll('.answer-group').forEach((group) => {
     const items = Array.from(group.querySelectorAll('details'));
@@ -340,6 +341,8 @@ if (supportFeed && supportFeed.getAttribute('data-support-feed')) {
       }
       const apps = JSON.parse(supportFeed.getAttribute('data-support-apps') || '[]');
       supportFeed.innerHTML = render(rows, apps, supportFeed.getAttribute('data-support-email') || '');
+      const searchInput = supportFeed.closest('main')?.querySelector('[data-support-search]');
+      if (searchInput) filterSupportAnswers(searchInput);
       showSupportApp();
     })
     .catch(() => {});
