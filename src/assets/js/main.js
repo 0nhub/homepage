@@ -192,33 +192,6 @@ if (gallerySection) {
   }
 }
 
-const filterSupportAnswers = (input) => {
-  const query = input.value.trim().toLocaleLowerCase();
-  const container = input.closest('main')?.querySelector('.support-answers');
-  if (!container) return;
-
-  container.querySelectorAll('.answer-group').forEach((group) => {
-    const items = Array.from(group.querySelectorAll('details'));
-    let visibleCount = 0;
-
-    items.forEach((item) => {
-      const text = item.textContent.toLocaleLowerCase();
-      const matches = query === '' || text.includes(query);
-      item.hidden = !matches;
-      if (matches) visibleCount += 1;
-    });
-
-    group.hidden = query !== '' && visibleCount === 0;
-  });
-};
-
-document.addEventListener('input', (event) => {
-  const input = event.target.closest('[data-support-search]');
-  if (input) filterSupportAnswers(input);
-});
-
-document.querySelectorAll('[data-support-search]').forEach(filterSupportAnswers);
-
 const supportFeed = document.querySelector('[data-support-feed]');
 
 const showSupportApp = () => {
@@ -320,11 +293,11 @@ if (supportFeed && supportFeed.getAttribute('data-support-feed')) {
     }).join('');
   };
 
-  if (!supportFeed.hasAttribute('data-static-support')) return;
-  fetch(`${supportFeed.getAttribute('data-support-feed')}${supportFeed.getAttribute('data-support-feed').includes('?') ? '&' : '?'}limit=100`)
-    .then((response) => (response.ok ? response.json() : Promise.reject()))
-    .then((payload) => {
-      let rows = Array.isArray(payload.data) ? payload.data : [];
+  if (supportFeed.hasAttribute('data-static-support')) {
+    fetch(`${supportFeed.getAttribute('data-support-feed')}${supportFeed.getAttribute('data-support-feed').includes('?') ? '&' : '?'}limit=100`)
+      .then((response) => (response.ok ? response.json() : Promise.reject()))
+      .then((payload) => {
+        let rows = Array.isArray(payload.data) ? payload.data : [];
       try {
         const overrides = JSON.parse(supportFeed.getAttribute('data-support-overrides') || '[]');
         if (Array.isArray(overrides) && overrides.length) {
@@ -341,9 +314,8 @@ if (supportFeed && supportFeed.getAttribute('data-support-feed')) {
       }
       const apps = JSON.parse(supportFeed.getAttribute('data-support-apps') || '[]');
       supportFeed.innerHTML = render(rows, apps, supportFeed.getAttribute('data-support-email') || '');
-      const searchInput = supportFeed.closest('main')?.querySelector('[data-support-search]');
-      if (searchInput) filterSupportAnswers(searchInput);
-      showSupportApp();
-    })
-    .catch(() => {});
+        showSupportApp();
+      })
+      .catch(() => {});
+  }
 }
