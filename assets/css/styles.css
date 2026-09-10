@@ -307,6 +307,9 @@ a.support-card:hover { background: #ececf1; }
 .answers-empty a:hover { text-decoration: underline; }
 .answer-screenshot { margin: 20px 0 0; border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; background: var(--secondary-bg); }
 .answer-screenshot img { margin: 0 auto; max-height: 420px; width: auto; object-fit: contain; }
+.support-contact-link { display: flex; justify-content: center; margin: 36px 0 85px; }
+.contact-page { padding-bottom: 85px; }
+.contact-form { width: 100%; min-height: 240px; }
 .contact-panel { width: 100%; margin: 0 0 85px; padding: 50px; border-radius: 24px; background: var(--secondary-bg); text-align: center; }
 .contact-panel h2 { font-size: 36px; margin-bottom: 22px; }
 .contact-panel p { font-size: 16px; color: var(--subtext-color); }

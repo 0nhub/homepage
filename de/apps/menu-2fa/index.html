@@ -20,8 +20,8 @@
   <meta name="twitter:description" content="Speichere deine TOTP-Konten lokal und kopiere den aktuellen Bestätigungscode mit einem Klick.">
   <meta property="og:image" content="https://sgroi.ga/assets/images/menu-2fa/menu2FA.png"><meta name="twitter:image" content="https://sgroi.ga/assets/images/menu-2fa/menu2FA.png">
   <link rel="icon" href="/assets/images/logo.png" type="image/png">
-  <link rel="stylesheet" href="/assets/css/styles.css?v=81859fa7ab">
-  <script src="/assets/js/main.js?v=81859fa7ab" defer></script>
+  <link rel="stylesheet" href="/assets/css/styles.css?v=619cdaaeb6">
+  <script src="/assets/js/main.js?v=619cdaaeb6" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
@@ -82,15 +82,5 @@
     </div>
     <div class="footer-bottom"><p>© 2026 Gabriel Sgroi</p><nav aria-label="Rechtliches und Support"><a href="/de/legal/imprint/">Impressum</a><a href="/de/legal/privacy/">Datenschutz</a><a href="/de/legal/terms/">AGB</a><a href="/de/Support/">Support</a></nav><a class="back-to-top" href="#main">Nach oben ↑</a></div>
   </div></footer>
-<script>
-document.addEventListener('input', function (event) {
-  var input = event.target.closest('[data-support-search]');
-  if (!input) return;
-  var query = input.value.trim().toLowerCase();
-  input.closest('.wrap').querySelectorAll('.answer-group details').forEach(function (item) {
-    item.hidden = !!query && item.textContent.toLowerCase().indexOf(query) === -1;
-  });
-});
-</script>
 </body>
 </html>

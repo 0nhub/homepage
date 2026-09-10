@@ -20,8 +20,8 @@
   <meta name="twitter:description" content="Hilfe und Antworten zu den Apps von Gabriel Sgroi.">
   
   <link rel="icon" href="/assets/images/logo.png" type="image/png">
-  <link rel="stylesheet" href="/assets/css/styles.css?v=81859fa7ab">
-  <script src="/assets/js/main.js?v=81859fa7ab" defer></script>
+  <link rel="stylesheet" href="/assets/css/styles.css?v=619cdaaeb6">
+  <script src="/assets/js/main.js?v=619cdaaeb6" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
@@ -47,7 +47,7 @@
   <header class="page-intro"><h1>Für welche App brauchst du Hilfe?</h1></header>
   <div class="support-grid"><a class="support-card" href="/de/Support/menu-launcher/"><img class="app-icon " src="/assets/images/menu-launcher/launcher.png" alt="" width="80" height="80"><h2>Menu Launcher</h2></a>
 <a class="support-card" href="/de/Support/menu-2fa/"><img class="app-icon " src="/assets/images/menu-2fa/menu2FA.png" alt="" width="80" height="80"><h2>Menu 2FA</h2></a></div>
-  <section class="contact-panel" id="contact"><p class="eyebrow">Mit einer Person sprechen</p><h2>Noch Hilfe nötig?</h2><p>Schreib mir mit App-Name, App-Version, macOS-Version und einer kurzen Beschreibung, was passiert ist. Schritte zum Nachstellen sind besonders hilfreich.</p><p>Bitte entferne persönliche Angaben aus Screenshots und sende niemals Passwörter, Authentisierungsgeheimnisse oder Wiederherstellungscodes.</p><div class="actions"><a class="button" href="mailto:hello@sgroi.ga?subject=App%20Support">Kontakt</a><a class="text-link" href="/de/legal/privacy/#support">Wie Support-Daten behandelt werden</a></div></section>
+  <div class="support-contact-link"><a class="button" href="/de/contact/">Contact</a></div>
 </div>
 </main>
   <footer class="site-footer"><div class="wrap">
@@ -65,15 +65,5 @@
     </div>
     <div class="footer-bottom"><p>© 2026 Gabriel Sgroi</p><nav aria-label="Rechtliches und Support"><a href="/de/legal/imprint/">Impressum</a><a href="/de/legal/privacy/">Datenschutz</a><a href="/de/legal/terms/">AGB</a><a href="/de/Support/">Support</a></nav><a class="back-to-top" href="#main">Nach oben ↑</a></div>
   </div></footer>
-<script>
-document.addEventListener('input', function (event) {
-  var input = event.target.closest('[data-support-search]');
-  if (!input) return;
-  var query = input.value.trim().toLowerCase();
-  input.closest('.wrap').querySelectorAll('.answer-group details').forEach(function (item) {
-    item.hidden = !!query && item.textContent.toLowerCase().indexOf(query) === -1;
-  });
-});
-</script>
 </body>
 </html>

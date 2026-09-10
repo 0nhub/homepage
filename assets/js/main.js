@@ -192,6 +192,19 @@ if (gallerySection) {
   }
 }
 
+const supportSearch = document.querySelector('[data-support-search]');
+if (supportSearch) {
+  supportSearch.addEventListener('input', (event) => {
+    const input = event.currentTarget;
+    const query = input.value.trim().toLowerCase();
+    const wrap = input.closest('.wrap');
+    if (!wrap) return;
+    wrap.querySelectorAll('.answer-group details').forEach((item) => {
+      item.hidden = Boolean(query) && !item.textContent.toLowerCase().includes(query);
+    });
+  });
+}
+
 const supportFeed = document.querySelector('[data-support-feed]');
 
 const showSupportApp = () => {

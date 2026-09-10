@@ -20,8 +20,8 @@
   <meta name="twitter:description" content="Help and answers for Gabriel Sgroi’s apps.">
   
   <link rel="icon" href="/assets/images/logo.png" type="image/png">
-  <link rel="stylesheet" href="/assets/css/styles.css?v=81859fa7ab">
-  <script src="/assets/js/main.js?v=81859fa7ab" defer></script>
+  <link rel="stylesheet" href="/assets/css/styles.css?v=619cdaaeb6">
+  <script src="/assets/js/main.js?v=619cdaaeb6" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -47,7 +47,7 @@
   <header class="page-intro"><h1>Which app do you need help with?</h1></header>
   <div class="support-grid"><a class="support-card" href="/Support/menu-launcher/"><img class="app-icon " src="/assets/images/menu-launcher/launcher.png" alt="" width="80" height="80"><h2>Menu Launcher</h2></a>
 <a class="support-card" href="/Support/menu-2fa/"><img class="app-icon " src="/assets/images/menu-2fa/menu2FA.png" alt="" width="80" height="80"><h2>Menu 2FA</h2></a></div>
-  <section class="contact-panel" id="contact"><p class="eyebrow">Talk to a person</p><h2>Still need a hand?</h2><p>Email me with the app name, app version, macOS version, and a short description of what happened. Steps to reproduce an issue are especially helpful.</p><p>Please remove personal information from screenshots and never include passwords, authentication secrets, or recovery codes.</p><div class="actions"><a class="button" href="mailto:hello@sgroi.ga?subject=App%20Support">Contact</a><a class="text-link" href="/legal/privacy/#support">How support data is handled</a></div></section>
+  <div class="support-contact-link"><a class="button" href="/contact/">Contact</a></div>
 </div>
 </main>
   <footer class="site-footer"><div class="wrap">
@@ -65,15 +65,5 @@
     </div>
     <div class="footer-bottom"><p>© 2026 Gabriel Sgroi</p><nav aria-label="Legal and support"><a href="/legal/imprint/">Imprint</a><a href="/legal/privacy/">Privacy</a><a href="/legal/terms/">Terms</a><a href="/Support/">Support</a></nav><a class="back-to-top" href="#main">Back to top ↑</a></div>
   </div></footer>
-<script>
-document.addEventListener('input', function (event) {
-  var input = event.target.closest('[data-support-search]');
-  if (!input) return;
-  var query = input.value.trim().toLowerCase();
-  input.closest('.wrap').querySelectorAll('.answer-group details').forEach(function (item) {
-    item.hidden = !!query && item.textContent.toLowerCase().indexOf(query) === -1;
-  });
-});
-</script>
 </body>
 </html>
