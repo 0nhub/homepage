@@ -221,6 +221,16 @@ if (supportAnswers) {
   }, true);
 }
 
+const supportSearch = document.querySelector('[data-support-search]');
+if (supportSearch && supportAnswers) {
+  supportSearch.addEventListener('input', () => {
+    const query = supportSearch.value.trim().toLocaleLowerCase();
+    supportAnswers.querySelectorAll('.answer-group details').forEach((article) => {
+      article.hidden = Boolean(query) && !article.textContent.toLocaleLowerCase().includes(query);
+    });
+  });
+}
+
 if (supportFeed && supportFeed.getAttribute('data-support-feed')) {
   const paragraphs = (text) => String(text || '')
     .split(/\n{2,}/)
