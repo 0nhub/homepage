@@ -112,7 +112,7 @@ def support_page_html(project, articles, copy, lang):
     email = escape(SITE['email'])
     if rows: answers = ''.join(article_html(r) for r in rows)
     else: answers = f'<p class="answers-empty">{escape(copy["answers_empty"])} <a href="mailto:{email}?subject={quote(project["name"] + " Support")}">{escape(copy["answers_send"])}</a> {escape(copy["answers_mention"])}</p>'
-    search_label = copy.get('support_search', 'Search questions')
+    search_label = 'Search'
     if lang == 'de':
         intro = f'<section class="support-hero product-hero" aria-labelledby="support-product-title">{icon(project)}<h1 id="support-product-title">{escape(project["name"])} Support</h1><label class="support-search"><span>{escape(search_label)}</span><input type="search" data-support-search placeholder="{escape(search_label, quote=True)}" autocomplete="off"></label></section>'
         contact = f'<p>Schreib mir mit App-Name, App-Version, macOS-Version und einer kurzen Beschreibung, was passiert ist. Schritte zum Nachstellen sind besonders hilfreich.</p><p>Bitte entferne persönliche Angaben aus Screenshots und sende niemals Passwörter, Authentisierungsgeheimnisse oder Wiederherstellungscodes.</p><div class="actions"><a class="button" href="mailto:{email}?subject=App%20Support">Kontakt</a></div>'

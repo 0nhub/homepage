@@ -195,17 +195,18 @@ if (gallerySection) {
 document.querySelectorAll('[data-support-search]').forEach((input) => {
   input.addEventListener('input', () => {
     const query = input.value.trim().toLocaleLowerCase();
-    const wrap = input.closest('.wrap');
-    if (!wrap) return;
+    const container = input.closest('main') || document;
 
-    wrap.querySelectorAll('.answer-group').forEach((group) => {
-      const items = group.querySelectorAll('details');
+    container.querySelectorAll('.answer-group').forEach((group) => {
+      const items = Array.from(group.querySelectorAll('details'));
       let visibleCount = 0;
       items.forEach((item) => {
-        const matches = !query || item.textContent.toLocaleLowerCase().includes(query);
+        const text = item.textContent.toLocaleLowerCase();
+        const matches = !query || text.includes(query);
         item.hidden = !matches;
         if (matches) visibleCount += 1;
       });
+      group.hidden = Boolean(query) && visibleCount === 0;
       group.classList.toggle('is-open', !query || visibleCount > 0);
     });
   });
