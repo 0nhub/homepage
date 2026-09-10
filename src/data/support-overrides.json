@@ -1,92 +1,182 @@
 [
   {
     "application": "Menu Launcher",
-    "name": "Wie füge ich eine App hinzu?",
-    "content": "Öffne Menu Launcher, füge einen neuen Eintrag hinzu und wähle die gewünschte App aus. Nach dem Hinzufügen erscheint die App im Launcher und kann direkt über die macOS-Menüleiste geöffnet werden.",
+    "en": {
+      "name": "How do I add an app?",
+      "content": "Open Menu Launcher, add a new item, and choose the app you want to use. It will then appear in the launcher and can be opened directly from the macOS menu bar."
+    },
+    "de": {
+      "name": "Wie füge ich eine App hinzu?",
+      "content": "Öffne Menu Launcher, füge einen neuen Eintrag hinzu und wähle die gewünschte App aus. Nach dem Hinzufügen erscheint die App im Launcher und kann direkt über die macOS-Menüleiste geöffnet werden."
+    },
     "age": 1
   },
   {
     "application": "Menu Launcher",
-    "name": "Wie füge ich einen Ordner hinzu?",
-    "content": "Füge einen neuen Eintrag hinzu und wähle den Ordner aus, auf den du zugreifen möchtest. Der Ordner ist anschließend direkt in Menu Launcher verfügbar und wird beim Auswählen im Finder geöffnet.",
+    "en": {
+      "name": "How do I add a folder?",
+      "content": "Add a new item and choose the folder you want to access. The folder will be available in Menu Launcher and opens in Finder when selected."
+    },
+    "de": {
+      "name": "Wie füge ich einen Ordner hinzu?",
+      "content": "Füge einen neuen Eintrag hinzu und wähle den Ordner aus, auf den du zugreifen möchtest. Der Ordner ist anschließend direkt in Menu Launcher verfügbar und wird beim Auswählen im Finder geöffnet."
+    },
     "age": 2
   },
   {
     "application": "Menu Launcher",
-    "name": "Wie ändere ich die Reihenfolge meiner Einträge?",
-    "content": "Öffne die Konfiguration von Menu Launcher und ändere die Position deiner vorhandenen Einträge. So kannst du häufig verwendete Apps und Ordner weiter oben im Launcher platzieren.",
+    "en": {
+      "name": "How do I reorder my items?",
+      "content": "Open the Menu Launcher configuration and change the position of your existing items. Frequently used apps and folders can be placed higher in the launcher."
+    },
+    "de": {
+      "name": "Wie ändere ich die Reihenfolge meiner Einträge?",
+      "content": "Öffne die Konfiguration von Menu Launcher und ändere die Position deiner vorhandenen Einträge. So kannst du häufig verwendete Apps und Ordner weiter oben im Launcher platzieren."
+    },
     "age": 3
   },
   {
     "application": "Menu Launcher",
-    "name": "Wie entferne ich eine App oder einen Ordner?",
-    "content": "Entferne den entsprechenden Eintrag in der Konfiguration von Menu Launcher. Dadurch wird nur die Verknüpfung aus Menu Launcher entfernt. Die ursprüngliche App, der Ordner und alle darin enthaltenen Dateien werden nicht gelöscht.",
+    "en": {
+      "name": "How do I remove an app or folder?",
+      "content": "Remove the relevant item in the Menu Launcher configuration. This only removes the shortcut from Menu Launcher; the original app, folder, and its files are not deleted."
+    },
+    "de": {
+      "name": "Wie entferne ich eine App oder einen Ordner?",
+      "content": "Entferne den entsprechenden Eintrag in der Konfiguration von Menu Launcher. Dadurch wird nur die Verknüpfung aus Menu Launcher entfernt. Die ursprüngliche App, der Ordner und alle darin enthaltenen Dateien werden nicht gelöscht."
+    },
     "age": 4
   },
   {
     "application": "Menu Launcher",
-    "name": "Ändert Menu Launcher meine Apps oder Ordner?",
-    "content": "Nein. Menu Launcher verwendet nur Verweise auf die von dir ausgewählten Apps und Ordner. Die ursprünglichen Elemente bleiben an ihren bestehenden Speicherorten auf deinem Mac erhalten.",
+    "en": {
+      "name": "Does Menu Launcher change my apps or folders?",
+      "content": "No. Menu Launcher only stores references to the apps and folders you choose. The original items remain in their existing locations on your Mac."
+    },
+    "de": {
+      "name": "Ändert Menu Launcher meine Apps oder Ordner?",
+      "content": "Nein. Menu Launcher verwendet nur Verweise auf die von dir ausgewählten Apps und Ordner. Die ursprünglichen Elemente bleiben an ihren bestehenden Speicherorten auf deinem Mac erhalten."
+    },
     "age": 5
   },
   {
     "application": "Menu Launcher",
-    "name": "Kann Menu Launcher beim Anmelden automatisch gestartet werden?",
-    "content": "Ja. Der automatische Start kann in Menu Launcher aktiviert werden, damit die App nach der Anmeldung bei macOS in der Menüleiste verfügbar ist. Die Option kann jederzeit wieder deaktiviert werden.",
+    "en": {
+      "name": "Can Menu Launcher launch automatically at login?",
+      "content": "Yes. Enable automatic launch in Menu Launcher so it is available in the macOS menu bar after you sign in. You can disable this option at any time."
+    },
+    "de": {
+      "name": "Kann Menu Launcher beim Anmelden automatisch gestartet werden?",
+      "content": "Ja. Der automatische Start kann in Menu Launcher aktiviert werden, damit die App nach der Anmeldung bei macOS in der Menüleiste verfügbar ist. Die Option kann jederzeit wieder deaktiviert werden."
+    },
     "age": 6
   },
   {
     "application": "Menu Launcher",
-    "name": "Wo erscheint Menu Launcher?",
-    "content": "Menu Launcher läuft in der macOS-Menüleiste und bietet dir direkten Zugriff auf die konfigurierten Apps und Ordner, ohne zusätzliche Elemente im Dock anzulegen.",
+    "en": {
+      "name": "Where does Menu Launcher appear?",
+      "content": "Menu Launcher runs in the macOS menu bar and gives you direct access to configured apps and folders without adding extra items to the Dock."
+    },
+    "de": {
+      "name": "Wo erscheint Menu Launcher?",
+      "content": "Menu Launcher läuft in der macOS-Menüleiste und bietet dir direkten Zugriff auf die konfigurierten Apps und Ordner, ohne zusätzliche Elemente im Dock anzulegen."
+    },
     "age": 7
   },
   {
     "application": "Menu Launcher",
-    "name": "Erfasst Menu Launcher Nutzungsdaten?",
-    "content": "Nein. Es werden keine vom Entwickler betriebenen Analyse-, Verhaltens- oder Werbesysteme verwendet. Deine Menu-Launcher-Konfiguration bleibt lokal auf deinem Mac.",
+    "en": {
+      "name": "Does Menu Launcher collect usage data?",
+      "content": "No. Menu Launcher does not use developer-operated analytics, behavioral tracking, or advertising systems. Your configuration stays local on your Mac."
+    },
+    "de": {
+      "name": "Erfasst Menu Launcher Nutzungsdaten?",
+      "content": "Nein. Es werden keine vom Entwickler betriebenen Analyse-, Verhaltens- oder Werbesysteme verwendet. Deine Menu-Launcher-Konfiguration bleibt lokal auf deinem Mac."
+    },
     "age": 8
   },
   {
     "application": "Menu 2FA",
-    "name": "Wie füge ich ein Authentifizierungskonto hinzu?",
-    "content": "Öffne Menu 2FA in der Menüleiste und wähle „Einstellungen“. Tippe anschließend auf „+“. Gib einen Titel und dein Base32-TOTP-Geheimnis ein oder füge eine otpauth://-URI ein. Optional kannst du ein Symbol auswählen. Die Geheimnisse bleiben auf deinem Mac und werden ausschließlich lokal zur Erzeugung der Codes verwendet.",
+    "en": {
+      "name": "How do I add an authentication account?",
+      "content": "Open Menu 2FA in the menu bar and choose Settings. Select “+”, enter a title and your Base32 TOTP secret, or paste an otpauth:// URI. Secrets stay on your Mac and are used locally to generate codes."
+    },
+    "de": {
+      "name": "Wie füge ich ein Authentifizierungskonto hinzu?",
+      "content": "Öffne Menu 2FA in der Menüleiste und wähle „Einstellungen“. Tippe anschließend auf „+“. Gib einen Titel und dein Base32-TOTP-Geheimnis ein oder füge eine otpauth://-URI ein. Optional kannst du ein Symbol auswählen. Die Geheimnisse bleiben auf deinem Mac und werden ausschließlich lokal zur Erzeugung der Codes verwendet."
+    },
     "age": 1
   },
   {
     "application": "Menu 2FA",
-    "name": "Wie kopiere ich einen Code?",
-    "content": "Klicke mit der linken Maustaste auf den Menu-2FA-Schlüssel in der Menüleiste und wähle ein Konto aus. Der aktuelle sechsstellige TOTP-Code wird in die Zwischenablage kopiert. Solange das Menü geöffnet ist, wird das Schlüsselsymbol für den 30-Sekunden-Zeitraum zu einem Countdown-Ring.",
+    "en": {
+      "name": "How do I copy a code?",
+      "content": "Click the Menu 2FA key in the menu bar and choose an account. The current six-digit TOTP code is copied to the clipboard. While the menu is open, the key icon shows the current 30-second countdown."
+    },
+    "de": {
+      "name": "Wie kopiere ich einen Code?",
+      "content": "Klicke mit der linken Maustaste auf den Menu-2FA-Schlüssel in der Menüleiste und wähle ein Konto aus. Der aktuelle sechsstellige TOTP-Code wird in die Zwischenablage kopiert. Solange das Menü geöffnet ist, wird das Schlüsselsymbol für den 30-Sekunden-Zeitraum zu einem Countdown-Ring."
+    },
     "age": 2
   },
   {
     "application": "Menu 2FA",
-    "name": "Wo werden meine Geheimnisse gespeichert?",
-    "content": "Authentifizierungskonten und Geheimnisse bleiben lokal auf deinem Mac. Menu 2FA erzeugt die Codes auf deinem Gerät und lädt weder Geheimnisse noch Codes zum Entwickler hoch. Sende beim Kontakt mit dem Support niemals Geheimnisse oder Wiederherstellungscodes.",
+    "en": {
+      "name": "Where are my secrets stored?",
+      "content": "Authentication accounts and secrets stay locally on your Mac. Menu 2FA generates codes on your device and does not upload secrets or codes to the developer. Never send secrets or recovery codes to support."
+    },
+    "de": {
+      "name": "Wo werden meine Geheimnisse gespeichert?",
+      "content": "Authentifizierungskonten und Geheimnisse bleiben lokal auf deinem Mac. Menu 2FA erzeugt die Codes auf deinem Gerät und lädt weder Geheimnisse noch Codes zum Entwickler hoch. Sende beim Kontakt mit dem Support niemals Geheimnisse oder Wiederherstellungscodes."
+    },
     "age": 3
   },
   {
     "application": "Menu 2FA",
-    "name": "Erfasst Menu 2FA Nutzungsdaten?",
-    "content": "Nein. Es werden keine vom Entwickler betriebenen Analyse-, Verhaltens- oder Werbesysteme verwendet. Deine Menu-2FA-Konfiguration bleibt lokal auf deinem Mac.",
+    "en": {
+      "name": "Does Menu 2FA collect usage data?",
+      "content": "No. Menu 2FA does not use developer-operated analytics, behavioral tracking, or advertising systems. Your configuration stays local on your Mac."
+    },
+    "de": {
+      "name": "Erfasst Menu 2FA Nutzungsdaten?",
+      "content": "Nein. Es werden keine vom Entwickler betriebenen Analyse-, Verhaltens- oder Werbesysteme verwendet. Deine Menu-2FA-Konfiguration bleibt lokal auf deinem Mac."
+    },
     "age": 4
   },
   {
     "application": "Menu 2FA",
-    "name": "Kann Menu 2FA beim Anmelden automatisch gestartet werden?",
-    "content": "Ja. Aktiviere „Beim Anmelden starten“ im Kontextmenü von Menu 2FA (Rechtsklick auf den Schlüssel). Du kannst diese Option dort oder in den macOS-Anmeldeobjekten jederzeit wieder deaktivieren.",
+    "en": {
+      "name": "Can Menu 2FA launch automatically at login?",
+      "content": "Enable “Launch at login” in the Menu 2FA context menu by right-clicking the key. You can disable the option there or in macOS Login Items."
+    },
+    "de": {
+      "name": "Kann Menu 2FA beim Anmelden automatisch gestartet werden?",
+      "content": "Ja. Aktiviere „Beim Anmelden starten“ im Kontextmenü von Menu 2FA (Rechtsklick auf den Schlüssel). Du kannst diese Option dort oder in den macOS-Anmeldeobjekten jederzeit wieder deaktivieren."
+    },
     "age": 5
   },
   {
     "application": "Menu 2FA",
-    "name": "Ich habe ein Konto entfernt. Kann ich es wiederherstellen?",
-    "content": "Entfernte Konten können in Menu 2FA nicht wiederhergestellt werden. Füge das Konto erneut mit dem ursprünglichen Geheimnis hinzu, sofern du es noch von dem Dienst hast, der es ausgestellt hat.",
+    "en": {
+      "name": "I removed an account. Can I restore it?",
+      "content": "Removed accounts cannot be restored in Menu 2FA. Add the account again with its original secret, if you still have it from the service that issued it."
+    },
+    "de": {
+      "name": "Ich habe ein Konto entfernt. Kann ich es wiederherstellen?",
+      "content": "Entfernte Konten können in Menu 2FA nicht wiederhergestellt werden. Füge das Konto erneut mit dem ursprünglichen Geheimnis hinzu, sofern du es noch von dem Dienst hast, der es ausgestellt hat."
+    },
     "age": 6
   },
   {
     "application": "Menu 2FA",
-    "name": "Für welche Plattform ist Menu 2FA entwickelt?",
-    "content": "Menu 2FA wurde für macOS entwickelt und ist für den Vertrieb über den Mac App Store vorgesehen.",
+    "en": {
+      "name": "Which platform is Menu 2FA made for?",
+      "content": "Menu 2FA was designed for macOS and is intended for distribution through the Mac App Store."
+    },
+    "de": {
+      "name": "Für welche Plattform ist Menu 2FA entwickelt?",
+      "content": "Menu 2FA wurde für macOS entwickelt und ist für den Vertrieb über den Mac App Store vorgesehen."
+    },
     "age": 7
   }
 ]

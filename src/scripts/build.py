@@ -5,8 +5,6 @@ import json
 import os
 import re
 import shutil
-import urllib.error
-import urllib.request
 from html import escape
 from pathlib import Path
 from string import Template
@@ -19,7 +17,6 @@ SITE = json.loads((SOURCE / 'data/site.json').read_text())
 PROJECTS = json.loads((SOURCE / 'data/projects.json').read_text())
 LAYOUT = Template((SOURCE / 'templates/layout.html').read_text())
 I18N = json.loads((SOURCE / 'data/i18n.json').read_text())
-SUPPORT_FEED = SITE.get('support_feed', '').strip()
 GALLERY_FEED = SITE.get('gallery_feed', '').strip()
 SUPPORT_OVERRIDES_PATH = SOURCE / 'data/support-overrides.json'
 ORIGIN = SITE['origin'].rstrip('/')
@@ -72,31 +69,14 @@ def match_project(label):
         re.sub(r'[^a-z0-9]+', '', p.get('name_de', '').casefold()),
     }), None)
 def dollar(text): return text.replace('$', '$$')
-def fetch_feed_rows(endpoint):
-    rows = []; page = 1
-    while page <= 20:
-        separator = '&' if '?' in endpoint else '?'; url = f'{endpoint}{separator}page={page}&limit=100'
-        key = os.environ.get('APPBACKEND_API_KEY')
-        if key: url += '&api_key=' + quote(key)
-        request = urllib.request.Request(url, headers={'Accept': 'application/json', 'User-Agent': 'sgroi.ga-build'})
-        with urllib.request.urlopen(request, timeout=20) as response: payload = json.loads(response.read().decode())
-        batch = payload.get('data') or []; rows.extend(batch); total = int(payload.get('count') or 0)
-        if not batch or len(rows) >= total: break
-        page += 1
-    return rows
 def load_support_articles():
-    remote = []
-    if SUPPORT_FEED:
-        try: remote = fetch_feed_rows(SUPPORT_FEED); print(f'Loaded {len(remote)} support article(s) from AppBackend.')
-        except (urllib.error.URLError, TimeoutError, json.JSONDecodeError, ValueError) as error: print('Warning: support feed unavailable:', error)
-    overrides = json.loads(SUPPORT_OVERRIDES_PATH.read_text()) if SUPPORT_OVERRIDES_PATH.exists() else []
-    overridden = {str(r.get('application') or '').strip().casefold() for r in overrides}
-    return [r for r in remote if str(r.get('application') or '').strip().casefold() not in overridden] + overrides
-def article_html(row):
-    title = (row.get('name') or '').strip() or 'Untitled'; figure = ''
+    return json.loads(SUPPORT_OVERRIDES_PATH.read_text(encoding='utf-8')) if SUPPORT_OVERRIDES_PATH.exists() else []
+def article_html(row, lang):
+    localized = row.get(lang) or row.get('en') or row
+    title = (localized.get('name') or '').strip() or 'Untitled'; figure = ''
     image = public_image(row.get('attachment'))
     if image: figure = f'<figure class="answer-screenshot"><img src="{escape(image, quote=True)}" alt="{escape(title, quote=True)}" loading="lazy"></figure>'
-    return f'<details name="support-answers"><summary>{escape(title)}</summary><div>{paragraphs(row.get("content"))}{figure}</div></details>'
+    return f'<details name="support-answers"><summary>{escape(title)}</summary><div>{paragraphs(localized.get("content"))}{figure}</div></details>'
 def support_cards(lang):
     root = locale_root(lang); cards = []
     for project in local_projects():
@@ -108,9 +88,9 @@ def support_page_html(project, articles, copy, lang):
         matched = match_project(str(row.get('application') or '').strip())
         if matched == project or str(row.get('application') or '').strip().casefold() in {project['name'].casefold(), project['slug'].casefold()}:
             rows.append(row)
-    rows.sort(key=lambda r: (position_key(r), (r.get('name') or '').casefold()))
+    rows.sort(key=lambda r: (position_key(r), ((r.get(lang) or r.get('en') or r).get('name') or '').casefold()))
     email = escape(SITE['email'])
-    if rows: answers = ''.join(article_html(r) for r in rows)
+    if rows: answers = ''.join(article_html(r, lang) for r in rows)
     else: answers = f'<p class="answers-empty">{escape(copy["answers_empty"])} <a href="mailto:{email}?subject={quote(project["name"] + " Support")}">{escape(copy["answers_send"])}</a> {escape(copy["answers_mention"])}</p>'
     intro = f'<section class="support-hero product-hero" aria-labelledby="support-product-title">{icon(project)}<h1 id="support-product-title">{escape(project["name"])} Support</h1></section>'
     contact_label = 'Kontakt' if lang == 'de' else 'Contact'
@@ -160,7 +140,7 @@ def build():
     SITEMAP_PATHS.clear(); ensure_photo_folders(); sync_assets(); clean_legacy_publish_trees(); articles = load_support_articles()
     routes = [('about','/about/','about_title','about_desc'),('legal','/legal/','legal_title','legal_desc'),('imprint','/legal/imprint/','imprint_title','imprint_desc'),('privacy','/legal/privacy/','privacy_title','privacy_desc'),('terms','/legal/terms/','terms_title','terms_desc'),('support','/Support/','support_title','support_desc'),('apps','/apps/','apps_title','apps_desc'),('contact','/contact/','contact_title','contact_desc')]
     for lang in ('en','de'):
-        copy = I18N[lang]; root = locale_root(lang); home = locale_home(lang); values = {'latest_cards': latest_cards(lang, root, copy), 'project_cards': project_cards(lang, root, copy), 'project_tiles': project_tiles(root), 'contact_email': escape(SITE['email']), 'contact_phone': escape(phone_display()), 'contact_phone_href': escape(phone_href(), quote=True), 'support_cards': dollar(support_cards(lang)), 'support_articles': '', 'support_feed': '', 'support_apps': '', 'support_overrides': '', 'support_ui': '', 'root': root, 'home': home, 'assets': ASSETS, 'error_home': escape(copy['error_home']), 'nav_projects': escape(copy['nav_projects']), 'social_label': escape(copy['social_label'])}
+        copy = I18N[lang]; root = locale_root(lang); home = locale_home(lang); values = {'latest_cards': latest_cards(lang, root, copy), 'project_cards': project_cards(lang, root, copy), 'project_tiles': project_tiles(root), 'contact_email': escape(SITE['email']), 'contact_phone': escape(phone_display()), 'contact_phone_href': escape(phone_href(), quote=True), 'support_cards': dollar(support_cards(lang)), 'support_articles': '', 'root': root, 'home': home, 'assets': ASSETS, 'error_home': escape(copy['error_home']), 'nav_projects': escape(copy['nav_projects']), 'social_label': escape(copy['social_label'])}
         source = page_source('home', lang); page('/', copy['home_title'], copy['home_desc'], Template(source.read_text()).substitute(values), lang, LOGO)
         for name, path, title_key, desc_key in routes:
             source = page_source(name, lang)
