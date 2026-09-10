@@ -282,8 +282,15 @@ a.support-card:hover { background: #ececf1; }
 .support-card p { font-size: 16px; color: var(--subtext-color); }
 .support-card .actions { justify-content: start; margin-top: 22px; gap: 16px; }
 .support-card .button, .support-card .text-link { font-size: 14px; }
+.support-page-header { max-width: 900px; margin: 0 auto; }
+.support-hero { padding-bottom: 28px; }
+.support-hero > .app-icon { margin: 0 auto 22px; box-shadow: 0 10px 24px rgba(0, 0, 0, .1); }
+.support-search { display: block; max-width: 680px; margin: 30px auto 0; text-align: left; }
+.support-search span { display: block; position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.support-search input { width: 100%; border: 1px solid var(--border-color); border-radius: 14px; padding: 16px 18px; background: var(--secondary-bg); color: var(--text-color); font: inherit; font-size: 17px; outline: none; }
+.support-search input:focus { border-color: var(--text-color); box-shadow: 0 0 0 3px rgba(0, 0, 0, .08); }
 .support-answers { margin-bottom: 50px; }
-.answer-group { display: none; max-width: 800px; margin: 20px auto 0; }
+.answer-group { display: none; max-width: 800px; margin: 0 auto; }
 .answer-group, .answer-group:target, .js .answer-group.is-open { display: block; }
 .answer-group h2 { font-size: 34px; margin-bottom: 24px; }
 .answer-group details { border-bottom: 1px solid var(--border-color); }

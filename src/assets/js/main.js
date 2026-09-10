@@ -293,6 +293,7 @@ if (supportFeed && supportFeed.getAttribute('data-support-feed')) {
     }).join('');
   };
 
+  if (!supportFeed.hasAttribute('data-static-support')) return;
   fetch(`${supportFeed.getAttribute('data-support-feed')}${supportFeed.getAttribute('data-support-feed').includes('?') ? '&' : '?'}limit=100`)
     .then((response) => (response.ok ? response.json() : Promise.reject()))
     .then((payload) => {

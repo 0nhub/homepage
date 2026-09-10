@@ -59,5 +59,15 @@
     </div>
     <div class="footer-bottom"><p>© $year Gabriel Sgroi</p><nav aria-label="$nav_legal"><a href="$root/legal/imprint/">$imprint</a><a href="$root/legal/privacy/">$privacy</a><a href="$root/legal/terms/">$terms</a><a href="$root/Support/">$nav_support</a></nav><a class="back-to-top" href="#main">$back_top</a></div>
   </div></footer>
+<script>
+document.addEventListener('input', function (event) {
+  var input = event.target.closest('[data-support-search]');
+  if (!input) return;
+  var query = input.value.trim().toLowerCase();
+  input.closest('.wrap').querySelectorAll('.answer-group details').forEach(function (item) {
+    item.hidden = !!query && item.textContent.toLowerCase().indexOf(query) === -1;
+  });
+});
+</script>
 </body>
 </html>
