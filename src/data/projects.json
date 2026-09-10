@@ -1,0 +1,37 @@
+[
+  {
+    "slug": "menu-launcher",
+    "name": "Menu Launcher",
+    "category": "macOS utility",
+    "description": "Keep your favorite apps, files and folders in one convenient menu bar launcher.",
+    "description_de": "Halte deine Lieblings-Apps, Dateien und Ordner in einem praktischen Menüleisten-Launcher.",
+    "status": "Meet the app",
+    "status_de": "Die App kennenlernen",
+    "icon": "/assets/images/menu-launcher/launcher.png",
+    "app_store_url": "https://apps.apple.com/app/menu-launcher/id6806591610",
+    "on_home": true
+  },
+  {
+    "slug": "menu-2fa",
+    "name": "Menu 2FA",
+    "category": "macOS utility",
+    "description": "Store your TOTP accounts locally and copy the current verification code with a single click.",
+    "description_de": "Speichere deine TOTP-Konten lokal und kopiere den aktuellen Bestätigungscode mit einem Klick.",
+    "status": "Meet the app",
+    "status_de": "Die App kennenlernen",
+    "icon": "/assets/images/menu-2fa/menu2FA.png",
+    "app_store_url": "https://apps.apple.com/de/app/menu-2fa/id6806774047?l=en-GB&mt=12",
+    "on_home": true
+  },
+  {
+    "slug": "bookmer",
+    "name": "Bookmer",
+    "category": "Bookmark manager",
+    "description": "A bookmark manager you can sign in to and use right away.",
+    "description_de": "Ein Bookmark-Manager, bei dem du dich direkt anmelden kannst.",
+    "status": "Live",
+    "status_de": "Live",
+    "icon": "/assets/images/bookmer/bookmer.png",
+    "url": "https://bookmer.com"
+  }
+]

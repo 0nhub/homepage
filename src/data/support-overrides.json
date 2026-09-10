@@ -1,0 +1,44 @@
+[
+  {
+    "application": "Menu 2FA",
+    "name": "How do I add an authenticator account?",
+    "content": "Open Menu 2FA from the menu bar, choose Settings, then tap +. Enter a title and your Base32 TOTP secret, or paste an otpauth:// URI. You can optionally choose an icon. Secrets stay on your Mac and are used only to generate codes locally.",
+    "age": 1
+  },
+  {
+    "application": "Menu 2FA",
+    "name": "How do I copy a code?",
+    "content": "Left-click the Menu 2FA key in the menu bar and choose an account. The current 6-digit TOTP code is copied to the clipboard. While that menu is open, the key icon becomes a countdown ring for the 30-second period.",
+    "age": 2
+  },
+  {
+    "application": "Menu 2FA",
+    "name": "Where are my secrets stored?",
+    "content": "Authenticator accounts and secrets remain locally on your Mac. Menu 2FA generates codes on-device and does not upload secrets or codes to the developer. Do not send secrets or recovery codes when contacting support.",
+    "age": 3
+  },
+  {
+    "application": "Menu 2FA",
+    "name": "Does Menu 2FA collect usage data?",
+    "content": "No developer-operated analytics, behavioral tracking, or advertising systems are used. Your Menu 2FA configuration remains locally on your Mac.",
+    "age": 4
+  },
+  {
+    "application": "Menu 2FA",
+    "name": "Can Menu 2FA start automatically when I log in?",
+    "content": "Yes. Enable Launch at Login from the Menu 2FA context menu (right-click the key). You can disable it again at any time there or in macOS Login Items.",
+    "age": 5
+  },
+  {
+    "application": "Menu 2FA",
+    "name": "I removed an account. Can I restore it?",
+    "content": "Removed accounts cannot be recovered from Menu 2FA. Add the account again with the original secret if you still have it from the service that issued it.",
+    "age": 6
+  },
+  {
+    "application": "Menu 2FA",
+    "name": "Which platform is Menu 2FA designed for?",
+    "content": "Menu 2FA is designed for macOS and is intended for distribution through the Mac App Store.",
+    "age": 7
+  }
+]
