@@ -194,7 +194,7 @@ if (gallerySection) {
 
 const filterSupportAnswers = (input) => {
   const query = input.value.trim().toLocaleLowerCase();
-  const container = input.closest('main') || document;
+  const container = input.closest('.support-page-header')?.parentElement || input.closest('main') || document;
 
   container.querySelectorAll('.answer-group').forEach((group) => {
     const items = Array.from(group.querySelectorAll('details'));
