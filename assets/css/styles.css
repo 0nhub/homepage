@@ -284,9 +284,7 @@ a.support-card:hover { background: #ececf1; }
 .support-card .button, .support-card .text-link { font-size: 14px; }
 .support-answers { margin-bottom: 50px; }
 .answer-group { display: none; max-width: 800px; margin: 20px auto 0; }
-.answer-group:target, .js .answer-group.is-open { display: block; }
-.js .answer-group { display: none; }
-.js .answer-group.is-open { display: block; }
+.answer-group, .answer-group:target, .js .answer-group.is-open { display: block; }
 .answer-group h2 { font-size: 34px; margin-bottom: 24px; }
 .answer-group details { border-bottom: 1px solid var(--border-color); }
 .answer-group summary { list-style: none; display: flex; justify-content: space-between; gap: 24px; padding: 24px 0; cursor: pointer; font-size: 17px; font-weight: 500; }
