@@ -192,25 +192,31 @@ if (gallerySection) {
   }
 }
 
-document.querySelectorAll('[data-support-search]').forEach((input) => {
-  input.addEventListener('input', () => {
-    const query = input.value.trim().toLocaleLowerCase();
-    const container = input.closest('main') || document;
+const filterSupportAnswers = (input) => {
+  const query = input.value.trim().toLocaleLowerCase();
+  const container = input.closest('main') || document;
 
-    container.querySelectorAll('.answer-group').forEach((group) => {
-      const items = Array.from(group.querySelectorAll('details'));
-      let visibleCount = 0;
-      items.forEach((item) => {
-        const text = item.textContent.toLocaleLowerCase();
-        const matches = !query || text.includes(query);
-        item.hidden = !matches;
-        if (matches) visibleCount += 1;
-      });
-      group.hidden = Boolean(query) && visibleCount === 0;
-      group.classList.toggle('is-open', !query || visibleCount > 0);
+  container.querySelectorAll('.answer-group').forEach((group) => {
+    const items = Array.from(group.querySelectorAll('details'));
+    let visibleCount = 0;
+
+    items.forEach((item) => {
+      const text = item.textContent.toLocaleLowerCase();
+      const matches = query === '' || text.includes(query);
+      item.hidden = !matches;
+      if (matches) visibleCount += 1;
     });
+
+    group.hidden = query !== '' && visibleCount === 0;
   });
+};
+
+document.addEventListener('input', (event) => {
+  const input = event.target.closest('[data-support-search]');
+  if (input) filterSupportAnswers(input);
 });
+
+document.querySelectorAll('[data-support-search]').forEach(filterSupportAnswers);
 
 const supportFeed = document.querySelector('[data-support-feed]');
 
