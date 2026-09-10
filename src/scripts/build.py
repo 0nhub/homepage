@@ -65,8 +65,8 @@ def position_key(row):
     try: return (0, float(row.get('age')))
     except (TypeError, ValueError): return (1, 0)
 def match_project(label):
-    key = label.casefold()
-    return next((p for p in PROJECTS if p['name'].casefold() == key or p['slug'].casefold() == key), None)
+    key = label.casefold().strip()
+    return next((p for p in local_projects() if p['name'].casefold() == key or p['slug'].casefold() == key or p.get('name_de', '').casefold() == key), None)
 def dollar(text): return text.replace('$', '$$')
 def fetch_feed_rows(endpoint):
     rows = []; page = 1
@@ -106,10 +106,10 @@ def support_page_html(project, articles, copy, lang):
     else: answers = f'<p class="answers-empty">{escape(copy["answers_empty"])} <a href="mailto:{email}?subject={quote(project["name"] + " Support")}">{escape(copy["answers_send"])}</a> {escape(copy["answers_mention"])}</p>'
     if lang == 'de':
         intro = f'<p class="eyebrow">Support</p><h1>{escape(project["name"])}</h1><p>Hilfe und Antworten für diese App.</p>'
-        contact = f'<p class="eyebrow">Mit einer Person sprechen</p><h2>Noch Hilfe nötig?</h2><p>Schreib mir mit App-Name, App-Version, macOS-Version und einer kurzen Beschreibung, was passiert ist. Schritte zum Nachstellen sind besonders hilfreich.</p><p>Bitte entferne persönliche Angaben aus Screenshots und sende niemals Passwörter, Authentisierungsgeheimnisse oder Wiederherstellungscodes.</p><div class="actions"><a class="button" href="mailto:$contact_email?subject=App%20Support">Kontakt</a><a class="text-link" href="{locale_root(lang)}/legal/privacy/#support">Wie Support-Daten behandelt werden</a></div>'
+        contact = f'<p class="eyebrow">Mit einer Person sprechen</p><h2>Noch Hilfe nötig?</h2><p>Schreib mir mit App-Name, App-Version, macOS-Version und einer kurzen Beschreibung, was passiert ist. Schritte zum Nachstellen sind besonders hilfreich.</p><p>Bitte entferne persönliche Angaben aus Screenshots und sende niemals Passwörter, Authentisierungsgeheimnisse oder Wiederherstellungscodes.</p><div class="actions"><a class="button" href="mailto:{email}?subject=App%20Support">Kontakt</a><a class="text-link" href="{locale_root(lang)}/legal/privacy/#support">Wie Support-Daten behandelt werden</a></div>'
     else:
         intro = f'<p class="eyebrow">Support</p><h1>{escape(project["name"])}</h1><p>Help and answers for this app.</p>'
-        contact = f'<p class="eyebrow">Talk to a person</p><h2>Still need a hand?</h2><p>Email me with the app name, app version, macOS version, and a short description of what happened. Steps to reproduce an issue are especially helpful.</p><p>Please remove personal information from screenshots and never include passwords, authentication secrets, or recovery codes.</p><div class="actions"><a class="button" href="mailto:$contact_email?subject=App%20Support">Contact</a><a class="text-link" href="{locale_root(lang)}/legal/privacy/#support">How support data is handled</a></div>'
+        contact = f'<p class="eyebrow">Talk to a person</p><h2>Still need a hand?</h2><p>Email me with the app name, app version, macOS version, and a short description of what happened. Steps to reproduce an issue are especially helpful.</p><p>Please remove personal information from screenshots and never include passwords, authentication secrets, or recovery codes.</p><div class="actions"><a class="button" href="mailto:{email}?subject=App%20Support">Contact</a><a class="text-link" href="{locale_root(lang)}/legal/privacy/#support">How support data is handled</a></div>'
     return f'<div class="wrap"><header class="page-intro">{intro}</header><div class="support-answers"><section class="answer-group is-open" id="{escape(project["slug"])}"><h2>{escape(project["name"])}</h2>{answers}</section></div><section class="contact-panel" id="contact">{contact}</section></div>'
 def product_gallery_html(project, lang): return ''
 def project_cards(lang, root, copy, projects=None):
