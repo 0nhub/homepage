@@ -94,7 +94,7 @@ def support_page_html(project, articles, copy, lang):
     else: answers = f'<p class="answers-empty">{escape(copy["answers_empty"])} <a href="mailto:{email}?subject={quote(project["name"] + " Support")}">{escape(copy["answers_send"])}</a> {escape(copy["answers_mention"])}</p>'
     intro = f'<section class="support-hero product-hero" aria-labelledby="support-product-title">{icon(project)}<h1 id="support-product-title">{escape(project["name"])} Support</h1></section>'
     contact_label = 'Kontakt' if lang == 'de' else 'Contact'
-    search_placeholder = 'suche' if lang == 'de' else 'search'
+    search_placeholder = 'Suche' if lang == 'de' else 'Search'
     search_label = 'Support durchsuchen' if lang == 'de' else 'Search support'
     search_box = f'<div class="support-search"><label for="support-search">{escape(search_label)}</label><input id="support-search" type="search" placeholder="{search_placeholder}" autocomplete="off" data-support-search></div>'
     return f'<div class="wrap"><header class="support-page-header">{intro}</header>{search_box}<div class="support-answers"><section class="answer-group is-open" id="{escape(project["slug"])}">{answers}</section></div><div class="support-contact-link"><a class="button" href="{locale_root(lang)}/contact/">{contact_label}</a></div></div>'
