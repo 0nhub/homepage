@@ -260,9 +260,9 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 .product-gallery-section.is-empty { display: none; }
 .media-frame { position: relative; }
 .media-gallery { overflow: hidden; padding: 4px 0; cursor: grab; }
-.media-gallery__track { display: flex; gap: 18px; width: max-content; min-width: 100%; transform: translate3d(calc(var(--gallery-index, 0) * -1 * (100% + 18px)), 0, 0); }
+.media-gallery__track { display: flex; gap: 18px; width: 100%; transform: translate3d(calc(var(--gallery-index, 0) * -1 * (100% + 18px)), 0, 0); }
 .media-gallery__track.is-animating { transition: transform .35s ease; }
-.media-gallery .media-card { flex: 0 0 max(100%, 1px); width: 100%; min-width: 0; }
+.media-gallery .media-card { flex: 0 0 100%; width: 100%; min-width: 0; }
 .media-gallery::-webkit-scrollbar { display: none; }
 .media-gallery.is-dragging { cursor: grabbing; }
 .media-card { flex: 0 0 100%; margin: 0; background: transparent; border: 0; border-radius: 0; overflow: visible; scroll-snap-align: start; user-select: none; display: flex; flex-direction: column; align-items: center; }
