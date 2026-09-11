@@ -129,11 +129,9 @@ def blog_date(post, lang):
         return value.strftime('%d.%m.%Y') if lang == 'de' else value.strftime('%B %d, %Y')
     except (KeyError, ValueError): return post.get('date', '')
 def blog_preview(post, lang):
-    """Use the article opening, not the short SEO excerpt, on the blog index."""
+    """Use a compact opening preview; CSS clamps it visually to two lines."""
     intro = blog_text(post, lang, 'intro').strip()
-    first_section = (post.get('sections') or [{}])[0]
-    first_body = blog_text(first_section, lang, 'body').strip()
-    return ' '.join(chunk for chunk in (intro, first_body) if chunk)
+    return intro
 
 def blog_cards(lang):
     return '\n'.join(f'<a class="blog-card" href="{escape(blog_href(post, lang), quote=True)}"><p class="blog-card__meta">{escape(blog_date(post, lang))} · {escape(post.get("category", ""))}</p><h2>{escape(blog_text(post, lang, "title"))}</h2><p class="blog-card__preview">{escape(blog_preview(post, lang))}</p></a>' for post in sorted(BLOG, key=lambda item: item.get('date', ''), reverse=True))
