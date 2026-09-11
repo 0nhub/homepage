@@ -130,6 +130,14 @@ def blog_date(post, lang):
     except (KeyError, ValueError): return post.get('date', '')
 def blog_cards(lang):
     return '\n'.join(f'<a class="blog-card" href="{escape(blog_href(post, lang), quote=True)}"><p class="blog-card__meta">{escape(blog_date(post, lang))} · {escape(post.get("category", ""))}</p><h2>{escape(blog_text(post, lang, "title"))}</h2><p>{escape(blog_text(post, lang, "excerpt"))}</p><span class="text-link">{escape(I18N[lang]["read_article"])} <span aria-hidden="true">›</span></span></a>' for post in sorted(BLOG, key=lambda item: item.get('date', ''), reverse=True))
+def blog_social_html(copy):
+    return f'''<nav class="about-layout__social" aria-label="{escape(copy['social_label'])}">
+      <a href="https://x.com/sgroiga" rel="noopener" aria-label="X">𝕏</a>
+      <a href="https://medium.com/@sgroiga" rel="noopener" aria-label="Medium">M</a>
+      <a href="https://www.linkedin.com/in/sgroiga/" rel="noopener" aria-label="LinkedIn">in</a>
+      <a href="https://www.producthunt.com/@sgroiga" rel="noopener" aria-label="Product Hunt">P</a>
+    </nav>'''
+
 def blog_article_html(post, lang):
     sections = ''.join(f'<section class="blog-article__section"><h2>{escape(section["title"])}</h2>{paragraphs(blog_text(section, lang, "body"))}</section>' for section in post.get('sections', []))
     date_label = escape(blog_date(post, lang))
@@ -139,7 +147,20 @@ def blog_article_html(post, lang):
     closing = escape(blog_text(post, lang, 'closing'))
     back_url = escape(localized_url('/blog/', lang), quote=True)
     back_label = escape(I18N[lang]['back_to_blog'])
-    return f'<article class="wrap blog-article prose"><header class="blog-article__header"><p class="eyebrow">{date_label} · {category}</p><h1>{title}</h1></header><p class="blog-article__intro">{intro}</p>{sections}<p class="blog-article__closing">{closing}</p><p class="blog-article__back"><a class="button button--secondary" href="{back_url}">{back_label}</a></p></article>'
+    copy = I18N[lang]
+    return f'''<div class="wrap about-layout blog-article-layout">
+  <aside class="about-layout__profile blog-article-layout__profile">
+    <img class="about-layout__photo" src="{ASSETS}/images/aboutme.jpg" alt="Gabriel Sgroi" width="280" height="280">
+    <p class="about-layout__name">Gabriel Sgroi</p>
+    {blog_social_html(copy)}
+  </aside>
+  <article class="about-layout__body blog-article prose" aria-labelledby="blog-heading">
+    <header class="blog-article__header"><p class="eyebrow">{date_label} · {category}</p><h1 id="blog-heading">{title}</h1></header>
+    <p class="blog-article__intro">{intro}</p>{sections}
+    <p class="blog-article__closing">{closing}</p>
+    <p class="blog-article__back"><a class="button button--secondary" href="{back_url}">{back_label}</a></p>
+  </article>
+</div>'''
 def page(path, title, description, content, lang, image=None):
     copy = I18N[lang]; root = locale_root(lang); home = locale_home(lang); localized = localized_url(path, lang); en_url = localized_url(path, 'en'); de_url = localized_url(path, 'de'); url = ORIGIN + localized
     social = ''
