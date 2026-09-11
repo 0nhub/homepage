@@ -48,14 +48,31 @@ const bindGalleryControls = (gallery) => {
   const previous = section?.querySelector('[data-gallery-prev]');
   const next = section?.querySelector('[data-gallery-next]');
   const track = gallery.querySelector('.media-gallery__track') || gallery;
+  const dots = gallery.querySelector('.media-gallery__dots');
   const cards = () => Array.from(track.querySelectorAll('.media-card'));
   let index = 0;
+  const buildDots = () => {
+    if (!dots) return;
+    dots.innerHTML = '';
+    cards().forEach((_card, dotIndex) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.setAttribute('role', 'tab');
+      dot.setAttribute('aria-label', `Show preview image ${dotIndex + 1}`);
+      dot.addEventListener('click', () => render(dotIndex));
+      dots.appendChild(dot);
+    });
+  };
   const render = (nextIndex, animate = true) => {
     const total = cards().length;
     if (!total) return;
     index = (nextIndex + total) % total;
     track.style.setProperty('--gallery-index', String(index));
     track.classList.toggle('is-animating', animate && !matchMedia('(prefers-reduced-motion: reduce)').matches);
+    dots?.querySelectorAll('button').forEach((dot, dotIndex) => {
+      dot.classList.toggle('is-active', dotIndex === index);
+      dot.setAttribute('aria-selected', String(dotIndex === index));
+    });
   };
   previous?.addEventListener('click', () => render(index - 1));
   next?.addEventListener('click', () => render(index + 1));
@@ -84,7 +101,8 @@ const bindGalleryControls = (gallery) => {
   gallery.addEventListener('pointerup', endDrag);
   gallery.addEventListener('pointercancel', endDrag);
   gallery.addEventListener('click', (event) => { if (dragged) event.preventDefault(); }, true);
-  window.addEventListener('resize', () => render(index, false), { passive: true });
+  window.addEventListener('resize', () => { buildDots(); render(index, false); }, { passive: true });
+  buildDots();
   render(0, false);
   return () => render(index, false);
 };
@@ -195,7 +213,7 @@ if (gallerySection) {
         }).join('')}</div>`;
 
         gallerySection.classList.remove('is-loading', 'is-empty');
-        updateControls();
+        bindGalleryControls(gallery);
       })
       .catch(() => finishEmpty());
   } else {
