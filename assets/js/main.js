@@ -154,7 +154,7 @@ document.querySelectorAll('[data-case-carousel]').forEach((carousel) => {
   const previous = carousel.querySelector('[data-case-prev]');
   const next = carousel.querySelector('[data-case-next]');
   let index = 0;
-  const visibleCards = () => (window.matchMedia('(min-width: 900px)').matches ? 3 : window.matchMedia('(min-width: 600px)').matches ? 2 : 1);
+  const visibleCards = () => (window.matchMedia('(min-width: 600px)').matches ? 2 : 1);
   const render = (nextIndex) => {
     const maxIndex = Math.max(0, cards.length - visibleCards());
     index = Math.min(Math.max(nextIndex, 0), maxIndex);
