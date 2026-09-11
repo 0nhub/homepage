@@ -136,7 +136,7 @@ def blog_preview(post, lang):
     return ' '.join(chunk for chunk in (intro, first_body) if chunk)
 
 def blog_cards(lang):
-    return '\n'.join(f'<article class="blog-card"><p class="blog-card__meta">{escape(blog_date(post, lang))} · {escape(post.get("category", ""))}</p><h2>{escape(blog_text(post, lang, "title"))}</h2><p class="blog-card__preview">{escape(blog_preview(post, lang))}</p></article>' for post in sorted(BLOG, key=lambda item: item.get('date', ''), reverse=True))
+    return '\n'.join(f'<a class="blog-card" href="{escape(blog_href(post, lang), quote=True)}"><p class="blog-card__meta">{escape(blog_date(post, lang))} · {escape(post.get("category", ""))}</p><h2>{escape(blog_text(post, lang, "title"))}</h2><p class="blog-card__preview">{escape(blog_preview(post, lang))}</p></a>' for post in sorted(BLOG, key=lambda item: item.get('date', ''), reverse=True))
 
 def blog_social_html(copy):
     return f'''<nav class="about-layout__social" aria-label="{escape(copy['social_label'])}">
