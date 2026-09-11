@@ -500,13 +500,29 @@ a.support-card:hover { background: #ececf1; }
 }
 .product-layout__store { font-size: 14px; padding: 9px 18px; }
 .product-layout__body { min-width: 0; }
-.product-hero--left { max-width: none; margin: 0; padding: 0 0 42px; text-align: left; }
+.product-hero--left { max-width: none; margin: 0; padding: 0 0 42px; text-align: center; }
 .product-hero--left .product-label { margin-bottom: 16px; }
 .product-hero--left h1 { margin: 0; }
+.app-store-badge { display: inline-flex; align-items: center; gap: 10px; width: max-content; min-height: 48px; box-sizing: border-box; padding: 7px 13px 7px 11px; border-radius: 8px; background: #050505; color: #fff; text-align: left; text-decoration: none; transition: transform .2s ease, opacity .2s ease; }
+.app-store-badge:hover { color: #fff; opacity: .88; transform: translateY(-1px); }
+.app-store-badge__apple { font-family: -apple-system, BlinkMacSystemFont, sans-serif; font-size: 31px; line-height: .9; letter-spacing: -.08em; }
+.app-store-badge__copy { display: flex; flex-direction: column; line-height: 1.05; white-space: nowrap; }
+.app-store-badge__copy span { font-size: 10px; font-weight: 400; letter-spacing: .01em; }
+.app-store-badge__copy strong { font-size: 17px; font-weight: 600; letter-spacing: -.02em; }
+.product-layout__profile .app-store-badge { align-self: center; }
+.product-final-cta .app-store-badge { margin-top: 18px; }
+.product-gallery-section { margin: 0 0 10px; }
+.product-gallery-section .media-frame { max-width: 900px; margin: 0 auto; padding: 0 58px; box-sizing: border-box; }
+.product-gallery-section .media-gallery { width: 100%; }
+.product-gallery-section .gallery-nav { background: #f5f5f7; }
+.product-gallery-section .gallery-nav[data-gallery-prev] { left: 0; }
+.product-gallery-section .gallery-nav[data-gallery-next] { right: 0; }
 .product-layout__body .product-description { padding-top: 65px; }
 @media (max-width: 760px) {
   .product-layout { display: block; padding-top: 48px; padding-bottom: 65px; }
   .product-layout__profile { position: static; margin-bottom: 54px; }
   .product-layout__profile .app-icon { width: 140px; height: 140px; border-radius: 32px; }
   .product-hero--left { padding-bottom: 30px; }
+  .product-gallery-section .media-frame { padding: 0 48px; }
+  .app-store-badge__copy strong { font-size: 16px; }
 }
