@@ -686,15 +686,6 @@ a.support-card:hover { background: #ececf1; }
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
-.blog-card__preview::after {
-  content: "…";
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  padding-left: 1.4em;
-  color: #6e6e73;
-  background: linear-gradient(to right, rgba(255,255,255,0), var(--primary-bg) 42%);
-}
 .blog-card:hover h2, .blog-card:focus-visible h2 { color: var(--accent-color); }
 .text-link { color: #0071e3; font-weight: 600; }
 .blog-article { min-width: 0; }
