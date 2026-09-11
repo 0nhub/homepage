@@ -132,10 +132,10 @@ def blog_cards(lang):
     return '\n'.join(f'<a class="blog-card" href="{escape(blog_href(post, lang), quote=True)}"><p class="blog-card__meta">{escape(blog_date(post, lang))} · {escape(post.get("category", ""))}</p><h2>{escape(blog_text(post, lang, "title"))}</h2><p>{escape(blog_text(post, lang, "excerpt"))}</p><span class="text-link">{escape(I18N[lang]["read_article"])} <span aria-hidden="true">›</span></span></a>' for post in sorted(BLOG, key=lambda item: item.get('date', ''), reverse=True))
 def blog_social_html(copy):
     return f'''<nav class="about-layout__social" aria-label="{escape(copy['social_label'])}">
-      <a href="https://x.com/sgroiga" rel="noopener" aria-label="X">𝕏</a>
-      <a href="https://medium.com/@sgroiga" rel="noopener" aria-label="Medium">M</a>
-      <a href="https://www.linkedin.com/in/sgroiga/" rel="noopener" aria-label="LinkedIn">in</a>
-      <a href="https://www.producthunt.com/@sgroiga" rel="noopener" aria-label="Product Hunt">P</a>
+      <a href="https://x.com/sgroiga" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="https://medium.com/@sgroiga" rel="noopener" aria-label="Medium"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M13.54 12a6.82 6.82 0 0 1-6.77 6.82A6.82 6.82 0 0 1 0 12a6.82 6.82 0 0 1 6.77-6.82A6.82 6.82 0 0 1 13.54 12Zm7.42 0c0 3.54-1.51 6.41-3.38 6.41s-3.39-2.87-3.39-6.41 1.52-6.41 3.39-6.41S20.96 8.46 20.96 12Zm3.04 0c0 3.17-.53 5.75-1.19 5.75s-1.19-2.58-1.19-5.75.53-5.75 1.19-5.75 1.19 2.58 1.19 5.75Z"/></svg></a>
+      <a href="https://www.linkedin.com/in/sgroiga/" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.02H3.56V9h3.56v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.27V1.73C24 .77 23.2 0 22.22 0h.01Z"/></svg></a>
+      <a href="https://www.producthunt.com/@sgroiga" rel="noopener" aria-label="Product Hunt"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M12 1.5a10.5 10.5 0 1 0 0 21 10.5 10.5 0 0 0 0-21ZM9.5 7h4.1a3.1 3.1 0 0 1 0 6.2H11.3V17H9.5V7Zm1.8 4.4h2.3a1.3 1.3 0 1 0 0-2.6h-2.3v2.6Z"/></svg></a>
     </nav>'''
 
 def blog_article_html(post, lang):
@@ -148,13 +148,13 @@ def blog_article_html(post, lang):
     back_url = escape(localized_url('/blog/', lang), quote=True)
     back_label = escape(I18N[lang]['back_to_blog'])
     copy = I18N[lang]
-    return f'''<div class="wrap about-layout blog-article-layout">
-  <aside class="about-layout__profile blog-article-layout__profile">
+    return f'''<div class="wrap about-layout">
+  <aside class="about-layout__profile">
     <img class="about-layout__photo" src="{ASSETS}/images/aboutme.jpg" alt="Gabriel Sgroi" width="280" height="280">
     <p class="about-layout__name">Gabriel Sgroi</p>
     {blog_social_html(copy)}
   </aside>
-  <article class="about-layout__body blog-article prose" aria-labelledby="blog-heading">
+  <article class="about-layout__body prose blog-article" aria-labelledby="blog-heading">
     <header class="blog-article__header"><p class="eyebrow">{date_label} · {category}</p><h1 id="blog-heading">{title}</h1></header>
     <p class="blog-article__intro">{intro}</p>{sections}
     <p class="blog-article__closing">{closing}</p>
