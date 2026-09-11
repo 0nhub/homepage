@@ -512,15 +512,16 @@ a.support-card:hover { background: #ececf1; }
 .app-store-badge__copy strong { font-size: 17px; font-weight: 600; letter-spacing: -.02em; }
 .product-layout__profile .app-store-badge { align-self: center; }
 .product-final-cta .app-store-badge { margin-top: 18px; }
-.product-gallery-section { margin: 0 0 10px; }
+.product-gallery-section { margin: 0 0 12px; padding-bottom: 0; }
 .product-gallery-section .media-frame { max-width: 900px; margin: 0 auto; padding: 0 58px; box-sizing: border-box; }
 .product-gallery-section .media-gallery { width: 100%; }
 .product-gallery-section .gallery-nav { background: #f5f5f7; }
 .product-gallery-section .gallery-nav[data-gallery-prev] { left: 0; }
 .product-gallery-section .gallery-nav[data-gallery-next] { right: 0; }
 .product-layout__body .product-description {
+  margin-top: 0;
+  padding-top: 0;
   grid-column: 1 / -1;
-  padding-top: 65px;
 }
 .product-layout__body .product-description .product-copy {
   grid-column: 1 / -1;
