@@ -662,8 +662,10 @@ a.support-card:hover { background: #ececf1; }
 
 /* Blog */
 .blog-index { width: calc(100% - 40px); max-width: var(--content-width); margin-inline: auto; padding-top: 82px; padding-bottom: 110px; }
+.blog-index .page-heading { max-width: none; margin: 0 0 56px; text-align: center; }
 .page-heading { max-width: 720px; margin-bottom: 56px; }
 .page-heading h1 { margin: 0 0 18px; font-size: clamp(46px, 7vw, 82px); line-height: .98; letter-spacing: -.06em; }
+.blog-index .page-heading h1 { margin-bottom: 0; }
 .page-heading > p:last-child { max-width: 620px; margin: 0; color: #6e6e73; font-size: clamp(18px, 2.2vw, 23px); line-height: 1.45; }
 .eyebrow, .blog-card__meta { color: #6e6e73; font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .blog-grid { display: block; width: 100%; }

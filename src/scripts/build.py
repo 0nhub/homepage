@@ -203,7 +203,7 @@ def build():
     for lang in ('en','de'):
         copy = I18N[lang]; root = locale_root(lang); home = locale_home(lang); values = {'latest_cards': latest_cards(lang, root, copy), 'project_cards': project_cards(lang, root, copy), 'project_tiles': project_tiles(root), 'contact_email': escape(SITE['email']), 'contact_phone': escape(phone_display()), 'contact_phone_href': escape(phone_href(), quote=True), 'support_cards': dollar(support_cards(lang)), 'support_articles': '', 'root': root, 'home': home, 'assets': ASSETS, 'error_home': escape(copy['error_home']), 'nav_projects': escape(copy['nav_projects']), 'social_label': escape(copy['social_label']), 'price_free': '$0' if lang == 'en' else '0 €'}
         source = page_source('home', lang); page('/', copy['home_title'], copy['home_desc'], Template(source.read_text()).substitute(values), lang, LOGO)
-        blog_content = f'<section class="wrap blog-index"><header class="page-heading"><p class="eyebrow">{escape(copy["blog_kicker"])}</p><h1>{escape(copy["blog_title"])}</h1><p>{escape(copy["blog_desc"])}</p></header><div class="blog-grid">{blog_cards(lang)}</div></section>'
+        blog_content = f'<section class="wrap blog-index"><header class="page-heading"><h1>{escape(copy["blog_title"])}</h1></header><div class="blog-grid">{blog_cards(lang)}</div></section>'
         page('/blog/', copy['blog_title'] + ' — Gabriel Sgroi', copy['blog_desc'], blog_content, lang)
         for post in BLOG:
             article = blog_article_html(post, lang)
