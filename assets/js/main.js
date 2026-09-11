@@ -148,35 +148,43 @@ document.querySelectorAll('.product-gallery-section').forEach((gallerySection) =
 });
 
 document.querySelectorAll('[data-case-carousel]').forEach((carousel) => {
+  const track = carousel.querySelector('.case-carousel__track');
   const cards = Array.from(carousel.querySelectorAll('.case-card'));
   const dots = carousel.querySelector('.case-carousel__dots');
   const previous = carousel.querySelector('[data-case-prev]');
   const next = carousel.querySelector('[data-case-next]');
   let index = 0;
+  const visibleCards = () => (window.matchMedia('(min-width: 900px)').matches ? 3 : window.matchMedia('(min-width: 600px)').matches ? 2 : 1);
   const render = (nextIndex) => {
-    index = (nextIndex + cards.length) % cards.length;
-    cards.forEach((card, cardIndex) => {
-      const active = cardIndex === index;
-      card.classList.toggle('is-active', active);
-      card.hidden = !active;
-    });
+    const maxIndex = Math.max(0, cards.length - visibleCards());
+    index = Math.min(Math.max(nextIndex, 0), maxIndex);
+    track?.style.setProperty('--case-index', String(index));
     if (dots) {
       dots.querySelectorAll('button').forEach((dot, dotIndex) => {
         dot.classList.toggle('is-active', dotIndex === index);
         dot.setAttribute('aria-selected', String(dotIndex === index));
       });
     }
+    if (previous) previous.disabled = index === 0;
+    if (next) next.disabled = index === maxIndex;
   };
-  cards.forEach((_, cardIndex) => {
-    const dot = document.createElement('button');
-    dot.type = 'button';
-    dot.setAttribute('role', 'tab');
-    dot.setAttribute('aria-label', `Show audience ${cardIndex + 1}`);
-    dot.addEventListener('click', () => render(cardIndex));
-    dots?.appendChild(dot);
-  });
+  const dotCount = () => Math.max(1, cards.length - visibleCards() + 1);
+  const buildDots = () => {
+    if (!dots) return;
+    dots.innerHTML = '';
+    for (let cardIndex = 0; cardIndex < dotCount(); cardIndex += 1) {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.setAttribute('role', 'tab');
+      dot.setAttribute('aria-label', `Show audience position ${cardIndex + 1}`);
+      dot.addEventListener('click', () => render(cardIndex));
+      dots.appendChild(dot);
+    }
+  };
   previous?.addEventListener('click', () => render(index - 1));
   next?.addEventListener('click', () => render(index + 1));
+  window.addEventListener('resize', () => { buildDots(); render(index); }, { passive: true });
+  buildDots();
   render(0);
 });
 
