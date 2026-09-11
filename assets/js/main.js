@@ -47,14 +47,15 @@ const bindGalleryControls = (gallery) => {
   const section = gallery.closest('.product-gallery-section');
   const previous = section?.querySelector('[data-gallery-prev]');
   const next = section?.querySelector('[data-gallery-next]');
-  const cards = () => Array.from(gallery.querySelectorAll('.media-card'));
+  const track = gallery.querySelector('.media-gallery__track') || gallery;
+  const cards = () => Array.from(track.querySelectorAll('.media-card'));
   let index = 0;
   const render = (nextIndex, animate = true) => {
     const total = cards().length;
     if (!total) return;
     index = (nextIndex + total) % total;
-    gallery.style.setProperty('--gallery-index', String(index));
-    gallery.classList.toggle('is-animating', animate && !matchMedia('(prefers-reduced-motion: reduce)').matches);
+    track.style.setProperty('--gallery-index', String(index));
+    track.classList.toggle('is-animating', animate && !matchMedia('(prefers-reduced-motion: reduce)').matches);
   };
   previous?.addEventListener('click', () => render(index - 1));
   next?.addEventListener('click', () => render(index + 1));
@@ -187,11 +188,11 @@ if (gallerySection) {
           return;
         }
 
-        gallery.innerHTML = items.map((item, index) => {
+        gallery.innerHTML = `<div class="media-gallery__track">${items.map((item, index) => {
           const alt = escapeHtml(`${altPrefix} ${index + 1}`);
           const lazy = index === 0 ? '' : ' loading="lazy"';
           return `<figure class="media-card"><img src="${escapeHtml(item.image)}" alt="${alt}" draggable="false"${lazy} width="720" height="450"></figure>`;
-        }).join('');
+        }).join('')}</div>`;
 
         gallerySection.classList.remove('is-loading', 'is-empty');
         updateControls();
