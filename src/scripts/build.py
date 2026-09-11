@@ -102,7 +102,7 @@ def product_gallery_html(project, lang):
     folder = SOURCE / 'assets/images' / project['slug'] / 'photos'
     images = sorted([p for p in folder.iterdir() if p.is_file() and p.suffix.lower() in PHOTO_EXTS]) if folder.exists() else []
     if not images:
-        images = [Path(project['icon'])] if project.get('icon') else []
+        images = [SOURCE / 'assets' / project['icon'].lstrip('/assets/')] if project.get('icon') else []
     cards = []
     for index, image in enumerate(images):
         if image.is_absolute():

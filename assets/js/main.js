@@ -44,8 +44,8 @@ const publicImageUrl = (value) => {
 };
 
 const bindGalleryControls = (gallery) => {
-  const section = gallery.closest('.media-section');
-  const previous = section && section.querySelector('[data-gallery-previous]');
+  const section = gallery.closest('.product-gallery-section');
+  const previous = section && section.querySelector('[data-gallery-prev]');
   const next = section && section.querySelector('[data-gallery-next]');
   const prefersReduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
   const slideSize = () => {
