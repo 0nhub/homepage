@@ -121,10 +121,18 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 .product-gallery-section .section-heading { margin-bottom: 22px; }
 .product-description { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 52px; align-items: start; }
 .product-description h2 { font-size: clamp(32px, 4vw, 48px); }
-.case-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
-.case-grid > div { padding: 30px 26px; border: 1px solid var(--border-color); border-radius: 22px; }
-.case-grid h3 { font-size: 20px; margin-bottom: 9px; }
-.case-grid p { color: var(--subtext-color); font-size: 15px; line-height: 1.55; margin: 0; }
+.case-carousel { position: relative; display: flex; align-items: center; gap: 16px; max-width: 760px; margin: 0 auto; }
+.case-carousel__viewport { flex: 1; min-width: 0; }
+.case-carousel__track { display: grid; }
+.case-card { grid-area: 1 / 1; min-height: 310px; padding: 34px 42px 38px; border: 1px solid var(--border-color); border-radius: 28px; background: var(--secondary-bg); text-align: center; }
+.case-card__avatar { display: grid; place-items: center; width: 76px; height: 76px; margin: 0 auto 18px; border-radius: 50%; background: var(--background-color); font-size: 42px; box-shadow: 0 8px 22px rgba(0,0,0,.08); }
+.case-card h3 { margin: 0 0 12px; font-size: 24px; line-height: 1.2; }
+.case-card p { max-width: 560px; margin: 0 auto; color: var(--subtext-color); font-size: 16px; line-height: 1.6; }
+.case-carousel__nav { flex: 0 0 auto; width: 42px; height: 42px; border: 1px solid var(--border-color); border-radius: 50%; background: var(--background-color); color: var(--text-color); font-size: 28px; line-height: 1; cursor: pointer; }
+.case-carousel__nav:hover { background: var(--secondary-bg); }
+.case-carousel__dots { position: absolute; left: 50%; bottom: -30px; display: flex; gap: 7px; transform: translateX(-50%); }
+.case-carousel__dots button { width: 7px; height: 7px; padding: 0; border: 0; border-radius: 50%; background: var(--border-color); cursor: pointer; }
+.case-carousel__dots button.is-active { background: var(--text-color); transform: scale(1.35); }
 .pricing-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
 .price-card { padding: 34px 30px; border: 1px solid var(--border-color); border-radius: 24px; }
 .price-card--featured { background: var(--secondary-bg); border-color: transparent; }
@@ -270,10 +278,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 .feature-grid h3 { font-size: 21px; margin-bottom: 9px; }
 .feature-grid p { color: var(--subtext-color); font-size: 15px; line-height: 1.55; margin: 0; }
 
-.case-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: stretch; }
-.case-grid > div { display: flex; flex-direction: column; min-height: 250px; padding: 28px 28px; border-radius: 22px; background: var(--secondary-bg); }
-.case-grid h3 { min-height: 2.5em; margin: 0 0 10px; font-size: 21px; line-height: 1.25; }
-.case-grid p { margin: 0; color: var(--subtext-color); font-size: 15px; line-height: 1.55; }
+.case-card[hidden] { display: none; }
 
 .resource-strip { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; border-top: 1px solid var(--border-color); padding: 30px 0; margin-bottom: 30px; }
 .resource-strip p { margin: 0; font-size: 14px; color: var(--subtext-color); }
@@ -407,8 +412,11 @@ a.support-card:hover { background: #ececf1; }
   .product-brand h1 { font-size: clamp(34px, 8vw, 48px); }
   .product-intro > .button { margin-top: 26px; }
   .product-description { grid-template-columns: 1fr; gap: 22px; }
-  .case-grid, .pricing-grid { grid-template-columns: 1fr; }
-  .case-grid h3 { min-height: 0; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .case-carousel { gap: 8px; }
+  .case-card { min-height: 330px; padding: 28px 22px 32px; }
+  .case-card h3 { font-size: 21px; }
+  .case-carousel__nav { width: 36px; height: 36px; font-size: 24px; }
   .product-gallery-section { padding-bottom: 46px; }
   .product-final-cta { padding: 54px 20px 64px; }
   .home-hero > .app-icon, .product-hero > .app-icon { width: 100px; height: 100px; border-radius: 23px; margin-bottom: 25px; }

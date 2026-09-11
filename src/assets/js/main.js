@@ -147,6 +147,39 @@ document.querySelectorAll('.product-gallery-section').forEach((gallerySection) =
   }
 });
 
+document.querySelectorAll('[data-case-carousel]').forEach((carousel) => {
+  const cards = Array.from(carousel.querySelectorAll('.case-card'));
+  const dots = carousel.querySelector('.case-carousel__dots');
+  const previous = carousel.querySelector('[data-case-prev]');
+  const next = carousel.querySelector('[data-case-next]');
+  let index = 0;
+  const render = (nextIndex) => {
+    index = (nextIndex + cards.length) % cards.length;
+    cards.forEach((card, cardIndex) => {
+      const active = cardIndex === index;
+      card.classList.toggle('is-active', active);
+      card.hidden = !active;
+    });
+    if (dots) {
+      dots.querySelectorAll('button').forEach((dot, dotIndex) => {
+        dot.classList.toggle('is-active', dotIndex === index);
+        dot.setAttribute('aria-selected', String(dotIndex === index));
+      });
+    }
+  };
+  cards.forEach((_, cardIndex) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.setAttribute('role', 'tab');
+    dot.setAttribute('aria-label', `Show audience ${cardIndex + 1}`);
+    dot.addEventListener('click', () => render(cardIndex));
+    dots?.appendChild(dot);
+  });
+  previous?.addEventListener('click', () => render(index - 1));
+  next?.addEventListener('click', () => render(index + 1));
+  render(0);
+});
+
 const gallerySection = document.querySelector('[data-gallery-feed]');
 if (gallerySection) {
   const gallery = gallerySection.querySelector('.media-gallery');
