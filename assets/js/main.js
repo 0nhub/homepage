@@ -140,6 +140,13 @@ const fetchFeedRows = async (endpoint) => {
   return rows;
 };
 
+document.querySelectorAll('.product-gallery-section').forEach((gallerySection) => {
+  const gallery = gallerySection.querySelector('.media-gallery');
+  if (gallery && !gallerySection.hasAttribute('data-gallery-feed')) {
+    bindGalleryControls(gallery);
+  }
+});
+
 const gallerySection = document.querySelector('[data-gallery-feed]');
 if (gallerySection) {
   const gallery = gallerySection.querySelector('.media-gallery');
