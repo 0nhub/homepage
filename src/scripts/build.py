@@ -164,6 +164,8 @@ def build():
         for name, path, title_key, desc_key in routes:
             source = page_source(name, lang)
             if source.exists(): page(path, copy[title_key] + ' — Gabriel Sgroi', copy[desc_key], Template(source.read_text()).substitute(values), lang, '/assets/images/aboutme.jpg' if name == 'about' else None)
+        error_source = page_source('404', lang)
+        if error_source.exists(): page('/404.html', '404 — Gabriel Sgroi', copy['error_desc'], Template(error_source.read_text()).substitute(values), lang)
         for project in local_projects():
             source = page_source(project['slug'], lang)
             if source.exists():
