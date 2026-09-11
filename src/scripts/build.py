@@ -158,7 +158,7 @@ def blog_article_html(post, lang):
     <header class="blog-article__header"><p class="eyebrow">{date_label} · {category}</p><h1 id="blog-heading">{title}</h1></header>
     <p class="blog-article__intro">{intro}</p>{sections}
     <p class="blog-article__closing">{closing}</p>
-    <p class="blog-article__back"><a class="button button--secondary" href="{back_url}">{back_label}</a></p>
+    <p class="blog-article__back"><a class="button" href="{back_url}">{back_label}</a></p>
   </article>
 </div>'''
 def page(path, title, description, content, lang, image=None):

@@ -681,7 +681,7 @@ a.support-card:hover { background: #ececf1; }
 .blog-article__section p { margin: 0 0 1em; }
 .blog-article__closing { max-width: 680px; margin: 52px 0 34px; font-size: 24px; font-weight: 600; line-height: 1.4; }
 .blog-article__back { margin: 0; }
-.button--secondary { background: #f2f2f7; color: #1d1d1f; }
+.button--secondary { background: transparent; color: var(--accent-color); }
 @media (max-width: 760px) {
   .about-layout { grid-template-columns: 1fr; gap: 34px; padding-top: 48px; padding-bottom: 72px; }
   .about-layout__profile { position: static; }
