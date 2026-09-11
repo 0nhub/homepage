@@ -128,8 +128,16 @@ def blog_date(post, lang):
         value = date.fromisoformat(post['date'])
         return value.strftime('%d.%m.%Y') if lang == 'de' else value.strftime('%B %d, %Y')
     except (KeyError, ValueError): return post.get('date', '')
+def blog_preview(post, lang):
+    """Use the article opening, not the short SEO excerpt, on the blog index."""
+    intro = blog_text(post, lang, 'intro').strip()
+    first_section = (post.get('sections') or [{}])[0]
+    first_body = blog_text(first_section, lang, 'body').strip()
+    return ' '.join(chunk for chunk in (intro, first_body) if chunk)
+
 def blog_cards(lang):
-    return '\n'.join(f'<a class="blog-card" href="{escape(blog_href(post, lang), quote=True)}"><p class="blog-card__meta">{escape(blog_date(post, lang))} · {escape(post.get("category", ""))}</p><h2>{escape(blog_text(post, lang, "title"))}</h2><p>{escape(blog_text(post, lang, "excerpt"))}</p><span class="text-link">{escape(I18N[lang]["read_article"])} <span aria-hidden="true">›</span></span></a>' for post in sorted(BLOG, key=lambda item: item.get('date', ''), reverse=True))
+    return '\n'.join(f'<a class="blog-card" href="{escape(blog_href(post, lang), quote=True)}"><p class="blog-card__meta">{escape(blog_date(post, lang))} · {escape(post.get("category", ""))}</p><h2>{escape(blog_text(post, lang, "title"))}</h2><p class="blog-card__preview">{escape(blog_preview(post, lang))}</p><span class="text-link">{escape(I18N[lang]["read_article"])} <span aria-hidden="true">›</span></span></a>' for post in sorted(BLOG, key=lambda item: item.get('date', ''), reverse=True))
+
 def blog_social_html(copy):
     return f'''<nav class="about-layout__social" aria-label="{escape(copy['social_label'])}">
       <a href="https://x.com/sgroiga" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
