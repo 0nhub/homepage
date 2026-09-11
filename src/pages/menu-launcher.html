@@ -1,8 +1,14 @@
-<div class="product-page wrap">
-  <section class="product-intro" aria-labelledby="product-title">
-    <div class="product-brand">$product_icon<div><p class="product-label">Menu Launcher</p><h1 id="product-title">Your Apps &amp; Folders<br>One Click Away</h1></div></div>
-    <a class="button" href="$app_store_url" rel="noopener">$store_download</a>
-  </section>
+<div class="product-page wrap product-layout">
+  <aside class="product-layout__profile">
+    $product_icon
+    <p class="product-layout__name">Menu Launcher</p>
+    <a class="button product-layout__store" href="$app_store_url" rel="noopener">$store_download</a>
+  </aside>
+  <article class="product-layout__body">
+    <section class="product-hero product-hero--left" aria-labelledby="product-title">
+      <p class="product-label">Menu Launcher</p>
+      <h1 id="product-title">Your Apps &amp; Folders<br>One Click Away</h1>
+    </section>
   $product_gallery
   <section class="product-description section" aria-labelledby="description-title">
     <h2 id="description-title">Your most-used destinations, always close.</h2>
@@ -12,5 +18,6 @@
   <section class="section use-cases" aria-labelledby="audience-title"><div class="section-heading"><div><h2 id="audience-title">Made for your workflow</h2><p>A small utility for people who want fewer steps between intention and action.</p></div></div><div class="case-grid"><div><h3>For focused work</h3><p>Keep your core work apps one click away and reduce desktop distractions.</p></div><div><h3>For power users</h3><p>Build a personal menu for the tools, projects, and folders you use every day.</p></div><div><h3>For a tidy Mac</h3><p>Keep the Dock simple while your important destinations remain instantly available.</p></div></div></section>
   <section class="section pricing" aria-labelledby="pricing-title"><div class="section-heading"><div><h2 id="pricing-title">Choose your access</h2><p>Start simply, then unlock more room for the way you work.</p></div></div><div class="pricing-grid"><article class="price-card"><p class="price-eyebrow">Free</p><h3>Essential access</h3><p class="price">$$0</p><ul><li>Quick access from the menu bar</li><li>Apps and folders in one place</li><li>Simple personal configuration</li></ul></article><article class="price-card price-card--featured"><p class="price-eyebrow">Pro</p><h3>More of your workflow</h3><p class="price">Upgrade</p><ul><li>More room for your complete setup</li><li>Organize the destinations you rely on</li><li>Built for heavier daily use</li></ul></article></div></section>
   <section class="product-final-cta"><h2>Ready when you are.</h2><a class="button" href="$app_store_url" rel="noopener">$store_download</a></section>
-  <div class="resource-strip"><p>A question about Menu Launcher?</p><nav aria-label="Menu Launcher resources"><a href="$root/Support/menu-launcher/">Support ↗</a><a href="$root/legal/privacy/">Privacy</a><a href="$root/legal/terms/">Terms</a></nav></div>
+    <div class="resource-strip"><p>A question about Menu Launcher?</p><nav aria-label="Menu Launcher resources"><a href="$root/Support/menu-launcher/">Support ↗</a><a href="$root/legal/privacy/">Privacy</a><a href="$root/legal/terms/">Terms</a></nav></div>
+  </article>
 </div>

@@ -466,3 +466,47 @@ a.support-card:hover { background: #ececf1; }
   html, .media-gallery { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
+
+/* Product pages use the same left-profile composition as About me. */
+.product-layout {
+  display: grid;
+  grid-template-columns: minmax(200px, 240px) minmax(0, 1fr);
+  gap: 48px 56px;
+  align-items: start;
+  padding-top: 72px;
+  padding-bottom: 110px;
+  max-width: 1100px;
+}
+.product-layout__profile {
+  position: sticky;
+  top: 124px;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.product-layout__profile .app-icon {
+  width: 180px;
+  height: 180px;
+  border-radius: 42px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, .09);
+}
+.product-layout__name {
+  margin: 18px 0 18px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -.02em;
+}
+.product-layout__store { font-size: 14px; padding: 9px 18px; }
+.product-layout__body { min-width: 0; }
+.product-hero--left { max-width: none; margin: 0; padding: 0 0 42px; text-align: left; }
+.product-hero--left .product-label { margin-bottom: 16px; }
+.product-hero--left h1 { margin: 0; }
+.product-layout__body .product-description { padding-top: 65px; }
+@media (max-width: 760px) {
+  .product-layout { display: block; padding-top: 48px; padding-bottom: 65px; }
+  .product-layout__profile { position: static; margin-bottom: 54px; }
+  .product-layout__profile .app-icon { width: 140px; height: 140px; border-radius: 32px; }
+  .product-hero--left { padding-bottom: 30px; }
+}
