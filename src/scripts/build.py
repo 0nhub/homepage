@@ -156,13 +156,13 @@ def blog_article_html(post, lang):
     back_url = escape(localized_url('/blog/', lang), quote=True)
     back_label = escape(I18N[lang]['back_to_blog'])
     copy = I18N[lang]
-    return f'''<div class="wrap about-layout">
+    return f'''<div class="blog-article-layout">
   <aside class="about-layout__profile">
     <img class="about-layout__photo" src="{ASSETS}/images/aboutme.jpg" alt="Gabriel Sgroi" width="280" height="280">
     <p class="about-layout__name">Gabriel Sgroi</p>
     {blog_social_html(copy)}
   </aside>
-  <article class="about-layout__body prose blog-article" aria-labelledby="blog-heading">
+  <article class="prose blog-article" aria-labelledby="blog-heading">
     <header class="blog-article__header"><p class="eyebrow">{date_label} · {category}</p><h1 id="blog-heading">{title}</h1></header>
     <p class="blog-article__intro">{intro}</p>{sections}
     <p class="blog-article__closing">{closing}</p>
