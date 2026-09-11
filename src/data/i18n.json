@@ -48,7 +48,9 @@
     "projects_desc": "All current apps and tools by Gabriel Sgroi.",
     "error_title": "Page not found",
     "error_desc": "This address is not on Gabriel Sgroi’s site.",
-    "error_home": "Home"
+    "error_home": "Home",
+    "confirmation_title": "Message sent — Gabriel Sgroi",
+    "confirmation_desc": "Your message has been successfully submitted. We’ll get back to you soon."
   },
   "de": {
     "skip": "Zum Inhalt springen",
@@ -99,6 +101,8 @@
     "projects_desc": "Alle aktuellen Apps und Werkzeuge von Gabriel Sgroi.",
     "error_title": "Seite nicht gefunden",
     "error_desc": "Diese Adresse gibt es auf der Website von Gabriel Sgroi nicht.",
-    "error_home": "Startseite"
+    "error_home": "Startseite",
+    "confirmation_title": "Nachricht gesendet — Gabriel Sgroi",
+    "confirmation_desc": "Deine Nachricht ist erfolgreich übermittelt worden. Wir werden uns bald melden."
   }
 }
