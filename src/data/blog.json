@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "stocked-products",
+    "date": "2026-09-11",
+    "category": "Tools & Apps",
+    "title": "Stocked Products: The Tools I Can't Live Without",
+    "title_de": "Stocked Products: Die Tools, die ich nicht mehr missen möchte",
+    "excerpt": "The tools and apps that keep me productive, focused, and sane as a software developer.",
+    "excerpt_de": "Die Tools und Apps, die mich als Softwareentwickler produktiv, fokussiert und entspannt halten.",
+    "sections": [
+      {
+        "title": "Figma",
+        "body": "For me, Figma is simply indispensable. Everything starts here. It helps me organize and structure projects from the very beginning, allowing me to create initial mockups and, over time, develop a genuine feel for what the finished product will look like. The way it helps me structure everything is invaluable, and I genuinely enjoy working with it. It's my absolute favorite tool for graphic design — and not just for project work. I also use it for general graphic tasks, whether I need to adjust a background image, tweak a color, or handle any other visual design needs.",
+        "body_de": "Für mich ist Figma schlichtweg unverzichtbar. Hier beginnt alles. Es hilft mir, Projekte von Anfang an zu organisieren und zu strukturieren, ermöglicht mir erste Mockups und gibt mir mit der Zeit ein Gefühl dafür, wie das fertige Produkt aussehen wird. Die Art und Weise, wie es mir hilft, alles zu strukturieren, ist von unschätzbarem Wert, und ich arbeite wirklich gerne damit. Es ist mein absolutes Lieblingstool für die Grafikgestaltung — und nicht nur für Projektarbeit. Ich nutze es auch für allgemeine Grafikaufgaben, sei es, um ein Hintergrundbild anzupassen, eine Farbe zu ändern oder andere visuelle Designanforderungen umzusetzen."
+      },
+      {
+        "title": "Dropover",
+        "body": "Dropover is a macOS application that has become extremely helpful when I need to move elements via drag and drop. Think of it as an enhanced clipboard — a temporary holding space that works remarkably well and makes me significantly faster. Especially when I need to place elements somewhere else, it has saved me countless times.",
+        "body_de": "Dropover ist eine macOS-Anwendung, die mir extrem hilft, wenn ich Elemente per Drag & Drop verschieben möchte. Man kann es sich wie eine erweiterte Zwischenablage vorstellen — ein temporärer Ablageort, der richtig gut funktioniert und mich deutlich schneller macht. Besonders wenn ich Elemente woanders platzieren möchte, hat es mir schon unzählige Male geholfen."
+      },
+      {
+        "title": "Mail.tm",
+        "body": "There are countless websites that require registration before you can use them. With sites like these, I'm particularly cautious and try to avoid sharing my personal email address whenever possible. That's where Mail.tm comes in. It provides temporary email addresses, helping me protect my identity while still being able to test a project. I also use it when creating user accounts for my own projects — for instance, when I need to test with demo users.",
+        "body_de": "Es gibt unzählige Webseiten, die eine Registrierung erfordern, bevor man sie nutzen kann. Bei solchen Seiten bin ich besonders vorsichtig und versuche, meine private E-Mail-Adresse möglichst nicht anzugeben. Genau hier kommt Mail.tm ins Spiel. Es stellt temporäre E-Mail-Adressen bereit und hilft mir, meine Identität zu schützen, während ich trotzdem ein Projekt testen kann. Ich nutze es auch, wenn ich Nutzerkonten für meine eigenen Projekte erstelle — beispielsweise, wenn ich mit Demo-Nutzern testen möchte."
+      },
+      {
+        "title": "Spotify",
+        "body": "I actually switch streaming services fairly often — from Deezer to Apple Music — but I always find my way back to Spotify. I believe this is particularly important for software developers: the ability to consistently focus on what matters. There are countless playlists that help me concentrate quickly. Maybe it's just in my head, but it genuinely helps me feel comfortable and stay focused on the essentials. I'm an active Pro subscriber, and I wouldn't have it any other way.",
+        "body_de": "Ich wechsle tatsächlich relativ oft den Streaming-Dienst — von Deezer über Apple Music — aber ich gelange immer wieder zu Spotify zurück. Ich glaube, dass das als Software Developer eine sehr wichtige Sache ist: die Fähigkeit, sich stetig auf das Wesentliche zu fokussieren. Es gibt unzählige Playlists, die mir dabei helfen, mich schnell zu konzentrieren. Vielleicht ist es nur Einbildung, aber es hilft mir tatsächlich, mich wohlzufühlen und auf das Wesentliche fokussiert zu bleiben. Ich nutze aktiv ein Pro-Abo, und ich möchte es nicht anders haben."
+      },
+      {
+        "title": "Beeper",
+        "body": "We're constantly flooded with messages from a multitude of sources, and I absolutely hate having a separate app for every single service. Beeper solves this by bundling all my social media channels and messaging services into one single app. Sure, I can't use every feature of each individual app to its fullest extent, but I find it incredibly convenient. Communication is reduced to one platform, and I no longer have to log in everywhere just to check if I have any new messages. As a result, I've deleted all the other apps and now use only Beeper for communication across all my devices.",
+        "body_de": "Wir werden mittlerweile von einer Vielzahl an Nachrichten aus unterschiedlichen Quellen überflutet, und ich hasse es, für jeden Dienst eine eigene App zu haben. Beeper löst dieses Problem, indem es alle meine Social-Media-Kanäle und Nachrichtendienste in einer einzigen App bündelt. Zwar kann ich dann nicht die Funktionen der jeweiligen App vollumfänglich nutzen, aber ich finde es trotzdem sehr angenehm. Die Kommunikation wird auf eine einzige Plattform reduziert, und ich muss mich nicht mehr überall anmelden, um zu prüfen, ob ich irgendwelche Nachrichten habe. Dadurch habe ich alle anderen Apps gelöscht und nutze nur noch Beeper für die Kommunikation auf allen meinen Endgeräten."
+      },
+      {
+        "title": "Browserling",
+        "body": "Browserling is a tool I use incredibly frequently to test websites — or at least their properties. It's immensely helpful when I don't want to test on my own platform. For testing across different browsers, it's a simple and fast method to verify how websites behave.",
+        "body_de": "Browserling ist ein Tool, das ich unglaublich häufig benutze, um Webseiten zu testen — zumindest deren Eigenschaften. Es hilft ungemein, wenn man nicht auf der eigenen Plattform testen möchte. Um andere Browserarten zu testen, ist es eine sehr simple und schnelle Methode, um das Verhalten von Webseiten zu überprüfen."
+      }
+    ],
+    "closing": "These are the tools that keep me productive, focused, and sane. What are yours?",
+    "closing_de": "Das sind die Tools, die mich produktiv, fokussiert und entspannt halten. Welche nutzt du?",
+    "intro": "As a software developer, I've come to rely on a carefully curated set of tools that have become integral to my daily workflow. Some are essential for my professional projects, while others simply make life easier. Today, I want to share the products I keep coming back to — the ones that have earned a permanent spot in my toolkit.",
+    "intro_de": "Als Software Developer habe ich mir im Laufe der Zeit eine sorgfältig kuratierte Sammlung von Werkzeugen aufgebaut, die aus meinem Alltag nicht mehr wegzudenken sind. Manche sind unverzichtbar für meine beruflichen Projekte, andere machen einfach das Leben leichter. Heute möchte ich die Produkte vorstellen, zu denen ich immer wieder zurückkehre — diejenigen, die einen festen Platz in meinem Toolkit verdient haben."
+  }
+]

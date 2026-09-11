@@ -50,7 +50,12 @@
     "error_desc": "This address is not on Gabriel Sgroi’s site.",
     "error_home": "Home",
     "confirmation_title": "Message sent — Gabriel Sgroi",
-    "confirmation_desc": "Your message has been successfully submitted. We’ll get back to you soon."
+    "confirmation_desc": "Your message has been successfully submitted. We’ll get back to you soon.",
+    "read_article": "Read article",
+    "back_to_blog": "Back to blog",
+    "blog_kicker": "Notes from my toolkit",
+    "blog_title": "Blog",
+    "blog_desc": "Thoughts, workflows, and the tools I return to every day."
   },
   "de": {
     "skip": "Zum Inhalt springen",
@@ -103,6 +108,11 @@
     "error_desc": "Diese Adresse gibt es auf der Website von Gabriel Sgroi nicht.",
     "error_home": "Startseite",
     "confirmation_title": "Nachricht gesendet — Gabriel Sgroi",
-    "confirmation_desc": "Deine Nachricht ist erfolgreich übermittelt worden. Wir werden uns bald melden."
+    "confirmation_desc": "Deine Nachricht ist erfolgreich übermittelt worden. Wir werden uns bald melden.",
+    "read_article": "Artikel lesen",
+    "back_to_blog": "Zurück zum Blog",
+    "blog_kicker": "Notizen aus meinem Toolkit",
+    "blog_title": "Blog",
+    "blog_desc": "Gedanken, Arbeitsabläufe und Tools, zu denen ich jeden Tag zurückkehre."
   }
 }
