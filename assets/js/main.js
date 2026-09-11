@@ -45,79 +45,47 @@ const publicImageUrl = (value) => {
 
 const bindGalleryControls = (gallery) => {
   const section = gallery.closest('.product-gallery-section');
-  const previous = section && section.querySelector('[data-gallery-prev]');
-  const next = section && section.querySelector('[data-gallery-next]');
-  const prefersReduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const slideSize = () => {
-    const card = gallery.querySelector('.media-card');
-    if (!card) return gallery.clientWidth;
-    const styles = getComputedStyle(gallery);
-    const gap = parseFloat(styles.columnGap || styles.gap) || 0;
-    return card.getBoundingClientRect().width + gap;
+  const previous = section?.querySelector('[data-gallery-prev]');
+  const next = section?.querySelector('[data-gallery-next]');
+  const cards = () => Array.from(gallery.querySelectorAll('.media-card'));
+  let index = 0;
+  const render = (nextIndex, animate = true) => {
+    const total = cards().length;
+    if (!total) return;
+    index = (nextIndex + total) % total;
+    gallery.style.setProperty('--gallery-index', String(index));
+    gallery.classList.toggle('is-animating', animate && !matchMedia('(prefers-reduced-motion: reduce)').matches);
   };
-  const updateControls = () => {
-    if (!previous || !next) return;
-    const single = gallery.querySelectorAll('.media-card').length <= 1;
-    previous.disabled = single || gallery.scrollLeft <= 2;
-    next.disabled = single || gallery.scrollLeft + gallery.clientWidth >= gallery.scrollWidth - 2;
-  };
-  const move = (direction) => {
-    gallery.scrollBy({
-      left: direction * slideSize(),
-      behavior: prefersReduced() ? 'auto' : 'smooth',
-    });
-  };
-  const snap = () => {
-    const size = slideSize();
-    if (!size) return;
-    const index = Math.round(gallery.scrollLeft / size);
-    gallery.scrollTo({
-      left: index * size,
-      behavior: prefersReduced() ? 'auto' : 'smooth',
-    });
-  };
-
-  if (previous && next) {
-    previous.addEventListener('click', () => move(-1));
-    next.addEventListener('click', () => move(1));
-  }
-
+  previous?.addEventListener('click', () => render(index - 1));
+  next?.addEventListener('click', () => render(index + 1));
   let pointerId = null;
   let startX = 0;
-  let startScroll = 0;
   let dragged = false;
-
   gallery.addEventListener('pointerdown', (event) => {
     if (event.pointerType !== 'mouse' || event.button !== 0) return;
     pointerId = event.pointerId;
     startX = event.clientX;
-    startScroll = gallery.scrollLeft;
     dragged = false;
-    gallery.classList.add('is-dragging');
     gallery.setPointerCapture(event.pointerId);
+    gallery.classList.add('is-dragging');
   });
   gallery.addEventListener('pointermove', (event) => {
     if (pointerId !== event.pointerId) return;
-    const delta = event.clientX - startX;
-    if (Math.abs(delta) > 4) dragged = true;
-    gallery.scrollLeft = startScroll - delta;
+    if (Math.abs(event.clientX - startX) > 8) dragged = true;
   });
   const endDrag = (event) => {
     if (pointerId !== event.pointerId) return;
+    const delta = event.clientX - startX;
     pointerId = null;
     gallery.classList.remove('is-dragging');
-    snap();
+    if (Math.abs(delta) > 40) render(index + (delta < 0 ? 1 : -1));
   };
   gallery.addEventListener('pointerup', endDrag);
   gallery.addEventListener('pointercancel', endDrag);
-  gallery.addEventListener('dragstart', (event) => event.preventDefault());
-  gallery.addEventListener('click', (event) => {
-    if (dragged) event.preventDefault();
-  }, true);
-  gallery.addEventListener('scroll', updateControls, { passive: true });
-  window.addEventListener('resize', updateControls, { passive: true });
-  updateControls();
-  return updateControls;
+  gallery.addEventListener('click', (event) => { if (dragged) event.preventDefault(); }, true);
+  window.addEventListener('resize', () => render(index, false), { passive: true });
+  render(0, false);
+  return () => render(index, false);
 };
 
 const fetchFeedRows = async (endpoint) => {
@@ -154,38 +122,32 @@ document.querySelectorAll('[data-case-carousel]').forEach((carousel) => {
   const previous = carousel.querySelector('[data-case-prev]');
   const next = carousel.querySelector('[data-case-next]');
   let index = 0;
-  const visibleCards = () => (window.matchMedia('(min-width: 600px)').matches ? 2 : 1);
-  const render = (nextIndex) => {
-    const maxIndex = Math.max(0, cards.length - visibleCards());
-    index = Math.min(Math.max(nextIndex, 0), maxIndex);
+  const visibleCards = () => matchMedia('(min-width: 600px)').matches ? 2 : 1;
+  const render = (nextIndex, animate = true) => {
+    const count = Math.max(1, cards.length - visibleCards() + 1);
+    index = (nextIndex + count) % count;
     track?.style.setProperty('--case-index', String(index));
-    if (dots) {
-      dots.querySelectorAll('button').forEach((dot, dotIndex) => {
-        dot.classList.toggle('is-active', dotIndex === index);
-        dot.setAttribute('aria-selected', String(dotIndex === index));
-      });
-    }
-    if (previous) previous.disabled = index === 0;
-    if (next) next.disabled = index === maxIndex;
+    track?.classList.toggle('is-animating', animate && !matchMedia('(prefers-reduced-motion: reduce)').matches);
+    dots?.querySelectorAll('button').forEach((dot, dotIndex) => {
+      dot.classList.toggle('is-active', dotIndex === index);
+      dot.setAttribute('aria-selected', String(dotIndex === index));
+    });
   };
-  const dotCount = () => Math.max(1, cards.length - visibleCards() + 1);
   const buildDots = () => {
     if (!dots) return;
     dots.innerHTML = '';
-    for (let cardIndex = 0; cardIndex < dotCount(); cardIndex += 1) {
+    for (let i = 0; i < Math.max(1, cards.length - visibleCards() + 1); i += 1) {
       const dot = document.createElement('button');
-      dot.type = 'button';
-      dot.setAttribute('role', 'tab');
-      dot.setAttribute('aria-label', `Show audience position ${cardIndex + 1}`);
-      dot.addEventListener('click', () => render(cardIndex));
+      dot.type = 'button'; dot.setAttribute('role', 'tab');
+      dot.setAttribute('aria-label', `Show audience position ${i + 1}`);
+      dot.addEventListener('click', () => render(i));
       dots.appendChild(dot);
     }
   };
   previous?.addEventListener('click', () => render(index - 1));
   next?.addEventListener('click', () => render(index + 1));
-  window.addEventListener('resize', () => { buildDots(); render(index); }, { passive: true });
-  buildDots();
-  render(0);
+  window.addEventListener('resize', () => { buildDots(); render(index, false); }, { passive: true });
+  buildDots(); render(0, false);
 });
 
 const gallerySection = document.querySelector('[data-gallery-feed]');
