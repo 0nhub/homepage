@@ -541,7 +541,6 @@ a.support-card:hover { background: #ececf1; }
 .product-gallery-section .media-frame { max-width: 900px; margin: 0 auto; padding: 0 58px; box-sizing: border-box; position: relative; }
 .product-gallery-section .media-gallery { width: 100%; }
 .product-gallery-section .media-gallery__track { width: 100%; }
-.product-gallery-section .gallery-nav { background: #f5f5f7; }
 .product-gallery-section .gallery-nav[data-gallery-prev] { left: 0; }
 .product-gallery-section .gallery-nav[data-gallery-next] { right: 0; }
 .product-layout__body .product-description {
