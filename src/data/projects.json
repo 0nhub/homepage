@@ -24,6 +24,18 @@
     "on_home": true
   },
   {
+    "slug": "expand",
+    "name": "Expand",
+    "category": "macOS utility",
+    "description": "A spatial board for macOS. Place text, images, files, and shapes on an open canvas, then nest boards you can go into.",
+    "description_de": "Ein räumliches Board für macOS. Platziere Text, Bilder, Dateien und Formen auf einer offenen Fläche und verschachtele Boards, die du betreten kannst.",
+    "status": "Coming soon",
+    "status_de": "Demnächst",
+    "icon": "/assets/images/expand/expand.png",
+    "app_store_url": "",
+    "on_home": false
+  },
+  {
     "slug": "bookmer",
     "name": "Bookmer",
     "category": "Bookmark manager",

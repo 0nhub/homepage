@@ -178,5 +178,29 @@
       "content": "Menu 2FA wurde für macOS entwickelt und ist für den Vertrieb über den Mac App Store vorgesehen."
     },
     "age": 7
+  },
+  {
+    "application": "Expand",
+    "en": {
+      "name": "What is Expand?",
+      "content": "Expand is a spatial board for macOS. Place text, images, files, and shapes on an open canvas, then nest boards you can actually go into. Your boards stay on your Mac and, if you choose, in iCloud Drive. Expand does not collect account data or analytics."
+    },
+    "de": {
+      "name": "Was ist Expand?",
+      "content": "Expand ist ein räumliches Board für macOS. Platziere Text, Bilder, Dateien und Formen auf einer offenen Fläche und verschachtele Boards, die du wirklich betreten kannst. Deine Boards bleiben auf deinem Mac und, wenn du möchtest, in der iCloud Drive. Expand sammelt weder Kontodaten noch Analytics."
+    },
+    "age": 1
+  },
+  {
+    "application": "Expand",
+    "en": {
+      "name": "Is Expand available on the App Store?",
+      "content": "Not yet. Expand is still in development and is not public on the Mac App Store. This support page will grow as the app is released."
+    },
+    "de": {
+      "name": "Ist Expand im App Store verfügbar?",
+      "content": "Noch nicht. Expand ist in der Entwicklung und noch nicht öffentlich im Mac App Store. Diese Support-Seite wird mit der Veröffentlichung weiter ausgebaut."
+    },
+    "age": 2
   }
 ]

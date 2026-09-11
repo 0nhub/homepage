@@ -549,6 +549,7 @@ a.support-card:hover { background: #ececf1; }
 .app-store-badge__copy span { font-size: 10px; font-weight: 400; letter-spacing: .01em; }
 .app-store-badge__copy strong { font-size: 17px; font-weight: 600; letter-spacing: -.02em; }
 .product-layout__profile .app-store-badge { align-self: center; }
+.product-coming-soon { margin: 0; font-size: 14px; font-weight: 500; letter-spacing: -.01em; color: #6e6e73; }
 .product-final-cta .app-store-badge { margin-top: 18px; }
 .product-gallery-section { margin: 0 0 12px; padding-bottom: 0; }
 .product-gallery-section .media-frame { max-width: 900px; margin: 0 auto; padding: 0 58px; box-sizing: border-box; position: relative; }

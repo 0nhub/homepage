@@ -220,8 +220,12 @@ def build():
         for project in local_projects():
             source = page_source(project['slug'], lang)
             if source.exists():
-                badge = f'<a class="app-store-badge" href="{escape(project["app_store_url"], quote=True)}" rel="noopener" aria-label="{("Download " + project["name"] + " on the Mac App Store") if lang == "en" else (project["name"] + " im Mac App Store laden")}"><span class="app-store-badge__apple" aria-hidden="true"></span><span class="app-store-badge__copy"><span>{("Download on the" if lang == "en" else "Laden im")}</span><strong>Mac App Store</strong></span></a>'
-                project_values = dict(values, product_icon=icon(project), product_gallery=product_gallery_html(project, lang), app_store_badge=badge, learn_more_href='#features', app_store_url=escape(project['app_store_url'], quote=True), store_download=escape(copy['store_download']))
+                store_url = (project.get('app_store_url') or '').strip()
+                if store_url:
+                    badge = f'<a class="app-store-badge" href="{escape(store_url, quote=True)}" rel="noopener" aria-label="{("Download " + project["name"] + " on the Mac App Store") if lang == "en" else (project["name"] + " im Mac App Store laden")}"><span class="app-store-badge__apple" aria-hidden="true"></span><span class="app-store-badge__copy"><span>{("Download on the" if lang == "en" else "Laden im")}</span><strong>Mac App Store</strong></span></a>'
+                else:
+                    badge = f'<p class="product-coming-soon">{escape("Coming soon" if lang == "en" else "Demnächst")}</p>'
+                project_values = dict(values, product_icon=icon(project), product_gallery=product_gallery_html(project, lang), app_store_badge=badge, learn_more_href='#features', app_store_url=escape(store_url or (root + '/apps/'), quote=True), store_download=escape(copy['store_download']))
                 project_values['store_action'] = badge
                 page('/apps/' + project['slug'] + '/', project['name'] + ' — Gabriel Sgroi', text_for(project, lang, 'description'), Template(source.read_text()).substitute(project_values), lang, project['icon'])
             page('/Support/' + project['slug'] + '/', project['name'] + ' Support — Gabriel Sgroi', text_for(project, lang, 'description'), support_page_html(project, articles, copy, lang), lang, project['icon'])
