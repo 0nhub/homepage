@@ -263,17 +263,18 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 .product-gallery-section.is-loading .media-frame,
 .product-gallery-section.is-empty { display: none; }
 .media-frame { position: relative; }
-.media-gallery { position: relative; overflow: hidden; padding: 4px 0 28px; cursor: grab; }
+.media-gallery { position: relative; overflow: hidden; padding: 4px 0 0; cursor: grab; }
 .media-gallery__track { display: flex; gap: 18px; width: 100%; transform: translate3d(calc(var(--gallery-index, 0) * -1 * (100% + 18px)), 0, 0); }
 .media-gallery__track.is-animating { transition: transform .35s ease; }
 .media-gallery .media-card { flex: 0 0 100%; width: 100%; min-width: 0; }
 .media-gallery::-webkit-scrollbar { display: none; }
 .media-gallery.is-dragging { cursor: grabbing; }
-.media-gallery__dots { position: absolute; left: 50%; bottom: 0; display: flex; gap: 7px; transform: translateX(-50%); }
+.media-gallery__dots { position: static; display: flex; justify-content: center; align-items: center; gap: 7px; min-height: 32px; margin: 12px auto 0; transform: none; }
 .media-gallery__dots button { width: 7px; height: 7px; padding: 0; border: 0; border-radius: 50%; background: var(--border-color); cursor: pointer; }
 .media-gallery__dots button.is-active { background: var(--text-color); transform: scale(1.35); }
 .media-card { flex: 0 0 100%; margin: 0; background: transparent; border: 0; border-radius: 0; overflow: visible; scroll-snap-align: start; user-select: none; display: flex; flex-direction: column; align-items: center; }
 .media-card img, .media-card video { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: contain; -webkit-user-drag: none; }
+.product-gallery-section + .product-description { padding-top: 18px; }
 .media-card video { background: #000; }
 .gallery-nav { display: none; position: absolute; top: 50%; z-index: 2; place-items: center; transform: translateY(-50%); }
 .js .product-gallery-section:not(.is-empty):not(.is-loading) .gallery-nav { display: grid; }
@@ -431,6 +432,7 @@ a.support-card:hover { background: #ececf1; }
   .gallery-nav { width: 40px; height: 40px; flex-basis: 40px; font-size: 26px; }
 
   .product-gallery-section { padding-bottom: 46px; }
+  .product-gallery-section + .product-description { padding-top: 12px; }
   .product-final-cta { padding: 54px 20px 64px; }
   .home-hero > .app-icon, .product-hero > .app-icon { width: 100px; height: 100px; border-radius: 23px; margin-bottom: 25px; }
   .home-hero h1, .product-hero h1 { font-size: clamp(36px, 8.6vw, 48px); }
