@@ -518,7 +518,15 @@ a.support-card:hover { background: #ececf1; }
 .product-gallery-section .gallery-nav { background: #f5f5f7; }
 .product-gallery-section .gallery-nav[data-gallery-prev] { left: 0; }
 .product-gallery-section .gallery-nav[data-gallery-next] { right: 0; }
-.product-layout__body .product-description { padding-top: 65px; }
+.product-layout__body .product-description {
+  grid-column: 1 / -1;
+  padding-top: 65px;
+}
+.product-layout__body .product-description .product-copy {
+  grid-column: 1 / -1;
+  width: 100%;
+  max-width: none;
+}
 @media (max-width: 760px) {
   .product-layout { display: block; padding-top: 48px; padding-bottom: 65px; }
   .product-layout__profile { position: static; margin-bottom: 54px; }
