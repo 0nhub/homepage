@@ -98,7 +98,21 @@ def support_page_html(project, articles, copy, lang):
     search_label = 'Support durchsuchen' if lang == 'de' else 'Search support'
     search_box = f'<div class="support-search"><label for="support-search">{escape(search_label)}</label><input id="support-search" type="search" placeholder="{search_placeholder}" autocomplete="off" data-support-search></div>'
     return f'<div class="wrap"><header class="support-page-header">{intro}</header>{search_box}<div class="support-answers"><section class="answer-group is-open" id="{escape(project["slug"])}">{answers}</section></div><div class="support-contact-link"><a class="button" href="{locale_root(lang)}/contact/">{contact_label}</a></div></div>'
-def product_gallery_html(project, lang): return ''
+def product_gallery_html(project, lang):
+    folder = SOURCE / 'assets/images' / project['slug'] / 'photos'
+    images = sorted([p for p in folder.iterdir() if p.is_file() and p.suffix.lower() in PHOTO_EXTS]) if folder.exists() else []
+    if not images:
+        images = [Path(project['icon'])] if project.get('icon') else []
+    cards = []
+    for index, image in enumerate(images):
+        if image.is_absolute():
+            try: relative = image.relative_to(SOURCE / 'assets')
+            except ValueError: continue
+            src = ASSETS + '/'+ relative.as_posix()
+        else:
+            src = ASSETS + '/images/' + project['slug'] + '/photos/' + image.name
+        cards.append(f'<figure class="media-card"><img src="{escape(src, quote=True)}" alt="{escape(project["name"] + " preview " + str(index + 1), quote=True)}" loading="{"eager" if index == 0 else "lazy"}" width="720" height="450"></figure>')
+    return f'<section class="product-gallery-section" aria-labelledby="gallery-title"><div class="section-heading"><div><h2 id="gallery-title">{("Product previews" if lang == "en" else "Produktvorschau")}</h2><p>{("Explore the app at a glance." if lang == "en" else "Entdecke die App auf einen Blick.")}</p></div><div class="gallery-controls"><button class="gallery-button" type="button" data-gallery-prev aria-label="Previous">‹</button><button class="gallery-button" type="button" data-gallery-next aria-label="Next">›</button></div></div><div class="media-gallery" data-gallery-local>{"".join(cards)}</div></section>' 
 def project_cards(lang, root, copy, projects=None):
     return '\n'.join(f'<a class="project-card" href="{project_href(p, root)}"><div class="project-info"><h3>{escape(p["name"])}</h3><p>{escape(text_for(p, lang, "description"))}</p><span class="text-link">{escape(copy["learn_more"])} <span aria-hidden="true">›</span></span></div><div class="project-art project-art--{escape(p["slug"])}">{icon(p)}</div></a>' for p in (projects if projects is not None else local_projects()))
 def latest_cards(lang, root, copy): return project_cards(lang, root, copy, [p for p in PROJECTS if p.get('on_home')])
@@ -151,7 +165,7 @@ def build():
         for project in local_projects():
             source = page_source(project['slug'], lang)
             if source.exists():
-                project_values = dict(values, product_icon=icon(project), product_gallery='', learn_more_href='#features')
+                project_values = dict(values, product_icon=icon(project), product_gallery=product_gallery_html(project, lang), learn_more_href='#features', app_store_url=escape(project['app_store_url'], quote=True), store_download=escape(copy['store_download']))
                 project_values['store_action'] = f'<a class="button" href="{escape(project["app_store_url"], quote=True)}" rel="noopener">{escape(copy["store_download"])}</a>'
                 page('/apps/' + project['slug'] + '/', project['name'] + ' — Gabriel Sgroi', text_for(project, lang, 'description'), Template(source.read_text()).substitute(project_values), lang, project['icon'])
             page('/Support/' + project['slug'] + '/', project['name'] + ' Support — Gabriel Sgroi', text_for(project, lang, 'description'), support_page_html(project, articles, copy, lang), lang, project['icon'])
