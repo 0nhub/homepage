@@ -271,8 +271,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 .feature-grid p { color: var(--subtext-color); font-size: 15px; line-height: 1.55; margin: 0; }
 
 .case-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: stretch; }
-.case-grid > div { display: flex; flex-direction: column; min-height: 250px; padding: 36px 28px; border-radius: 22px; background: var(--secondary-bg); }
-.case-grid h3 { min-height: 3.2em; margin: 0 0 14px; font-size: 21px; line-height: 1.25; }
+.case-grid > div { display: flex; flex-direction: column; min-height: 250px; padding: 28px 28px; border-radius: 22px; background: var(--secondary-bg); }
+.case-grid h3 { min-height: 2.5em; margin: 0 0 10px; font-size: 21px; line-height: 1.25; }
 .case-grid p { margin: 0; color: var(--subtext-color); font-size: 15px; line-height: 1.55; }
 
 .resource-strip { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; border-top: 1px solid var(--border-color); padding: 30px 0; margin-bottom: 30px; }
@@ -408,6 +408,7 @@ a.support-card:hover { background: #ececf1; }
   .product-intro > .button { margin-top: 26px; }
   .product-description { grid-template-columns: 1fr; gap: 22px; }
   .case-grid, .pricing-grid { grid-template-columns: 1fr; }
+  .case-grid h3 { min-height: 0; }
   .product-gallery-section { padding-bottom: 46px; }
   .product-final-cta { padding: 54px 20px 64px; }
   .home-hero > .app-icon, .product-hero > .app-icon { width: 100px; height: 100px; border-radius: 23px; margin-bottom: 25px; }
