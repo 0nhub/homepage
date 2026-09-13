@@ -464,7 +464,9 @@ a.support-card:hover { background: #ececf1; }
   .section-heading h2 { font-size: 32px; }
   .section-heading p { font-size: 17px; }
   .project-grid, .support-grid, .feature-grid, .support-grid.legal-grid { grid-template-columns: 1fr; }
-  .apps-page .page-intro { text-align: left; }
+  .page-intro,
+  .apps-page .page-intro,
+  .blog-index .page-intro { text-align: center; }
   .apps-dashboard {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     justify-content: start; max-width: none; gap: 28px 24px;

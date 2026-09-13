@@ -346,5 +346,161 @@
       "content": "Noch nicht. Menu Runner wird vorbereitet und ist noch nicht öffentlich im Mac App Store. Diese Support-Seite wird mit der Veröffentlichung weiter ausgebaut."
     },
     "age": 12
+  },
+  {
+    "application": "Menu Linguo",
+    "en": {
+      "name": "How do I translate a word or sentence?",
+      "content": "Left-click the Menu Linguo icon in the macOS menu bar. Type or paste in the top field. Apple Translation fills the language below."
+    },
+    "de": {
+      "name": "Wie übersetze ich ein Wort oder einen Satz?",
+      "content": "Klicke mit der linken Maustaste auf das Menu-Linguo-Symbol in der macOS-Menüleiste. Tippe oder füge Text ins obere Feld ein. Apple Translation füllt die Sprache darunter."
+    },
+    "age": 1
+  },
+  {
+    "application": "Menu Linguo",
+    "en": {
+      "name": "How do I switch which language is on top?",
+      "content": "Click the other field and start typing or pasting. That language jumps to the top and becomes the source. Selecting or copying the translation does not switch the pair."
+    },
+    "de": {
+      "name": "Wie wechsle ich, welche Sprache oben steht?",
+      "content": "Klicke ins andere Feld und beginne zu tippen oder einzufügen. Diese Sprache rückt nach oben und wird zur Quelle. Markieren oder Kopieren der Übersetzung wechselt das Paar nicht."
+    },
+    "age": 2
+  },
+  {
+    "application": "Menu Linguo",
+    "en": {
+      "name": "How do I add a language?",
+      "content": "Right-click the menu bar icon and open Settings, or press ⌘,. Use Plus or Choice Language to add a language. You need at least two languages before the card can translate."
+    },
+    "de": {
+      "name": "Wie füge ich eine Sprache hinzu?",
+      "content": "Rechtsklick auf das Menüleisten-Symbol und Einstellungen öffnen, oder ⌘, drücken. Mit Plus oder Choice Language fügst du eine Sprache hinzu. Für die Karte brauchst du mindestens zwei Sprachen."
+    },
+    "age": 3
+  },
+  {
+    "application": "Menu Linguo",
+    "en": {
+      "name": "How do I open Settings?",
+      "content": "Right-click the menu bar icon and choose Settings, press ⌘,, or reopen the app from Finder. On first launch, Settings opens until you have added two languages."
+    },
+    "de": {
+      "name": "Wie öffne ich die Einstellungen?",
+      "content": "Rechtsklick auf das Menüleisten-Symbol und Einstellungen wählen, ⌘, drücken, oder die App erneut aus dem Finder öffnen. Beim ersten Start öffnen sich die Einstellungen, bis du zwei Sprachen hinzugefügt hast."
+    },
+    "age": 4
+  },
+  {
+    "application": "Menu Linguo",
+    "en": {
+      "name": "How do I change a language on the card?",
+      "content": "Click a flag on the card. The menu lists your other Settings languages, except the two already on the card. Pick one to replace that side."
+    },
+    "de": {
+      "name": "Wie ändere ich eine Sprache auf der Karte?",
+      "content": "Klicke auf eine Flagge auf der Karte. Das Menü zeigt deine anderen Sprachen aus den Einstellungen, außer den beiden, die schon auf der Karte sind. Wähle eine, um diese Seite zu ersetzen."
+    },
+    "age": 5
+  },
+  {
+    "application": "Menu Linguo",
+    "en": {
+      "name": "How do I copy the translation or clear the source?",
+      "content": "The source field shows a clear button when it has text. The translation field has a copy button. Selecting or copying the translation does not switch the language pair."
+    },
+    "de": {
+      "name": "Wie kopiere ich die Übersetzung oder lösche die Quelle?",
+      "content": "Das Quellenfeld zeigt einen Löschen-Button, sobald Text darin steht. Das Übersetzungsfeld hat einen Kopieren-Button. Markieren oder Kopieren der Übersetzung wechselt das Sprachenpaar nicht."
+    },
+    "age": 6
+  },
+  {
+    "application": "Menu Linguo",
+    "en": {
+      "name": "How do I reorder my languages?",
+      "content": "Open Settings and drag language rows into the order you want. Extra languages stay in Settings and appear only when you click a flag on the card."
+    },
+    "de": {
+      "name": "Wie ändere ich die Reihenfolge meiner Sprachen?",
+      "content": "Öffne die Einstellungen und ziehe Sprachzeilen in die gewünschte Reihenfolge. Weitere Sprachen bleiben in den Einstellungen und erscheinen nur, wenn du auf eine Flagge auf der Karte klickst."
+    },
+    "age": 7
+  },
+  {
+    "application": "Menu Linguo",
+    "en": {
+      "name": "How do I remove a language?",
+      "content": "Open Settings, open the overflow menu on a language row, and delete it. This removes it from Menu Linguo only. Apple’s system translation packs stay installed."
+    },
+    "de": {
+      "name": "Wie entferne ich eine Sprache?",
+      "content": "Öffne die Einstellungen, öffne das Überlaufmenü einer Sprachzeile und lösche sie. Das entfernt sie nur aus Menu Linguo. Die System-Übersetzungspakete von Apple bleiben installiert."
+    },
+    "age": 8
+  },
+  {
+    "application": "Menu Linguo",
+    "en": {
+      "name": "Does Menu Linguo send my text to a cloud translator?",
+      "content": "No. Menu Linguo uses Apple Translation on your Mac. There is no account inside the app and no developer-operated analytics."
+    },
+    "de": {
+      "name": "Sendet Menu Linguo meinen Text an einen Cloud-Übersetzer?",
+      "content": "Nein. Menu Linguo nutzt Apple Translation auf deinem Mac. In der App gibt es kein Konto und keine vom Entwickler betriebenen Analysen."
+    },
+    "age": 9
+  },
+  {
+    "application": "Menu Linguo",
+    "en": {
+      "name": "Does the interface follow my Mac’s language?",
+      "content": "Yes. Menu Linguo follows the language of your Mac. There is no separate language setting inside the app."
+    },
+    "de": {
+      "name": "Folgt die Oberfläche der Sprache meines Macs?",
+      "content": "Ja. Menu Linguo folgt der Sprache deines Macs. In der App gibt es keine eigene Spracheinstellung."
+    },
+    "age": 10
+  },
+  {
+    "application": "Menu Linguo",
+    "en": {
+      "name": "Can Menu Linguo launch automatically at login?",
+      "content": "Yes. Right-click the menu bar icon and enable Launch at Login. You can turn it off there or in macOS Login Items."
+    },
+    "de": {
+      "name": "Kann Menu Linguo beim Anmelden automatisch starten?",
+      "content": "Ja. Rechtsklick auf das Menüleisten-Symbol und „Start bei Anmeldung“ aktivieren. Du kannst die Option dort oder in den macOS-Anmeldeobjekten wieder ausschalten."
+    },
+    "age": 11
+  },
+  {
+    "application": "Menu Linguo",
+    "en": {
+      "name": "Which macOS version is required?",
+      "content": "Menu Linguo requires macOS 15 or later."
+    },
+    "de": {
+      "name": "Welche macOS-Version wird benötigt?",
+      "content": "Menu Linguo erfordert macOS 15 oder neuer."
+    },
+    "age": 12
+  },
+  {
+    "application": "Menu Linguo",
+    "en": {
+      "name": "Is Menu Linguo available on the App Store?",
+      "content": "Not yet. Menu Linguo is in review and is not public on the Mac App Store. This support page will stay current as the listing goes live."
+    },
+    "de": {
+      "name": "Ist Menu Linguo im App Store verfügbar?",
+      "content": "Noch nicht. Menu Linguo ist in der Prüfung und noch nicht öffentlich im Mac App Store. Diese Support-Seite bleibt aktuell, sobald das Listing live ist."
+    },
+    "age": 13
   }
 ]

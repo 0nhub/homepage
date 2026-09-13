@@ -24,6 +24,18 @@
     "on_home": true
   },
   {
+    "slug": "menu-linguo",
+    "name": "Menu Linguo",
+    "category": "macOS utility",
+    "description": "Translate in the macOS menu bar. Two languages on a card, Apple Translation on your Mac.",
+    "description_de": "Übersetze in der macOS-Menüleiste. Zwei Sprachen auf einer Karte, Apple Translation auf deinem Mac.",
+    "status": "Coming soon",
+    "status_de": "Demnächst",
+    "icon": "/assets/images/menu-linguo/menu-linguo.png",
+    "app_store_url": "",
+    "on_home": true
+  },
+  {
     "slug": "menu-runner",
     "name": "Menu Runner",
     "category": "macOS utility",
