@@ -37,6 +37,7 @@ def locale_home(lang): return '/' if lang == 'en' else '/de/'
 def localized_url(path, lang):
     if path == '/': return '/' if lang == 'en' else '/de/'
     if path == '/error-page.html': return '/error-page.html' if lang == 'en' else '/de/error-page.html'
+    if path == '/review/': return '/review/'
     return ('' if lang == 'en' else '/de') + path
 def output_file(localized):
     if localized == '/': return 'index.html'
@@ -79,10 +80,8 @@ def article_html(row, lang):
     if image: figure = f'<figure class="answer-screenshot"><img src="{escape(image, quote=True)}" alt="{escape(title, quote=True)}" loading="lazy"></figure>'
     return f'<details name="support-answers"><summary>{escape(title)}</summary><div>{paragraphs(localized.get("content"))}{figure}</div></details>'
 def support_cards(lang):
-    root = locale_root(lang); cards = []
-    for project in local_projects():
-        cards.append(f'<a class="support-card" href="{root}/Support/{escape(project["slug"])}/">{icon(project)}<h2>{escape(project["name"])}</h2></a>')
-    return '\n'.join(cards)
+    root = locale_root(lang)
+    return '\n'.join(f'<a class="apps-tile" href="{root}/Support/{escape(project["slug"])}/">{icon(project)}<h2>{escape(project["name"])}</h2></a>' for project in local_projects())
 def support_page_html(project, articles, copy, lang):
     rows = []
     for row in articles:
@@ -145,7 +144,7 @@ def blog_social_html(copy):
     </nav>'''
 
 def blog_article_html(post, lang):
-    sections = ''.join(f'<section class="blog-article__section"><h2>{escape(section["title"])}</h2>{paragraphs(blog_text(section, lang, "body"))}</section>' for section in post.get('sections', []))
+    sections = ''.join(f'<section class="blog-article__section"><h2>{escape(blog_text(section, lang, "title"))}</h2>{paragraphs(blog_text(section, lang, "body"))}</section>' for section in post.get('sections', []))
     date_label = escape(blog_date(post, lang))
     category = escape(post.get('category', ''))
     title = escape(blog_text(post, lang, 'title'))
@@ -171,7 +170,7 @@ def page(path, title, description, content, lang, image=None):
     if image: social = f'<meta property="og:image" content="{escape(ORIGIN + image, quote=True)}"><meta name="twitter:image" content="{escape(ORIGIN + image, quote=True)}">'
     output = LAYOUT.substitute(html_lang=lang, title=escape(title), description=escape(description), canonical=escape(url), hreflang_en=escape(ORIGIN + en_url), hreflang_de=escape(ORIGIN + de_url), year=escape(SITE['year']), app_store_url=escape(SITE['app_store_url'] or root + '/apps/', quote=True), content=content, social_image=social, twitter_card='summary', projects_current='aria-current="page"' if path == '/apps/' else '', support_current='aria-current="page"' if path == '/Support/' else '', about_current='aria-current="page"' if path == '/about/' else '', blog_url=escape(localized_url('/blog/', lang), quote=True), home=home, root=root, assets=ASSETS, asset_version=ASSET_VERSION, lang_switch_href=escape(de_url if lang == 'en' else en_url, quote=True), lang_switch_label='EN' if lang == 'en' else 'DE', lang_switch_code=lang, lang_switch_aria='Auf Deutsch wechseln' if lang == 'en' else 'Switch to English', skip=escape(copy['skip']), home_label=escape(copy['home_label']), nav_about=escape(copy['nav_about']), nav_projects=escape(copy['nav_projects']), nav_support=escape(copy['nav_support']), nav_blog=escape(copy['nav_blog']), nav_main=escape(copy['nav_main']), nav_legal=escape(copy['nav_legal']), menu=escape(copy['menu']), follow_me=escape(copy['follow_me']), social_label=escape(copy['social_label']), footer_tag=escape(copy['footer_tag']), footer_tag_url=escape(copy['footer_tag_url'], quote=True), back_top=escape(copy['back_top']), imprint=escape(copy['imprint']), privacy=escape(copy['privacy']), terms=escape(copy['terms']))
     write(output_file(localized), output)
-    if localized not in SITEMAP_PATHS and not localized.endswith('error-page.html'): SITEMAP_PATHS.append(localized)
+    if localized not in SITEMAP_PATHS and not localized.endswith('error-page.html') and localized != '/review/': SITEMAP_PATHS.append(localized)
 def sync_assets():
     target = ROOT / 'assets'
     if target.exists(): shutil.rmtree(target)
@@ -205,7 +204,7 @@ def build():
     SITEMAP_PATHS.clear(); ensure_photo_folders(); sync_assets(); clean_legacy_publish_trees(); articles = load_support_articles()
     routes = [('about','/about/','about_title','about_desc'),('legal','/legal/','legal_title','legal_desc'),('imprint','/legal/imprint/','imprint_title','imprint_desc'),('privacy','/legal/privacy/','privacy_title','privacy_desc'),('terms','/legal/terms/','terms_title','terms_desc'),('support','/Support/','support_title','support_desc'),('apps','/apps/','apps_title','apps_desc'),('contact','/contact/','contact_title','contact_desc'),('send-confirmation','/send-confirmation/','confirmation_title','confirmation_desc')]
     for lang in ('en','de'):
-        copy = I18N[lang]; root = locale_root(lang); home = locale_home(lang); values = {'latest_cards': latest_cards(lang, root, copy), 'project_cards': project_cards(lang, root, copy), 'project_tiles': project_tiles(root), 'contact_email': escape(SITE['email']), 'contact_phone': escape(phone_display()), 'contact_phone_href': escape(phone_href(), quote=True), 'support_cards': dollar(support_cards(lang)), 'support_articles': '', 'root': root, 'home': home, 'assets': ASSETS, 'error_home': escape(copy['error_home']), 'nav_projects': escape(copy['nav_projects']), 'social_label': escape(copy['social_label']), 'price_free': '$0' if lang == 'en' else '0 €'}
+        copy = I18N[lang]; root = locale_root(lang); home = locale_home(lang); values = {'latest_cards': latest_cards(lang, root, copy), 'project_cards': project_cards(lang, root, copy, PROJECTS), 'project_tiles': project_tiles(root), 'contact_email': escape(SITE['email']), 'contact_phone': escape(phone_display()), 'contact_phone_href': escape(phone_href(), quote=True), 'support_cards': dollar(support_cards(lang)), 'support_articles': '', 'root': root, 'home': home, 'assets': ASSETS, 'error_home': escape(copy['error_home']), 'nav_projects': escape(copy['nav_projects']), 'social_label': escape(copy['social_label']), 'price_free': '$0' if lang == 'en' else '0 €'}
         source = page_source('home', lang); page('/', copy['home_title'], copy['home_desc'], Template(source.read_text()).substitute(values), lang, LOGO)
         blog_content = f'<section class="wrap blog-index"><header class="page-intro page-intro-plain"><h1>{escape(copy["blog_title"])}</h1></header><div class="blog-grid">{blog_cards(lang)}</div></section>'
         page('/blog/', copy['blog_title'] + ' — Gabriel Sgroi', copy['blog_desc'], blog_content, lang)
@@ -215,6 +214,10 @@ def build():
         for name, path, title_key, desc_key in routes:
             source = page_source(name, lang)
             if source.exists(): page(path, copy[title_key] + ' — Gabriel Sgroi', copy[desc_key], Template(source.read_text()).substitute(values), lang, '/assets/images/aboutme.jpg' if name == 'about' else None)
+        if lang == 'en':
+            review_source = page_source('review', lang)
+            if review_source.exists():
+                page('/review/', copy['review_title'] + ' — Gabriel Sgroi', copy['review_desc'], Template(review_source.read_text()).substitute(values), lang)
         error_source = page_source('404', lang)
         if error_source.exists(): page('/404.html', '404 — Gabriel Sgroi', copy['error_desc'], Template(error_source.read_text()).substitute(values), lang)
         for project in local_projects():

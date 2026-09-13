@@ -40,15 +40,20 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 }
 .wrap { width: calc(100% - 40px); max-width: var(--content-width); margin-inline: auto; }
 #main { flex: 1 0 auto; display: flex; flex-direction: column; }
-.apps-page .page-intro { padding: 70px 0 40px; text-align: center; }
+.apps-page .page-intro { padding: 70px 0 32px; text-align: center; }
 .apps-page .page-intro h1 { margin-bottom: 0; }
+.apps-page .page-intro:has(.eyebrow) h1 { margin-bottom: 20px; }
+.apps-page .page-intro .eyebrow { margin-bottom: 0; }
+.apps-page .project-grid { margin-bottom: 80px; }
+.apps-page .apps-dashboard { margin-bottom: 8px; }
 .apps-dashboard {
-  display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start;
+  display: grid; grid-template-columns: repeat(4, 128px);
+  justify-content: center; justify-items: center; align-items: start;
   gap: 32px 48px; margin: 0 auto 80px; max-width: 720px;
 }
 .apps-tile {
   display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
-  gap: 14px; flex: 0 0 128px; width: 128px; padding: 0; background: transparent;
+  gap: 14px; width: 128px; padding: 0; background: transparent;
   border-radius: 0; text-align: center;
   transform: translateY(0);
   transition: transform .22s ease;
@@ -183,7 +188,10 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 .project-card { display: flex; flex-direction: column; align-items: center; text-align: center; background: var(--secondary-bg); border-radius: 24px; overflow: hidden; }
 .project-info { padding: 36px 28px 0; }
 .project-info h3 { font-size: 34px; font-weight: 700; letter-spacing: -.03em; margin-bottom: 13px; }
-.project-info > p { max-width: 380px; font-size: 17px; line-height: 1.45; color: var(--subtext-color); margin: 0 auto 18px; }
+.project-info > p {
+  max-width: 380px; font-size: 17px; line-height: 1.45; color: var(--subtext-color); margin: 0 auto 18px;
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;
+}
 .project-card:hover .text-link { text-decoration: none; }
 .project-art { width: 100%; padding: 38px 20px 43px; display: flex; justify-content: center; }
 .project-art .app-icon { width: 140px; height: 140px; border-radius: 31px; box-shadow: 0 14px 30px rgba(0, 0, 0, .09); }
@@ -457,8 +465,11 @@ a.support-card:hover { background: #ececf1; }
   .section-heading p { font-size: 17px; }
   .project-grid, .support-grid, .feature-grid, .support-grid.legal-grid { grid-template-columns: 1fr; }
   .apps-page .page-intro { text-align: left; }
-  .apps-dashboard { justify-content: flex-start; max-width: none; gap: 28px 24px; }
-  .apps-tile { flex: 0 0 calc(50% - 12px); width: auto; max-width: none; }
+  .apps-dashboard {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: start; max-width: none; gap: 28px 24px;
+  }
+  .apps-tile { width: auto; max-width: none; }
   .project-grid { gap: 20px; }
   .project-info { padding-top: 32px; }
   .project-info h3 { font-size: 32px; }
@@ -733,5 +744,45 @@ a.support-card:hover { background: #ececf1; }
   .blog-card__preview { height: 3em; font-size: 16px; }
   .blog-article__intro { margin-bottom: 40px; }
   .blog-article__section { padding: 24px 0; }
+}
+
+.review-page { padding-bottom: 85px; }
+.review-page .highlight { color: var(--accent-color); }
+.review-page .page-intro .review-note {
+  display: block; width: 100%; max-width: none;
+  margin: 10px 0 0; text-align: center;
+  font-size: 11px; font-weight: 400; letter-spacing: 0;
+  color: var(--subtext-color); text-transform: none;
+}
+.review-steps > div { padding: 32px; }
+.review-steps .review-step-num {
+  display: grid; place-items: center;
+  width: 80px; height: 80px; margin: 0 0 24px;
+  border-radius: 50%; background: #fff;
+  color: var(--text-color); font-size: 36px; font-weight: 700;
+  letter-spacing: -.04em; line-height: 1;
+}
+.review-steps, .review-quotes { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.review-quotes p { margin: 0; }
+.review-author { margin-top: 16px !important; font-size: 13px; font-weight: 600; color: var(--subtext-color); }
+.review-table-wrap { overflow-x: auto; border: 1px solid var(--border-color); border-radius: 24px; background: var(--primary-bg); }
+.review-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.review-table th, .review-table td { padding: 14px 18px; text-align: left; border-bottom: 1px solid var(--border-color); vertical-align: top; }
+.review-table thead th { background: var(--secondary-bg); font-weight: 600; color: var(--text-color); }
+.review-table tbody tr:last-child td { border-bottom: none; }
+.review-table td:first-child { color: var(--text-color); font-weight: 500; }
+.review-table td:nth-child(2) { color: var(--accent-color); font-weight: 600; background: rgba(0, 113, 227, .04); }
+.review-table th:nth-child(2) { color: var(--accent-color); }
+.review-page .price-card .actions { justify-content: center; margin: 22px 0 0; }
+.review-strike { text-decoration: line-through; color: var(--subtext-color); font-size: .55em; font-weight: 500; }
+.review-price-meta { font-size: 16px; font-weight: 500; color: var(--subtext-color); letter-spacing: 0; }
+.review-addon { margin: 22px 0 0; padding: 18px 20px; border-radius: 18px; background: var(--primary-bg); }
+.review-addon p { margin: 6px 0 0; font-size: 14px; color: var(--subtext-color); }
+.review-guarantee { margin: 22px 0 0; text-align: left; }
+.review-guarantee strong { display: block; font-size: 15px; }
+.review-guarantee p { margin: 6px 0 0; font-size: 14px; color: var(--subtext-color); }
+.review-page .answer-group { margin-top: 20px; }
+@media (max-width: 640px) {
+  .review-steps, .review-quotes { grid-template-columns: 1fr; }
 }
 

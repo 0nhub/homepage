@@ -239,17 +239,18 @@ const showSupportApp = () => {
 window.addEventListener('hashchange', showSupportApp);
 showSupportApp();
 
-const supportAnswers = document.querySelector('.support-answers');
-if (supportAnswers) {
-  supportAnswers.addEventListener('toggle', (event) => {
+const exclusiveDetails = document.querySelectorAll('.support-answers, .review-page .answer-group');
+exclusiveDetails.forEach((group) => {
+  group.addEventListener('toggle', (event) => {
     const opened = event.target;
     if (!(opened instanceof HTMLDetailsElement) || !opened.open) return;
-    supportAnswers.querySelectorAll('details[open]').forEach((item) => {
+    group.querySelectorAll('details[open]').forEach((item) => {
       if (item !== opened) item.open = false;
     });
   }, true);
-}
+});
 
+const supportAnswers = document.querySelector('.support-answers');
 const supportSearch = document.querySelector('[data-support-search]');
 if (supportSearch && supportAnswers) {
   supportSearch.addEventListener('input', () => {

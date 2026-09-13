@@ -202,5 +202,149 @@
       "content": "Noch nicht. Expand ist in der Entwicklung und noch nicht öffentlich im Mac App Store. Diese Support-Seite wird mit der Veröffentlichung weiter ausgebaut."
     },
     "age": 2
+  },
+  {
+    "application": "Menu Runner",
+    "en": {
+      "name": "How do I add a command?",
+      "content": "Open Menu Runner and add a new item. Give it a title, optionally an icon or emoji, and the shell command you want to save."
+    },
+    "de": {
+      "name": "Wie füge ich einen Befehl hinzu?",
+      "content": "Öffne Menu Runner und füge einen neuen Eintrag hinzu. Vergib einen Titel, optional ein Symbol oder Emoji, und den Shell-Befehl, den du speichern möchtest."
+    },
+    "age": 1
+  },
+  {
+    "application": "Menu Runner",
+    "en": {
+      "name": "How do I run a command?",
+      "content": "Left-click the Menu Runner icon in the macOS menu bar and choose the command. It runs with /bin/zsh."
+    },
+    "de": {
+      "name": "Wie führe ich einen Befehl aus?",
+      "content": "Klicke mit der linken Maustaste auf das Menu-Runner-Symbol in der macOS-Menüleiste und wähle den Befehl. Er wird mit /bin/zsh ausgeführt."
+    },
+    "age": 2
+  },
+  {
+    "application": "Menu Runner",
+    "en": {
+      "name": "How do I edit a command?",
+      "content": "Open the command in Settings. You can edit it in a dark, full-size code window."
+    },
+    "de": {
+      "name": "Wie bearbeite ich einen Befehl?",
+      "content": "Öffne den Befehl in den Einstellungen. Du kannst ihn in einem dunklen, großen Code-Fenster bearbeiten."
+    },
+    "age": 3
+  },
+  {
+    "application": "Menu Runner",
+    "en": {
+      "name": "Can commands run on a schedule?",
+      "content": "Yes. You can optionally add a time trigger: hour, day, week, month, or a custom schedule."
+    },
+    "de": {
+      "name": "Können Befehle zeitgesteuert laufen?",
+      "content": "Ja. Du kannst optional einen Zeitauslöser setzen: Stunde, Tag, Woche, Monat oder einen eigenen Zeitplan."
+    },
+    "age": 4
+  },
+  {
+    "application": "Menu Runner",
+    "en": {
+      "name": "What are event-code checks?",
+      "content": "An optional check that fires when a script exits 0. Use it when a follow-up should run only after a successful command."
+    },
+    "de": {
+      "name": "Was sind Event-Code-Prüfungen?",
+      "content": "Eine optionale Prüfung, die auslöst, wenn ein Skript mit Exit-Code 0 endet. Nutze sie, wenn eine Folgeaktion nur nach einem erfolgreichen Befehl laufen soll."
+    },
+    "age": 5
+  },
+  {
+    "application": "Menu Runner",
+    "en": {
+      "name": "How do I reorder my commands?",
+      "content": "Drag items in your list to change their order."
+    },
+    "de": {
+      "name": "Wie ändere ich die Reihenfolge meiner Befehle?",
+      "content": "Ziehe Einträge in der Liste an die gewünschte Stelle."
+    },
+    "age": 6
+  },
+  {
+    "application": "Menu Runner",
+    "en": {
+      "name": "Can I sync commands across Macs?",
+      "content": "Yes, if you turn on optional iCloud sync. Commands can sync across Macs signed in with your Apple ID. There is no account inside Menu Runner."
+    },
+    "de": {
+      "name": "Kann ich Befehle zwischen Macs abgleichen?",
+      "content": "Ja, wenn du den optionalen iCloud-Sync einschaltest. Befehle können zwischen Macs abgeglichen werden, die mit deiner Apple-ID angemeldet sind. In Menu Runner selbst gibt es kein Konto."
+    },
+    "age": 7
+  },
+  {
+    "application": "Menu Runner",
+    "en": {
+      "name": "Does Menu Runner need an account?",
+      "content": "No. There is no account inside the app. Commands stay under your control on your Mac."
+    },
+    "de": {
+      "name": "Braucht Menu Runner ein Konto?",
+      "content": "Nein. In der App gibt es kein Konto. Die Befehle bleiben unter deiner Kontrolle auf deinem Mac."
+    },
+    "age": 8
+  },
+  {
+    "application": "Menu Runner",
+    "en": {
+      "name": "Can Menu Runner launch automatically at login?",
+      "content": "Yes. Right-click the menu bar icon and enable Launch at Login. You can turn it off there or in macOS Login Items."
+    },
+    "de": {
+      "name": "Kann Menu Runner beim Anmelden automatisch starten?",
+      "content": "Ja. Rechtsklick auf das Menüleisten-Symbol und „Start bei Anmeldung“ aktivieren. Du kannst die Option dort oder in den macOS-Anmeldeobjekten wieder ausschalten."
+    },
+    "age": 9
+  },
+  {
+    "application": "Menu Runner",
+    "en": {
+      "name": "Which macOS version is required?",
+      "content": "Menu Runner requires macOS 15 or later."
+    },
+    "de": {
+      "name": "Welche macOS-Version wird benötigt?",
+      "content": "Menu Runner erfordert macOS 15 oder neuer."
+    },
+    "age": 10
+  },
+  {
+    "application": "Menu Runner",
+    "en": {
+      "name": "Does Menu Runner collect usage data?",
+      "content": "No. Menu Runner does not use developer-operated analytics, behavioral tracking, or advertising systems. There is no account inside the app."
+    },
+    "de": {
+      "name": "Erfasst Menu Runner Nutzungsdaten?",
+      "content": "Nein. Es werden keine vom Entwickler betriebenen Analyse-, Verhaltens- oder Werbesysteme verwendet. In der App gibt es kein Konto."
+    },
+    "age": 11
+  },
+  {
+    "application": "Menu Runner",
+    "en": {
+      "name": "Is Menu Runner available on the App Store?",
+      "content": "Not yet. Menu Runner is still being prepared and is not public on the Mac App Store. This support page will grow as the app is released."
+    },
+    "de": {
+      "name": "Ist Menu Runner im App Store verfügbar?",
+      "content": "Noch nicht. Menu Runner wird vorbereitet und ist noch nicht öffentlich im Mac App Store. Diese Support-Seite wird mit der Veröffentlichung weiter ausgebaut."
+    },
+    "age": 12
   }
 ]
