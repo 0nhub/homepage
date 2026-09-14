@@ -33,7 +33,7 @@
     "status_de": "Demnächst",
     "icon": "/assets/images/menu-linguo/menu-linguo.png",
     "app_store_url": "",
-    "on_home": true
+    "on_home": false
   },
   {
     "slug": "menu-runner",
