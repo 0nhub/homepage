@@ -795,49 +795,12 @@ a.support-card:hover { background: #ececf1; }
   flex: 1 0 auto;
   padding-bottom: 72px;
 }
-.kanboa-soon__top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding-top: 36px;
-}
-.kanboa-soon__brand {
-  margin: 0;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: -.03em;
-}
-.kanboa-soon__status {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin: 0;
-  color: var(--subtext-color);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-}
-.kanboa-soon__pulse {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #12b76a;
-  box-shadow: 0 0 0 0 rgba(18, 183, 106, .45);
-  animation: kanboa-pulse 1.8s ease-out infinite;
-}
-@keyframes kanboa-pulse {
-  0% { box-shadow: 0 0 0 0 rgba(18, 183, 106, .45); }
-  70% { box-shadow: 0 0 0 8px rgba(18, 183, 106, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(18, 183, 106, 0); }
-}
 .kanboa-soon__main {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 72px 0 40px;
+  padding: 88px 0 40px;
   max-width: 820px;
 }
 .kanboa-soon__badge {
@@ -942,14 +905,8 @@ a.support-card:hover { background: #ececf1; }
 }
 .kanboa-soon__success { color: #0f7b4c; }
 .kanboa-soon__error { color: #b42318; }
-.kanboa-soon__zone {
-  margin: 28px 0 0;
-  color: #a1a1a6;
-  font-size: 12px;
-}
 @media (max-width: 640px) {
-  .kanboa-soon__top { padding-top: 24px; }
-  .kanboa-soon__main { padding-top: 48px; }
+  .kanboa-soon__main { padding-top: 56px; }
   .kanboa-soon__countdown { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .kanboa-soon__unit { min-height: 104px; }
   .kanboa-soon__form { flex-direction: column; }

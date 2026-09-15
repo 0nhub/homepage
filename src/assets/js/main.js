@@ -461,8 +461,9 @@ if (notifyForm) {
         body: JSON.stringify([{ email, submitted_date: berlinDate() }]),
       });
       if (!response.ok) throw new Error('waitlist');
+      if (emailInput) emailInput.value = '';
+      notifyForm.hidden = true;
       if (success) success.hidden = false;
-      if (emailInput) emailInput.disabled = true;
     } catch {
       if (success) success.hidden = true;
       if (error) error.hidden = false;
