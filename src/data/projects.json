@@ -29,10 +29,10 @@
     "category": "macOS utility",
     "description": "Translate in the macOS menu bar. Two languages on a card, Apple Translation on your Mac.",
     "description_de": "Übersetze in der macOS-Menüleiste. Zwei Sprachen auf einer Karte, Apple Translation auf deinem Mac.",
-    "status": "Coming soon",
-    "status_de": "Demnächst",
+    "status": "Meet the app",
+    "status_de": "Die App kennenlernen",
     "icon": "/assets/images/menu-linguo/menu-linguo.png",
-    "app_store_url": "",
+    "app_store_url": "https://apps.apple.com/de/app/menu-linguo/id6811692107?l=en-GB&mt=12",
     "on_home": false
   },
   {

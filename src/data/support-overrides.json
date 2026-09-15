@@ -495,11 +495,11 @@
     "application": "Linguo",
     "en": {
       "name": "Is Linguo available on the App Store?",
-      "content": "Not yet. Linguo is in review and is not public on the Mac App Store. This support page will stay current as the listing goes live."
+      "content": "Yes. Linguo is public on the Mac App Store as Menu Linguo."
     },
     "de": {
       "name": "Ist Linguo im App Store verfügbar?",
-      "content": "Noch nicht. Linguo ist in der Prüfung und noch nicht öffentlich im Mac App Store. Diese Support-Seite bleibt aktuell, sobald das Listing live ist."
+      "content": "Ja. Linguo ist öffentlich im Mac App Store als Menu Linguo erhältlich."
     },
     "age": 13
   }
