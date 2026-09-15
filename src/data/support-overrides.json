@@ -1,181 +1,181 @@
 [
   {
-    "application": "Menu Launcher",
+    "application": "Launcher",
     "en": {
       "name": "How do I add an app?",
-      "content": "Open Menu Launcher, add a new item, and choose the app you want to use. It will then appear in the launcher and can be opened directly from the macOS menu bar."
+      "content": "Open Launcher, add a new item, and choose the app you want to use. It will then appear in the launcher and can be opened directly from the macOS menu bar."
     },
     "de": {
       "name": "Wie füge ich eine App hinzu?",
-      "content": "Öffne Menu Launcher, füge einen neuen Eintrag hinzu und wähle die gewünschte App aus. Nach dem Hinzufügen erscheint die App im Launcher und kann direkt über die macOS-Menüleiste geöffnet werden."
+      "content": "Öffne Launcher, füge einen neuen Eintrag hinzu und wähle die gewünschte App aus. Nach dem Hinzufügen erscheint die App im Launcher und kann direkt über die macOS-Menüleiste geöffnet werden."
     },
     "age": 1
   },
   {
-    "application": "Menu Launcher",
+    "application": "Launcher",
     "en": {
       "name": "How do I add a folder?",
-      "content": "Add a new item and choose the folder you want to access. The folder will be available in Menu Launcher and opens in Finder when selected."
+      "content": "Add a new item and choose the folder you want to access. The folder will be available in Launcher and opens in Finder when selected."
     },
     "de": {
       "name": "Wie füge ich einen Ordner hinzu?",
-      "content": "Füge einen neuen Eintrag hinzu und wähle den Ordner aus, auf den du zugreifen möchtest. Der Ordner ist anschließend direkt in Menu Launcher verfügbar und wird beim Auswählen im Finder geöffnet."
+      "content": "Füge einen neuen Eintrag hinzu und wähle den Ordner aus, auf den du zugreifen möchtest. Der Ordner ist anschließend direkt in Launcher verfügbar und wird beim Auswählen im Finder geöffnet."
     },
     "age": 2
   },
   {
-    "application": "Menu Launcher",
+    "application": "Launcher",
     "en": {
       "name": "How do I reorder my items?",
-      "content": "Open the Menu Launcher configuration and change the position of your existing items. Frequently used apps and folders can be placed higher in the launcher."
+      "content": "Open the Launcher configuration and change the position of your existing items. Frequently used apps and folders can be placed higher in the launcher."
     },
     "de": {
       "name": "Wie ändere ich die Reihenfolge meiner Einträge?",
-      "content": "Öffne die Konfiguration von Menu Launcher und ändere die Position deiner vorhandenen Einträge. So kannst du häufig verwendete Apps und Ordner weiter oben im Launcher platzieren."
+      "content": "Öffne die Konfiguration von Launcher und ändere die Position deiner vorhandenen Einträge. So kannst du häufig verwendete Apps und Ordner weiter oben im Launcher platzieren."
     },
     "age": 3
   },
   {
-    "application": "Menu Launcher",
+    "application": "Launcher",
     "en": {
       "name": "How do I remove an app or folder?",
-      "content": "Remove the relevant item in the Menu Launcher configuration. This only removes the shortcut from Menu Launcher; the original app, folder, and its files are not deleted."
+      "content": "Remove the relevant item in the Launcher configuration. This only removes the shortcut from Launcher; the original app, folder, and its files are not deleted."
     },
     "de": {
       "name": "Wie entferne ich eine App oder einen Ordner?",
-      "content": "Entferne den entsprechenden Eintrag in der Konfiguration von Menu Launcher. Dadurch wird nur die Verknüpfung aus Menu Launcher entfernt. Die ursprüngliche App, der Ordner und alle darin enthaltenen Dateien werden nicht gelöscht."
+      "content": "Entferne den entsprechenden Eintrag in der Konfiguration von Launcher. Dadurch wird nur die Verknüpfung aus Launcher entfernt. Die ursprüngliche App, der Ordner und alle darin enthaltenen Dateien werden nicht gelöscht."
     },
     "age": 4
   },
   {
-    "application": "Menu Launcher",
+    "application": "Launcher",
     "en": {
-      "name": "Does Menu Launcher change my apps or folders?",
-      "content": "No. Menu Launcher only stores references to the apps and folders you choose. The original items remain in their existing locations on your Mac."
+      "name": "Does Launcher change my apps or folders?",
+      "content": "No. Launcher only stores references to the apps and folders you choose. The original items remain in their existing locations on your Mac."
     },
     "de": {
-      "name": "Ändert Menu Launcher meine Apps oder Ordner?",
-      "content": "Nein. Menu Launcher verwendet nur Verweise auf die von dir ausgewählten Apps und Ordner. Die ursprünglichen Elemente bleiben an ihren bestehenden Speicherorten auf deinem Mac erhalten."
+      "name": "Ändert Launcher meine Apps oder Ordner?",
+      "content": "Nein. Launcher verwendet nur Verweise auf die von dir ausgewählten Apps und Ordner. Die ursprünglichen Elemente bleiben an ihren bestehenden Speicherorten auf deinem Mac erhalten."
     },
     "age": 5
   },
   {
-    "application": "Menu Launcher",
+    "application": "Launcher",
     "en": {
-      "name": "Can Menu Launcher launch automatically at login?",
-      "content": "Yes. Enable automatic launch in Menu Launcher so it is available in the macOS menu bar after you sign in. You can disable this option at any time."
+      "name": "Can Launcher launch automatically at login?",
+      "content": "Yes. Enable automatic launch in Launcher so it is available in the macOS menu bar after you sign in. You can disable this option at any time."
     },
     "de": {
-      "name": "Kann Menu Launcher beim Anmelden automatisch gestartet werden?",
-      "content": "Ja. Der automatische Start kann in Menu Launcher aktiviert werden, damit die App nach der Anmeldung bei macOS in der Menüleiste verfügbar ist. Die Option kann jederzeit wieder deaktiviert werden."
+      "name": "Kann Launcher beim Anmelden automatisch gestartet werden?",
+      "content": "Ja. Der automatische Start kann in Launcher aktiviert werden, damit die App nach der Anmeldung bei macOS in der Menüleiste verfügbar ist. Die Option kann jederzeit wieder deaktiviert werden."
     },
     "age": 6
   },
   {
-    "application": "Menu Launcher",
+    "application": "Launcher",
     "en": {
-      "name": "Where does Menu Launcher appear?",
-      "content": "Menu Launcher runs in the macOS menu bar and gives you direct access to configured apps and folders without adding extra items to the Dock."
+      "name": "Where does Launcher appear?",
+      "content": "Launcher runs in the macOS menu bar and gives you direct access to configured apps and folders without adding extra items to the Dock."
     },
     "de": {
-      "name": "Wo erscheint Menu Launcher?",
-      "content": "Menu Launcher läuft in der macOS-Menüleiste und bietet dir direkten Zugriff auf die konfigurierten Apps und Ordner, ohne zusätzliche Elemente im Dock anzulegen."
+      "name": "Wo erscheint Launcher?",
+      "content": "Launcher läuft in der macOS-Menüleiste und bietet dir direkten Zugriff auf die konfigurierten Apps und Ordner, ohne zusätzliche Elemente im Dock anzulegen."
     },
     "age": 7
   },
   {
-    "application": "Menu Launcher",
+    "application": "Launcher",
     "en": {
-      "name": "Does Menu Launcher collect usage data?",
-      "content": "No. Menu Launcher does not use developer-operated analytics, behavioral tracking, or advertising systems. Your configuration stays local on your Mac."
+      "name": "Does Launcher collect usage data?",
+      "content": "No. Launcher does not use developer-operated analytics, behavioral tracking, or advertising systems. Your configuration stays local on your Mac."
     },
     "de": {
-      "name": "Erfasst Menu Launcher Nutzungsdaten?",
-      "content": "Nein. Es werden keine vom Entwickler betriebenen Analyse-, Verhaltens- oder Werbesysteme verwendet. Deine Menu-Launcher-Konfiguration bleibt lokal auf deinem Mac."
+      "name": "Erfasst Launcher Nutzungsdaten?",
+      "content": "Nein. Es werden keine vom Entwickler betriebenen Analyse-, Verhaltens- oder Werbesysteme verwendet. Deine Launcher-Konfiguration bleibt lokal auf deinem Mac."
     },
     "age": 8
   },
   {
-    "application": "Menu 2FA",
+    "application": "2FA",
     "en": {
       "name": "How do I add an authentication account?",
-      "content": "Open Menu 2FA in the menu bar and choose Settings. Select “+”, enter a title and your Base32 TOTP secret, or paste an otpauth:// URI. Secrets stay on your Mac and are used locally to generate codes."
+      "content": "Open 2FA in the menu bar and choose Settings. Select “+”, enter a title and your Base32 TOTP secret, or paste an otpauth:// URI. Secrets stay on your Mac and are used locally to generate codes."
     },
     "de": {
       "name": "Wie füge ich ein Authentifizierungskonto hinzu?",
-      "content": "Öffne Menu 2FA in der Menüleiste und wähle „Einstellungen“. Tippe anschließend auf „+“. Gib einen Titel und dein Base32-TOTP-Geheimnis ein oder füge eine otpauth://-URI ein. Optional kannst du ein Symbol auswählen. Die Geheimnisse bleiben auf deinem Mac und werden ausschließlich lokal zur Erzeugung der Codes verwendet."
+      "content": "Öffne 2FA in der Menüleiste und wähle „Einstellungen“. Tippe anschließend auf „+“. Gib einen Titel und dein Base32-TOTP-Geheimnis ein oder füge eine otpauth://-URI ein. Optional kannst du ein Symbol auswählen. Die Geheimnisse bleiben auf deinem Mac und werden ausschließlich lokal zur Erzeugung der Codes verwendet."
     },
     "age": 1
   },
   {
-    "application": "Menu 2FA",
+    "application": "2FA",
     "en": {
       "name": "How do I copy a code?",
-      "content": "Click the Menu 2FA key in the menu bar and choose an account. The current six-digit TOTP code is copied to the clipboard. While the menu is open, the key icon shows the current 30-second countdown."
+      "content": "Click the 2FA key in the menu bar and choose an account. The current six-digit TOTP code is copied to the clipboard. While the menu is open, the key icon shows the current 30-second countdown."
     },
     "de": {
       "name": "Wie kopiere ich einen Code?",
-      "content": "Klicke mit der linken Maustaste auf den Menu-2FA-Schlüssel in der Menüleiste und wähle ein Konto aus. Der aktuelle sechsstellige TOTP-Code wird in die Zwischenablage kopiert. Solange das Menü geöffnet ist, wird das Schlüsselsymbol für den 30-Sekunden-Zeitraum zu einem Countdown-Ring."
+      "content": "Klicke mit der linken Maustaste auf den 2FA-Schlüssel in der Menüleiste und wähle ein Konto aus. Der aktuelle sechsstellige TOTP-Code wird in die Zwischenablage kopiert. Solange das Menü geöffnet ist, wird das Schlüsselsymbol für den 30-Sekunden-Zeitraum zu einem Countdown-Ring."
     },
     "age": 2
   },
   {
-    "application": "Menu 2FA",
+    "application": "2FA",
     "en": {
       "name": "Where are my secrets stored?",
-      "content": "Authentication accounts and secrets stay locally on your Mac. Menu 2FA generates codes on your device and does not upload secrets or codes to the developer. Never send secrets or recovery codes to support."
+      "content": "Authentication accounts and secrets stay locally on your Mac. 2FA generates codes on your device and does not upload secrets or codes to the developer. Never send secrets or recovery codes to support."
     },
     "de": {
       "name": "Wo werden meine Geheimnisse gespeichert?",
-      "content": "Authentifizierungskonten und Geheimnisse bleiben lokal auf deinem Mac. Menu 2FA erzeugt die Codes auf deinem Gerät und lädt weder Geheimnisse noch Codes zum Entwickler hoch. Sende beim Kontakt mit dem Support niemals Geheimnisse oder Wiederherstellungscodes."
+      "content": "Authentifizierungskonten und Geheimnisse bleiben lokal auf deinem Mac. 2FA erzeugt die Codes auf deinem Gerät und lädt weder Geheimnisse noch Codes zum Entwickler hoch. Sende beim Kontakt mit dem Support niemals Geheimnisse oder Wiederherstellungscodes."
     },
     "age": 3
   },
   {
-    "application": "Menu 2FA",
+    "application": "2FA",
     "en": {
-      "name": "Does Menu 2FA collect usage data?",
-      "content": "No. Menu 2FA does not use developer-operated analytics, behavioral tracking, or advertising systems. Your configuration stays local on your Mac."
+      "name": "Does 2FA collect usage data?",
+      "content": "No. 2FA does not use developer-operated analytics, behavioral tracking, or advertising systems. Your configuration stays local on your Mac."
     },
     "de": {
-      "name": "Erfasst Menu 2FA Nutzungsdaten?",
-      "content": "Nein. Es werden keine vom Entwickler betriebenen Analyse-, Verhaltens- oder Werbesysteme verwendet. Deine Menu-2FA-Konfiguration bleibt lokal auf deinem Mac."
+      "name": "Erfasst 2FA Nutzungsdaten?",
+      "content": "Nein. Es werden keine vom Entwickler betriebenen Analyse-, Verhaltens- oder Werbesysteme verwendet. Deine 2FA-Konfiguration bleibt lokal auf deinem Mac."
     },
     "age": 4
   },
   {
-    "application": "Menu 2FA",
+    "application": "2FA",
     "en": {
-      "name": "Can Menu 2FA launch automatically at login?",
-      "content": "Enable “Launch at login” in the Menu 2FA context menu by right-clicking the key. You can disable the option there or in macOS Login Items."
+      "name": "Can 2FA launch automatically at login?",
+      "content": "Enable “Launch at login” in the 2FA context menu by right-clicking the key. You can disable the option there or in macOS Login Items."
     },
     "de": {
-      "name": "Kann Menu 2FA beim Anmelden automatisch gestartet werden?",
-      "content": "Ja. Aktiviere „Beim Anmelden starten“ im Kontextmenü von Menu 2FA (Rechtsklick auf den Schlüssel). Du kannst diese Option dort oder in den macOS-Anmeldeobjekten jederzeit wieder deaktivieren."
+      "name": "Kann 2FA beim Anmelden automatisch gestartet werden?",
+      "content": "Ja. Aktiviere „Beim Anmelden starten“ im Kontextmenü von 2FA (Rechtsklick auf den Schlüssel). Du kannst diese Option dort oder in den macOS-Anmeldeobjekten jederzeit wieder deaktivieren."
     },
     "age": 5
   },
   {
-    "application": "Menu 2FA",
+    "application": "2FA",
     "en": {
       "name": "I removed an account. Can I restore it?",
-      "content": "Removed accounts cannot be restored in Menu 2FA. Add the account again with its original secret, if you still have it from the service that issued it."
+      "content": "Removed accounts cannot be restored in 2FA. Add the account again with its original secret, if you still have it from the service that issued it."
     },
     "de": {
       "name": "Ich habe ein Konto entfernt. Kann ich es wiederherstellen?",
-      "content": "Entfernte Konten können in Menu 2FA nicht wiederhergestellt werden. Füge das Konto erneut mit dem ursprünglichen Geheimnis hinzu, sofern du es noch von dem Dienst hast, der es ausgestellt hat."
+      "content": "Entfernte Konten können in 2FA nicht wiederhergestellt werden. Füge das Konto erneut mit dem ursprünglichen Geheimnis hinzu, sofern du es noch von dem Dienst hast, der es ausgestellt hat."
     },
     "age": 6
   },
   {
-    "application": "Menu 2FA",
+    "application": "2FA",
     "en": {
-      "name": "Which platform is Menu 2FA made for?",
-      "content": "Menu 2FA was designed for macOS and is intended for distribution through the Mac App Store."
+      "name": "Which platform is 2FA made for?",
+      "content": "2FA was designed for macOS and is intended for distribution through the Mac App Store."
     },
     "de": {
-      "name": "Für welche Plattform ist Menu 2FA entwickelt?",
-      "content": "Menu 2FA wurde für macOS entwickelt und ist für den Vertrieb über den Mac App Store vorgesehen."
+      "name": "Für welche Plattform ist 2FA entwickelt?",
+      "content": "2FA wurde für macOS entwickelt und ist für den Vertrieb über den Mac App Store vorgesehen."
     },
     "age": 7
   },
@@ -195,40 +195,40 @@
     "application": "Expand",
     "en": {
       "name": "Is Expand available on the App Store?",
-      "content": "Not yet. Expand is still in development and is not public on the Mac App Store. This support page will grow as the app is released."
+      "content": "Yes. Expand is public on the Mac App Store as Expand Board."
     },
     "de": {
       "name": "Ist Expand im App Store verfügbar?",
-      "content": "Noch nicht. Expand ist in der Entwicklung und noch nicht öffentlich im Mac App Store. Diese Support-Seite wird mit der Veröffentlichung weiter ausgebaut."
+      "content": "Ja. Expand ist öffentlich im Mac App Store als Expand Board erhältlich."
     },
     "age": 2
   },
   {
-    "application": "Menu Runner",
+    "application": "Runner",
     "en": {
       "name": "How do I add a command?",
-      "content": "Open Menu Runner and add a new item. Give it a title, optionally an icon or emoji, and the shell command you want to save."
+      "content": "Open Runner and add a new item. Give it a title, optionally an icon or emoji, and the shell command you want to save."
     },
     "de": {
       "name": "Wie füge ich einen Befehl hinzu?",
-      "content": "Öffne Menu Runner und füge einen neuen Eintrag hinzu. Vergib einen Titel, optional ein Symbol oder Emoji, und den Shell-Befehl, den du speichern möchtest."
+      "content": "Öffne Runner und füge einen neuen Eintrag hinzu. Vergib einen Titel, optional ein Symbol oder Emoji, und den Shell-Befehl, den du speichern möchtest."
     },
     "age": 1
   },
   {
-    "application": "Menu Runner",
+    "application": "Runner",
     "en": {
       "name": "How do I run a command?",
-      "content": "Left-click the Menu Runner icon in the macOS menu bar and choose the command. It runs with /bin/zsh."
+      "content": "Left-click the Runner icon in the macOS menu bar and choose the command. It runs with /bin/zsh."
     },
     "de": {
       "name": "Wie führe ich einen Befehl aus?",
-      "content": "Klicke mit der linken Maustaste auf das Menu-Runner-Symbol in der macOS-Menüleiste und wähle den Befehl. Er wird mit /bin/zsh ausgeführt."
+      "content": "Klicke mit der linken Maustaste auf das Runner-Symbol in der macOS-Menüleiste und wähle den Befehl. Er wird mit /bin/zsh ausgeführt."
     },
     "age": 2
   },
   {
-    "application": "Menu Runner",
+    "application": "Runner",
     "en": {
       "name": "How do I edit a command?",
       "content": "Open the command in Settings. You can edit it in a dark, full-size code window."
@@ -240,7 +240,7 @@
     "age": 3
   },
   {
-    "application": "Menu Runner",
+    "application": "Runner",
     "en": {
       "name": "Can commands run on a schedule?",
       "content": "Yes. You can optionally add a time trigger: hour, day, week, month, or a custom schedule."
@@ -252,7 +252,7 @@
     "age": 4
   },
   {
-    "application": "Menu Runner",
+    "application": "Runner",
     "en": {
       "name": "What are event-code checks?",
       "content": "An optional check that fires when a script exits 0. Use it when a follow-up should run only after a successful command."
@@ -264,7 +264,7 @@
     "age": 5
   },
   {
-    "application": "Menu Runner",
+    "application": "Runner",
     "en": {
       "name": "How do I reorder my commands?",
       "content": "Drag items in your list to change their order."
@@ -276,91 +276,91 @@
     "age": 6
   },
   {
-    "application": "Menu Runner",
+    "application": "Runner",
     "en": {
       "name": "Can I sync commands across Macs?",
-      "content": "Yes, if you turn on optional iCloud sync. Commands can sync across Macs signed in with your Apple ID. There is no account inside Menu Runner."
+      "content": "Yes, if you turn on optional iCloud sync. Commands can sync across Macs signed in with your Apple ID. There is no account inside Runner."
     },
     "de": {
       "name": "Kann ich Befehle zwischen Macs abgleichen?",
-      "content": "Ja, wenn du den optionalen iCloud-Sync einschaltest. Befehle können zwischen Macs abgeglichen werden, die mit deiner Apple-ID angemeldet sind. In Menu Runner selbst gibt es kein Konto."
+      "content": "Ja, wenn du den optionalen iCloud-Sync einschaltest. Befehle können zwischen Macs abgeglichen werden, die mit deiner Apple-ID angemeldet sind. In Runner selbst gibt es kein Konto."
     },
     "age": 7
   },
   {
-    "application": "Menu Runner",
+    "application": "Runner",
     "en": {
-      "name": "Does Menu Runner need an account?",
+      "name": "Does Runner need an account?",
       "content": "No. There is no account inside the app. Commands stay under your control on your Mac."
     },
     "de": {
-      "name": "Braucht Menu Runner ein Konto?",
+      "name": "Braucht Runner ein Konto?",
       "content": "Nein. In der App gibt es kein Konto. Die Befehle bleiben unter deiner Kontrolle auf deinem Mac."
     },
     "age": 8
   },
   {
-    "application": "Menu Runner",
+    "application": "Runner",
     "en": {
-      "name": "Can Menu Runner launch automatically at login?",
+      "name": "Can Runner launch automatically at login?",
       "content": "Yes. Right-click the menu bar icon and enable Launch at Login. You can turn it off there or in macOS Login Items."
     },
     "de": {
-      "name": "Kann Menu Runner beim Anmelden automatisch starten?",
+      "name": "Kann Runner beim Anmelden automatisch starten?",
       "content": "Ja. Rechtsklick auf das Menüleisten-Symbol und „Start bei Anmeldung“ aktivieren. Du kannst die Option dort oder in den macOS-Anmeldeobjekten wieder ausschalten."
     },
     "age": 9
   },
   {
-    "application": "Menu Runner",
+    "application": "Runner",
     "en": {
       "name": "Which macOS version is required?",
-      "content": "Menu Runner requires macOS 15 or later."
+      "content": "Runner requires macOS 15 or later."
     },
     "de": {
       "name": "Welche macOS-Version wird benötigt?",
-      "content": "Menu Runner erfordert macOS 15 oder neuer."
+      "content": "Runner erfordert macOS 15 oder neuer."
     },
     "age": 10
   },
   {
-    "application": "Menu Runner",
+    "application": "Runner",
     "en": {
-      "name": "Does Menu Runner collect usage data?",
-      "content": "No. Menu Runner does not use developer-operated analytics, behavioral tracking, or advertising systems. There is no account inside the app."
+      "name": "Does Runner collect usage data?",
+      "content": "No. Runner does not use developer-operated analytics, behavioral tracking, or advertising systems. There is no account inside the app."
     },
     "de": {
-      "name": "Erfasst Menu Runner Nutzungsdaten?",
+      "name": "Erfasst Runner Nutzungsdaten?",
       "content": "Nein. Es werden keine vom Entwickler betriebenen Analyse-, Verhaltens- oder Werbesysteme verwendet. In der App gibt es kein Konto."
     },
     "age": 11
   },
   {
-    "application": "Menu Runner",
+    "application": "Runner",
     "en": {
-      "name": "Is Menu Runner available on the App Store?",
-      "content": "Not yet. Menu Runner is still being prepared and is not public on the Mac App Store. This support page will grow as the app is released."
+      "name": "Is Runner available on the App Store?",
+      "content": "Not yet. Runner is still being prepared and is not public on the Mac App Store. This support page will grow as the app is released."
     },
     "de": {
-      "name": "Ist Menu Runner im App Store verfügbar?",
-      "content": "Noch nicht. Menu Runner wird vorbereitet und ist noch nicht öffentlich im Mac App Store. Diese Support-Seite wird mit der Veröffentlichung weiter ausgebaut."
+      "name": "Ist Runner im App Store verfügbar?",
+      "content": "Noch nicht. Runner wird vorbereitet und ist noch nicht öffentlich im Mac App Store. Diese Support-Seite wird mit der Veröffentlichung weiter ausgebaut."
     },
     "age": 12
   },
   {
-    "application": "Menu Linguo",
+    "application": "Linguo",
     "en": {
       "name": "How do I translate a word or sentence?",
-      "content": "Left-click the Menu Linguo icon in the macOS menu bar. Type or paste in the top field. Apple Translation fills the language below."
+      "content": "Left-click the Linguo icon in the macOS menu bar. Type or paste in the top field. Apple Translation fills the language below."
     },
     "de": {
       "name": "Wie übersetze ich ein Wort oder einen Satz?",
-      "content": "Klicke mit der linken Maustaste auf das Menu-Linguo-Symbol in der macOS-Menüleiste. Tippe oder füge Text ins obere Feld ein. Apple Translation füllt die Sprache darunter."
+      "content": "Klicke mit der linken Maustaste auf das Linguo-Symbol in der macOS-Menüleiste. Tippe oder füge Text ins obere Feld ein. Apple Translation füllt die Sprache darunter."
     },
     "age": 1
   },
   {
-    "application": "Menu Linguo",
+    "application": "Linguo",
     "en": {
       "name": "How do I switch which language is on top?",
       "content": "Click the other field and start typing or pasting. That language jumps to the top and becomes the source. Selecting or copying the translation does not switch the pair."
@@ -372,7 +372,7 @@
     "age": 2
   },
   {
-    "application": "Menu Linguo",
+    "application": "Linguo",
     "en": {
       "name": "How do I add a language?",
       "content": "Right-click the menu bar icon and open Settings, or press ⌘,. Use Plus or Choice Language to add a language. You need at least two languages before the card can translate."
@@ -384,7 +384,7 @@
     "age": 3
   },
   {
-    "application": "Menu Linguo",
+    "application": "Linguo",
     "en": {
       "name": "How do I open Settings?",
       "content": "Right-click the menu bar icon and choose Settings, press ⌘,, or reopen the app from Finder. On first launch, Settings opens until you have added two languages."
@@ -396,7 +396,7 @@
     "age": 4
   },
   {
-    "application": "Menu Linguo",
+    "application": "Linguo",
     "en": {
       "name": "How do I change a language on the card?",
       "content": "Click a flag on the card. The menu lists your other Settings languages, except the two already on the card. Pick one to replace that side."
@@ -408,7 +408,7 @@
     "age": 5
   },
   {
-    "application": "Menu Linguo",
+    "application": "Linguo",
     "en": {
       "name": "How do I copy the translation or clear the source?",
       "content": "The source field shows a clear button when it has text. The translation field has a copy button. Selecting or copying the translation does not switch the language pair."
@@ -420,7 +420,7 @@
     "age": 6
   },
   {
-    "application": "Menu Linguo",
+    "application": "Linguo",
     "en": {
       "name": "How do I reorder my languages?",
       "content": "Open Settings and drag language rows into the order you want. Extra languages stay in Settings and appear only when you click a flag on the card."
@@ -432,74 +432,74 @@
     "age": 7
   },
   {
-    "application": "Menu Linguo",
+    "application": "Linguo",
     "en": {
       "name": "How do I remove a language?",
-      "content": "Open Settings, open the overflow menu on a language row, and delete it. This removes it from Menu Linguo only. Apple’s system translation packs stay installed."
+      "content": "Open Settings, open the overflow menu on a language row, and delete it. This removes it from Linguo only. Apple’s system translation packs stay installed."
     },
     "de": {
       "name": "Wie entferne ich eine Sprache?",
-      "content": "Öffne die Einstellungen, öffne das Überlaufmenü einer Sprachzeile und lösche sie. Das entfernt sie nur aus Menu Linguo. Die System-Übersetzungspakete von Apple bleiben installiert."
+      "content": "Öffne die Einstellungen, öffne das Überlaufmenü einer Sprachzeile und lösche sie. Das entfernt sie nur aus Linguo. Die System-Übersetzungspakete von Apple bleiben installiert."
     },
     "age": 8
   },
   {
-    "application": "Menu Linguo",
+    "application": "Linguo",
     "en": {
-      "name": "Does Menu Linguo send my text to a cloud translator?",
-      "content": "No. Menu Linguo uses Apple Translation on your Mac. There is no account inside the app and no developer-operated analytics."
+      "name": "Does Linguo send my text to a cloud translator?",
+      "content": "No. Linguo uses Apple Translation on your Mac. There is no account inside the app and no developer-operated analytics."
     },
     "de": {
-      "name": "Sendet Menu Linguo meinen Text an einen Cloud-Übersetzer?",
-      "content": "Nein. Menu Linguo nutzt Apple Translation auf deinem Mac. In der App gibt es kein Konto und keine vom Entwickler betriebenen Analysen."
+      "name": "Sendet Linguo meinen Text an einen Cloud-Übersetzer?",
+      "content": "Nein. Linguo nutzt Apple Translation auf deinem Mac. In der App gibt es kein Konto und keine vom Entwickler betriebenen Analysen."
     },
     "age": 9
   },
   {
-    "application": "Menu Linguo",
+    "application": "Linguo",
     "en": {
       "name": "Does the interface follow my Mac’s language?",
-      "content": "Yes. Menu Linguo follows the language of your Mac. There is no separate language setting inside the app."
+      "content": "Yes. Linguo follows the language of your Mac. There is no separate language setting inside the app."
     },
     "de": {
       "name": "Folgt die Oberfläche der Sprache meines Macs?",
-      "content": "Ja. Menu Linguo folgt der Sprache deines Macs. In der App gibt es keine eigene Spracheinstellung."
+      "content": "Ja. Linguo folgt der Sprache deines Macs. In der App gibt es keine eigene Spracheinstellung."
     },
     "age": 10
   },
   {
-    "application": "Menu Linguo",
+    "application": "Linguo",
     "en": {
-      "name": "Can Menu Linguo launch automatically at login?",
+      "name": "Can Linguo launch automatically at login?",
       "content": "Yes. Right-click the menu bar icon and enable Launch at Login. You can turn it off there or in macOS Login Items."
     },
     "de": {
-      "name": "Kann Menu Linguo beim Anmelden automatisch starten?",
+      "name": "Kann Linguo beim Anmelden automatisch starten?",
       "content": "Ja. Rechtsklick auf das Menüleisten-Symbol und „Start bei Anmeldung“ aktivieren. Du kannst die Option dort oder in den macOS-Anmeldeobjekten wieder ausschalten."
     },
     "age": 11
   },
   {
-    "application": "Menu Linguo",
+    "application": "Linguo",
     "en": {
       "name": "Which macOS version is required?",
-      "content": "Menu Linguo requires macOS 15 or later."
+      "content": "Linguo requires macOS 15 or later."
     },
     "de": {
       "name": "Welche macOS-Version wird benötigt?",
-      "content": "Menu Linguo erfordert macOS 15 oder neuer."
+      "content": "Linguo erfordert macOS 15 oder neuer."
     },
     "age": 12
   },
   {
-    "application": "Menu Linguo",
+    "application": "Linguo",
     "en": {
-      "name": "Is Menu Linguo available on the App Store?",
-      "content": "Not yet. Menu Linguo is in review and is not public on the Mac App Store. This support page will stay current as the listing goes live."
+      "name": "Is Linguo available on the App Store?",
+      "content": "Not yet. Linguo is in review and is not public on the Mac App Store. This support page will stay current as the listing goes live."
     },
     "de": {
-      "name": "Ist Menu Linguo im App Store verfügbar?",
-      "content": "Noch nicht. Menu Linguo ist in der Prüfung und noch nicht öffentlich im Mac App Store. Diese Support-Seite bleibt aktuell, sobald das Listing live ist."
+      "name": "Ist Linguo im App Store verfügbar?",
+      "content": "Noch nicht. Linguo ist in der Prüfung und noch nicht öffentlich im Mac App Store. Diese Support-Seite bleibt aktuell, sobald das Listing live ist."
     },
     "age": 13
   }

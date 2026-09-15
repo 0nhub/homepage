@@ -359,3 +359,114 @@ if (supportFeed && supportFeed.getAttribute('data-support-feed')) {
       .catch(() => {});
   }
 }
+
+const pad2 = (value) => String(Math.max(0, value)).padStart(2, '0');
+
+const berlinParts = (date) => {
+  const parts = new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Europe/Berlin',
+    weekday: 'short',
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: false,
+  }).formatToParts(date);
+  return Object.fromEntries(parts.map((part) => [part.type, part.value]));
+};
+
+const berlinEpoch = (year, monthIndex, day, hours, minutes) => {
+  let guess = Date.UTC(year, monthIndex, day, hours, minutes, 0);
+  const formatter = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'Europe/Berlin',
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: false,
+  });
+  for (let index = 0; index < 2; index += 1) {
+    const mapped = Object.fromEntries(formatter.formatToParts(new Date(guess)).map((part) => [part.type, part.value]));
+    const hour = Number(mapped.hour === '24' ? 0 : mapped.hour);
+    guess += ((hours - hour) * 3600 + (minutes - Number(mapped.minute)) * 60) * 1000;
+    guess += (day - Number(mapped.day)) * 24 * 3600 * 1000;
+  }
+  return guess;
+};
+
+const nextSundayBerlin = (hours, minutes) => {
+  const now = Date.now();
+  for (let offset = 0; offset <= 8; offset += 1) {
+    const probe = berlinParts(new Date(now + offset * 24 * 60 * 60 * 1000));
+    if (probe.weekday === 'Sun') {
+      const target = berlinEpoch(Number(probe.year), Number(probe.month) - 1, Number(probe.day), hours, minutes);
+      if (target > now) return target;
+    }
+  }
+  return now + 7 * 24 * 60 * 60 * 1000;
+};
+
+const countdownRoot = document.querySelector('[data-kanboa-countdown]');
+if (countdownRoot) {
+  const target = nextSundayBerlin(8, 40);
+  const liveLabel = countdownRoot.getAttribute('data-live') || 'Kanboa is live now!';
+  const tick = () => {
+    const distance = target - Date.now();
+    if (distance <= 0) {
+      countdownRoot.classList.add('is-live');
+      countdownRoot.innerHTML = `<p class="kanboa-soon__live">${escapeHtml(liveLabel)}</p>`;
+      return false;
+    }
+    const days = Math.floor(distance / 86400000);
+    const hours = Math.floor((distance % 86400000) / 3600000);
+    const minutes = Math.floor((distance % 3600000) / 60000);
+    const seconds = Math.floor((distance % 60000) / 1000);
+    countdownRoot.querySelector('[data-unit="days"]').textContent = pad2(days);
+    countdownRoot.querySelector('[data-unit="hours"]').textContent = pad2(hours);
+    countdownRoot.querySelector('[data-unit="minutes"]').textContent = pad2(minutes);
+    countdownRoot.querySelector('[data-unit="seconds"]').textContent = pad2(seconds);
+    return true;
+  };
+  if (tick()) {
+    const timer = setInterval(() => {
+      if (!tick()) clearInterval(timer);
+    }, 1000);
+  }
+}
+
+const notifyForm = document.querySelector('[data-kanboa-notify]');
+if (notifyForm) {
+  const waitlistUrl = 'https://v1.appbackend.io/v1/rows/SkqAxgVclt6m?api_key=JsxqZpFR1RgIHOobLWNhX4McxpTW2i6kfqdK';
+  const success = document.querySelector('[data-kanboa-success]');
+  const error = document.querySelector('[data-kanboa-error]');
+  const emailInput = notifyForm.querySelector('input[type="email"]');
+  const submitButton = notifyForm.querySelector('button[type="submit"]');
+  const berlinDate = () => {
+    const parts = berlinParts(new Date());
+    return `${parts.year}-${pad2(Number(parts.month))}-${pad2(Number(parts.day))}`;
+  };
+
+  notifyForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const email = String(new FormData(notifyForm).get('email') || '').trim();
+    if (!email) return;
+    if (error) error.hidden = true;
+    if (submitButton) submitButton.disabled = true;
+    try {
+      const response = await fetch(waitlistUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify([{ email, submitted_date: berlinDate() }]),
+      });
+      if (!response.ok) throw new Error('waitlist');
+      if (success) success.hidden = false;
+      if (emailInput) emailInput.disabled = true;
+    } catch {
+      if (success) success.hidden = true;
+      if (error) error.hidden = false;
+      if (submitButton) submitButton.disabled = false;
+    }
+  });
+}

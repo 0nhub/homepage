@@ -57,7 +57,9 @@
     "blog_title": "Blog",
     "blog_desc": "Thoughts, workflows, and the tools I return to every day.",
     "review_title": "UserImpression",
-    "review_desc": "Brutally honest UX feedback — a first-time user walkthrough of your product."
+    "review_desc": "Brutally honest UX feedback — a first-time user walkthrough of your product.",
+    "kanboa_title": "Kanboa",
+    "kanboa_desc": "Kanboa is launching soon. Join the waitlist and we will notify you."
   },
   "de": {
     "skip": "Zum Inhalt springen",
@@ -117,6 +119,8 @@
     "blog_title": "Blog",
     "blog_desc": "Gedanken, Arbeitsabläufe und Tools, zu denen ich jeden Tag zurückkehre.",
     "review_title": "UserImpression",
-    "review_desc": "Brutally honest UX feedback — a first-time user walkthrough of your product."
+    "review_desc": "Brutally honest UX feedback — a first-time user walkthrough of your product.",
+    "kanboa_title": "Kanboa",
+    "kanboa_desc": "Kanboa startet bald. Trag dich ein, wir benachrichtigen dich zum Launch."
   }
 }

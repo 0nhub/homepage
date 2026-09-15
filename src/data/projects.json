@@ -1,7 +1,7 @@
 [
   {
     "slug": "menu-launcher",
-    "name": "Menu Launcher",
+    "name": "Launcher",
     "category": "macOS utility",
     "description": "Keep your favorite apps, files and folders in one convenient menu bar launcher.",
     "description_de": "Halte deine Lieblings-Apps, Dateien und Ordner in einem praktischen Menüleisten-Launcher.",
@@ -13,7 +13,7 @@
   },
   {
     "slug": "menu-2fa",
-    "name": "Menu 2FA",
+    "name": "2FA",
     "category": "macOS utility",
     "description": "Store TOTP accounts locally and copy the current code with one click.",
     "description_de": "Speichere TOTP-Konten lokal und kopiere den aktuellen Code mit einem Klick.",
@@ -25,7 +25,7 @@
   },
   {
     "slug": "menu-linguo",
-    "name": "Menu Linguo",
+    "name": "Linguo",
     "category": "macOS utility",
     "description": "Translate in the macOS menu bar. Two languages on a card, Apple Translation on your Mac.",
     "description_de": "Übersetze in der macOS-Menüleiste. Zwei Sprachen auf einer Karte, Apple Translation auf deinem Mac.",
@@ -37,7 +37,7 @@
   },
   {
     "slug": "menu-runner",
-    "name": "Menu Runner",
+    "name": "Runner",
     "category": "macOS utility",
     "description": "Lives in the macOS menu bar and runs the shell commands you save.",
     "description_de": "Sitzt in der macOS-Menüleiste und führt die Shell-Befehle aus, die du speicherst.",
@@ -53,10 +53,10 @@
     "category": "macOS utility",
     "description": "A spatial macOS board for text, images, files, and nested boards.",
     "description_de": "Ein räumliches macOS-Board für Text, Bilder, Dateien und verschachtelte Boards.",
-    "status": "Coming soon",
-    "status_de": "Demnächst",
+    "status": "Meet the app",
+    "status_de": "Die App kennenlernen",
     "icon": "/assets/images/expand/expand.png",
-    "app_store_url": "",
+    "app_store_url": "https://apps.apple.com/de/app/expand-board/id6809594353?l=en-GB&mt=12",
     "on_home": false
   },
   {
