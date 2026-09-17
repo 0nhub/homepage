@@ -143,6 +143,9 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 .case-carousel__dots button { width: 7px; height: 7px; padding: 0; border: 0; border-radius: 50%; background: var(--border-color); cursor: pointer; }
 .case-carousel__dots button.is-active { background: var(--text-color); transform: scale(1.35); }
 .pricing-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; justify-content: start; align-items: start; }
+.pricing-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.pricing-grid--5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.price-note { margin: -12px 0 18px; color: var(--subtext-color); font-size: 14px; line-height: 1.45; }
 .pricing-grid:has(> :only-child) { grid-template-columns: minmax(0, 560px); justify-content: center; margin-inline: auto; }
 .price-card { padding: 34px 30px; border: 1px solid var(--border-color); border-radius: 24px; }
 .price-card--featured { background: var(--secondary-bg); border-color: transparent; }
@@ -165,7 +168,10 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 .hero-description { max-width: 670px; margin: 0 auto 30px; color: var(--subtext-color); font-size: 22px; line-height: 1.45; }
 .product-copy { max-width: none; width: 100%; margin: 0 auto 28px; text-align: left; }
 .product-copy p { color: var(--subtext-color); font-size: 18px; line-height: 1.55; }
-.product-copy p:last-child { margin-bottom: 0; }
+.product-copy ul { margin: 0 0 18px; padding-left: 22px; color: var(--subtext-color); font-size: 18px; line-height: 1.55; }
+.product-copy li + li { margin-top: 8px; }
+.product-copy p:last-child,
+.product-copy ul:last-child { margin-bottom: 0; }
 .actions { display: flex; justify-content: center; align-items: center; gap: 22px; flex-wrap: wrap; }
 .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; border: 1px solid var(--accent-color); border-radius: 999px; background: var(--accent-color); color: #fff; padding: 12px 27px; font-size: 16px; font-weight: 500; transition: background .2s, transform .2s; }
 .button:hover { background: #0077ed; }
@@ -405,6 +411,8 @@ a.support-card:hover { background: #ececf1; }
 @media (max-width: 900px) {
   .site-header { gap: 20px; }
   .main-navigation { gap: 24px; }
+  .pricing-grid--3,
+  .pricing-grid--5 { grid-template-columns: 1fr; }
   .feature-grid { gap: 16px; }
   .feature-grid > div { padding: 28px 20px; }
   .document-layout { grid-template-columns: 155px minmax(0, 1fr); gap: 30px; }
@@ -438,7 +446,9 @@ a.support-card:hover { background: #ececf1; }
   .product-brand h1 { font-size: clamp(34px, 8vw, 48px); }
   .product-intro > .button { margin-top: 26px; }
   .product-description { grid-template-columns: 1fr; gap: 22px; }
-  .pricing-grid { grid-template-columns: 1fr; }
+  .pricing-grid,
+  .pricing-grid--3,
+  .pricing-grid--5 { grid-template-columns: 1fr; }
   .case-carousel { gap: 8px; }
   .case-carousel__track { gap: 14px; transform: translate3d(calc(var(--case-index, 0) * -1 * (100% + 7px)), 0, 0); }
   .pricing-grid:has(> :only-child) { grid-template-columns: minmax(0, 560px); max-width: 560px; justify-content: center; margin-inline: auto; }
@@ -575,11 +585,14 @@ a.support-card:hover { background: #ececf1; }
   padding-top: 0;
   grid-column: 1 / -1;
 }
-.product-layout__body .product-description .product-copy {
+.product-layout__body .product-description .product-copy,
+.product-layout__body .product-copy {
   grid-column: 1 / -1;
   width: 100%;
   max-width: none;
 }
+.product-layout__body .pricing .product-copy { margin-bottom: 22px; }
+.product-layout__body .pricing .product-copy:last-child { margin: 22px 0 0; }
 @media (max-width: 760px) {
   .product-layout { display: block; padding-top: 48px; padding-bottom: 65px; }
   .product-layout__profile { position: static; margin-bottom: 54px; }
@@ -911,5 +924,121 @@ a.support-card:hover { background: #ececf1; }
   .kanboa-soon__unit { min-height: 104px; }
   .kanboa-soon__form { flex-direction: column; }
   .kanboa-soon__form .button { width: 100%; }
+}
+
+.kanboa-project {
+  max-width: 1100px;
+  padding-bottom: 110px;
+  text-align: center;
+}
+.kanboa-project .product-copy {
+  max-width: 720px;
+  text-align: center;
+}
+.kanboa-project .product-copy ul {
+  display: inline-block;
+  text-align: left;
+}
+.kanboa-project__intro { padding-bottom: 24px; }
+.kanboa-project__video {
+  max-width: 920px;
+  margin: 36px auto 0;
+}
+.kanboa-project__demo { margin: 32px 0 0; }
+.kanboa-project__password {
+  margin: 14px 0 0;
+  font-size: 16px;
+  color: var(--subtext-color);
+}
+.kanboa-project__password code {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+.kanboa-tiers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  max-width: 920px;
+  margin: 0 auto;
+}
+.kanboa-tiers article {
+  flex: 1 1 148px;
+  max-width: 172px;
+  min-width: 0;
+  padding: 28px 12px 26px;
+  border-radius: 22px;
+  background: var(--secondary-bg);
+}
+.kanboa-tiers__name {
+  margin: 0 0 10px;
+  color: var(--accent-color);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .01em;
+}
+.kanboa-tiers__price {
+  margin: 0 0 8px;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -.04em;
+  line-height: 1;
+}
+.kanboa-tiers__users {
+  margin: 0;
+  color: var(--subtext-color);
+  font-size: 14px;
+  white-space: nowrap;
+}
+.kanboa-tiers__shared {
+  max-width: 820px;
+  margin: 36px auto 0;
+}
+.kanboa-tiers__shared-label {
+  margin: 0 0 14px;
+  color: var(--text-color);
+  font-size: 15px;
+  font-weight: 600;
+}
+.kanboa-tiers__shared ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.kanboa-tiers__shared li {
+  padding: 9px 14px;
+  border-radius: 999px;
+  background: var(--secondary-bg);
+  color: var(--subtext-color);
+  font-size: 14px;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+@media (max-width: 760px) {
+  .kanboa-project { padding-bottom: 65px; }
+  .kanboa-tiers {
+    max-width: 420px;
+    gap: 10px;
+  }
+  .kanboa-tiers article {
+    flex: 1 1 100%;
+    max-width: none;
+    display: grid;
+    grid-template-columns: 72px 1fr auto;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 18px;
+    text-align: left;
+  }
+  .kanboa-tiers__name,
+  .kanboa-tiers__price,
+  .kanboa-tiers__users { margin: 0; }
+  .kanboa-tiers__price { font-size: 24px; }
+  .kanboa-tiers__shared li { white-space: normal; }
 }
 

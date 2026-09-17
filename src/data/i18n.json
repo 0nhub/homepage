@@ -59,7 +59,9 @@
     "review_title": "UserImpression",
     "review_desc": "Brutally honest UX feedback — a first-time user walkthrough of your product.",
     "kanboa_title": "Kanboa",
-    "kanboa_desc": "Kanboa is launching soon. Join the waitlist and we will notify you."
+    "kanboa_desc": "Kanboa is launching soon. Join the waitlist and we will notify you.",
+    "kanboa_project_title": "Kanboa",
+    "kanboa_project_desc": "Kanboa is a browser workspace: a Kanban board and conversation in the same place."
   },
   "de": {
     "skip": "Zum Inhalt springen",
@@ -121,6 +123,8 @@
     "review_title": "UserImpression",
     "review_desc": "Brutally honest UX feedback — a first-time user walkthrough of your product.",
     "kanboa_title": "Kanboa",
-    "kanboa_desc": "Kanboa startet bald. Trag dich ein, wir benachrichtigen dich zum Launch."
+    "kanboa_desc": "Kanboa startet bald. Trag dich ein, wir benachrichtigen dich zum Launch.",
+    "kanboa_project_title": "Kanboa",
+    "kanboa_project_desc": "Kanboa ist ein Browser-Arbeitsbereich: Kanban-Board und Gespräch am selben Ort."
   }
 }
