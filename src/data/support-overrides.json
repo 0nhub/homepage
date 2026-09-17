@@ -339,11 +339,11 @@
     "application": "Runner",
     "en": {
       "name": "Is Runner available on the App Store?",
-      "content": "Not yet. Runner is still being prepared and is not public on the Mac App Store. This support page will grow as the app is released."
+      "content": "Yes. Runner is public on the Mac App Store as Menu Runner."
     },
     "de": {
       "name": "Ist Runner im App Store verfügbar?",
-      "content": "Noch nicht. Runner wird vorbereitet und ist noch nicht öffentlich im Mac App Store. Diese Support-Seite wird mit der Veröffentlichung weiter ausgebaut."
+      "content": "Ja. Runner ist öffentlich im Mac App Store als Menu Runner erhältlich."
     },
     "age": 12
   },

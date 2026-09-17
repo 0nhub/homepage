@@ -41,10 +41,10 @@
     "category": "macOS utility",
     "description": "Lives in the macOS menu bar and runs the shell commands you save.",
     "description_de": "Sitzt in der macOS-Menüleiste und führt die Shell-Befehle aus, die du speicherst.",
-    "status": "Coming soon",
-    "status_de": "Demnächst",
+    "status": "Meet the app",
+    "status_de": "Die App kennenlernen",
     "icon": "/assets/images/menu-runner/menu-runner.png",
-    "app_store_url": "",
+    "app_store_url": "https://apps.apple.com/de/app/menu-runner/id6811438145?l=en-GB&mt=12",
     "on_home": false
   },
   {
