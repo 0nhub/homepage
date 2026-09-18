@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 460" width="720" height="460" role="img" aria-label="Placeholder">
+  <rect width="720" height="460" fill="#fff"/>
+  <g>
+    <path d="M120 96h132a18 18 0 0 1 18 18v52a18 18 0 0 1-18 18h-96l-36 26v-96a18 18 0 0 1 0 0z" fill="#f2f2f5"/>
+    <rect x="146" y="124" width="82" height="9" rx="4.5" fill="#dedee4"/>
+    <rect x="146" y="144" width="60" height="9" rx="4.5" fill="#dedee4"/>
+  </g>
+  <g>
+    <rect x="296" y="60" width="216" height="360" rx="30" fill="#1d1d1f"/>
+    <rect x="306" y="70" width="196" height="340" rx="24" fill="#fafafc"/>
+    <rect x="374" y="76" width="60" height="10" rx="5" fill="#1d1d1f"/>
+    <rect x="326" y="112" width="120" height="10" rx="5" fill="#e6e6eb"/>
+    <rect x="326" y="132" width="70" height="8" rx="4" fill="#eeeef2"/>
+    <rect x="326" y="164" width="90" height="14" rx="7" fill="#dedee4"/>
+    <rect x="320" y="196" width="168" height="34" rx="10" fill="#f0f0f4"/>
+    <rect x="320" y="238" width="168" height="34" rx="10" fill="#f0f0f4"/>
+    <rect x="320" y="280" width="168" height="34" rx="10" fill="#f0f0f4"/>
+    <rect x="332" y="208" width="72" height="10" rx="5" fill="#dedee4"/>
+    <rect x="332" y="250" width="54" height="10" rx="5" fill="#dedee4"/>
+    <rect x="332" y="292" width="88" height="10" rx="5" fill="#dedee4"/>
+  </g>
+  <text x="360" y="442" text-anchor="middle" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#b0b0b8" letter-spacing="1.4">PLACEHOLDER</text>
+</svg>

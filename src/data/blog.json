@@ -1,8 +1,55 @@
 [
   {
+    "slug": "why-i-despise-subscription-models",
+    "date": "2026-09-18",
+    "category": "Personal",
+    "preview": {
+      "src": "/images/blog/unsplash/subscriptions.jpg",
+      "alt": "A white die showing the word Pay",
+      "alt_de": "Ein weißer Würfel mit dem Wort Pay",
+      "source_url": "https://unsplash.com/photos/a-white-dice-with-the-word-pay-on-it-JIpwo285mWA",
+      "photographer": "Rubaitul Azad",
+      "creator_url": "https://unsplash.com/@rubaitulazad"
+    },
+    "title": "Why I Despise Subscription Models: A Software Developer's Perspective",
+    "title_de": "Warum ich Abo-Modelle verabscheue: Die Sicht eines Softwareentwicklers",
+    "excerpt": "I despise subscription models for apps with no ongoing costs. One-time purchases are the fair deal.",
+    "excerpt_de": "Ich verabscheue Abo-Modelle bei Apps ohne laufende Kosten. Einmalkauf ist das faire Geschäft.",
+    "intro": "I absolutely despise subscription models. And as a software developer, I simply cannot comprehend how my fellow developers can have such blatant intentions when it comes to subscriptions. Don't get me wrong—I think subscription models have every right to exist. After all, developers don't live on love and air; they need calculable income. I especially understand it when software incurs ongoing costs, like server expenses for cloud services or integrations that require continuous financial outlay. That makes perfect sense to me. But what I absolutely cannot understand—and what I find truly repulsive—is that apps with no ongoing infrastructure costs still force you into a subscription. That is beyond customer-unfriendly; it's simply nonsensical.",
+    "intro_de": "Ich verabscheue Abo-Modelle zutiefst. Und als Softwareentwickler kann ich einfach nicht nachvollziehen, mit welcher Offenheit andere Entwickler bei Abos vorgehen. Versteht mich nicht falsch: Abo-Modelle haben jede Berechtigung. Entwickler leben nicht von Luft und Liebe; sie brauchen kalkulierbares Einkommen. Besonders verstehe ich es, wenn Software laufende Kosten verursacht — Server für Cloud-Dienste oder Integrationen, die dauerhaft Geld kosten. Das ergibt für mich Sinn. Was ich absolut nicht verstehe — und was ich wirklich abstoßend finde — ist, dass Apps ohne laufende Infrastrukturkosten trotzdem ins Abo zwingen. Das ist nicht nur kundenunfreundlich. Das ist schlicht unsinnig.",
+    "sections": [
+      {
+        "title": "How this started",
+        "title_de": "Wie das angefangen hat",
+        "body": "This whole trend started with a variation that Adobe introduced. Back then, there were ubiquitous programs like Photoshop that were extremely expensive to purchase outright. Individual programs cost several hundred euros, and every year there was a new version. Instead of releasing a new version annually that you could have used for many years, they decided to switch to a subscription model. In a way, it democratized access—suddenly everyone could afford a few euros a month to use professional software. Adobe was one of the biggest pioneers in this space, and soon everyone jumped on the bandwagon. I believe Adobe changed a lot, but specifically with Adobe, it was tied to a cloud service. You could offload tasks, and those ongoing infrastructure costs justified the subscription to some extent. But not for an app that is developed once and runs completely offline.",
+        "body_de": "Dieser ganze Trend begann mit einer Variante, die Adobe eingeführt hat. Damals gab es allgegenwärtige Programme wie Photoshop, die im Einmalkauf extrem teuer waren. Einzelne Programme kosteten mehrere hundert Euro, und jedes Jahr kam eine neue Version. Statt jährlich eine Version herauszubringen, die man viele Jahre hätte nutzen können, stellte man auf ein Abo um. In gewisser Weise hat das den Zugang demokratisiert — plötzlich konnte sich jeder ein paar Euro im Monat leisten, um professionelle Software zu nutzen. Adobe war einer der größten Vorreiter, und bald sprang jeder auf. Ich glaube, Adobe hat viel verändert. Aber gerade bei Adobe hing das an einem Cloud-Dienst. Man konnte Aufgaben auslagern, und diese laufenden Infrastrukturkosten rechtfertigten das Abo bis zu einem gewissen Grad. Aber nicht bei einer App, die einmal entwickelt wird und komplett offline läuft."
+      },
+      {
+        "title": "A fair deal",
+        "title_de": "Ein faires Geschäft",
+        "body": "I'm a big advocate—and that's why I'm extremely committed—to making all my published projects one-time purchases. Of course, there are ongoing costs: support, further development, updates. But I think if an app is well-made and continuously supported and improved, you can keep attracting new buyers. I believe that's a fair deal. And even if you eventually release a new major version years later, it's perfectly fine to offer that as a paid one-time purchase option. In any case, I will always strive to offer any app I develop as a one-time purchase, as long as there are no ongoing infrastructure costs. Apps should not be a subscription trap—they should be fairly affordable.",
+        "body_de": "Ich bin ein großer Verfechter davon — und deshalb extrem konsequent —, alle veröffentlichten Projekte als Einmalkauf anzubieten. Natürlich gibt es laufende Kosten: Support, Weiterentwicklung, Updates. Aber ich denke: Wenn eine App gut gemacht ist und durchgehend betreut und verbessert wird, kommen weiter neue Käufer. Das ist für mich ein faires Geschäft. Und selbst wenn Jahre später eine neue Hauptversion erscheint, ist es völlig in Ordnung, die als bezahlten Einmalkauf anzubieten. In jedem Fall werde ich jede App, die ich entwickle, als Einmalkauf anbieten, solange es keine laufenden Infrastrukturkosten gibt. Apps sollen keine Abo-Falle sein. Sie sollen fair bezahlbar sein."
+      },
+      {
+        "title": "My promise",
+        "title_de": "Mein Versprechen",
+        "body": "So here's my promise: every app I release will be a one-time purchase. Because I believe in fair pricing, not endless renting.",
+        "body_de": "Deshalb mein Versprechen: Jede App, die ich veröffentliche, wird ein Einmalkauf. Weil ich an faire Preise glaube, nicht an endloses Mieten."
+      }
+    ]
+  },
+  {
     "slug": "why-macos",
     "date": "2026-09-13",
     "category": "Personal",
+    "preview": {
+      "src": "/images/blog/unsplash/apple-ecosystem.jpg",
+      "alt": "An illuminated Apple logo",
+      "alt_de": "Ein beleuchtetes Apple-Logo",
+      "source_url": "https://unsplash.com/photos/apple-logo-uAmgf8kRvqg",
+      "photographer": "Mohamed M",
+      "creator_url": "https://unsplash.com/@mohamed_m"
+    },
     "title": "Why macOS? A Personal Take on Apple's Ecosystem",
     "title_de": "Warum macOS? Ein persönlicher Blick auf Apples Ökosystem",
     "excerpt": "I've used macOS since 2008. Here's why it's still my first choice, and why I find it so hard to use anything else.",
@@ -46,6 +93,14 @@
     "slug": "stocked-products",
     "date": "2026-09-11",
     "category": "Tools & Apps",
+    "preview": {
+      "src": "/images/blog/unsplash/tools.jpg",
+      "alt": "A laptop surrounded by floating application screens",
+      "alt_de": "Ein Laptop mit schwebenden Anwendungsfenstern",
+      "source_url": "https://unsplash.com/photos/a-laptop-computer-with-a-bunch-of-different-screens-on-top-of-it-XV2kGdTo9II",
+      "photographer": "Philip Oroni",
+      "creator_url": "https://unsplash.com/@philipsfuture"
+    },
     "title": "Stocked Products: The Tools I Can't Live Without",
     "title_de": "Stocked Products: Die Tools, die ich nicht mehr missen möchte",
     "excerpt": "The tools and apps that keep me productive, focused, and sane as a software developer.",

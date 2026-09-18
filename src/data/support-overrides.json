@@ -194,14 +194,146 @@
   {
     "application": "Expand",
     "en": {
+      "name": "How do I add something to a board?",
+      "content": "Double-click an empty area of the board to add a new element. You can also right-click the canvas and choose the kind of content you want to create, including text, images, files, or shapes. The plus button in the toolbar provides the same creation options and places the new element near the top of the window. After adding an element, drag it to the position that makes sense for your layout."
+    },
+    "de": {
+      "name": "Wie füge ich einem Board etwas hinzu?",
+      "content": "Doppelklicke auf einen freien Bereich des Boards, um ein neues Element anzulegen. Alternativ kannst du mit der rechten Maustaste auf die Fläche klicken und auswählen, welche Art von Inhalt du erstellen möchtest, darunter Text, Bilder, Dateien oder Formen. Das Plus in der Toolbar bietet dieselben Möglichkeiten und platziert das neue Element im oberen Bereich des Fensters. Danach kannst du es an die passende Stelle deines Layouts ziehen."
+    },
+    "age": 2
+  },
+  {
+    "application": "Expand",
+    "en": {
+      "name": "Which kinds of content can I place on a board?",
+      "content": "A board can contain text, images, PDFs and other files, shapes, connecting lines, Kanban-style elements, and additional boards. This lets you keep written notes, visual references, documents, and structures together on one open canvas instead of separating them across several apps or folders."
+    },
+    "de": {
+      "name": "Welche Inhalte kann ich auf einem Board platzieren?",
+      "content": "Ein Board kann Text, Bilder, PDFs und andere Dateien, Formen, Verbindungslinien, Kanban-Elemente und weitere Boards enthalten. So bleiben Notizen, visuelle Referenzen, Dokumente und Strukturen gemeinsam auf einer offenen Fläche, statt über mehrere Apps oder Ordner verteilt zu sein."
+    },
+    "age": 3
+  },
+  {
+    "application": "Expand",
+    "en": {
+      "name": "How do nested boards work?",
+      "content": "Boards can contain other boards, and those boards can contain further boards without a fixed nesting limit. Open a nested board to work inside it as its own canvas. The breadcrumbs in the title bar show your current position and let you move back to a parent board. This is useful for starting with a broad overview and opening deeper levels only when you need their details."
+    },
+    "de": {
+      "name": "Wie funktionieren verschachtelte Boards?",
+      "content": "Boards können weitere Boards enthalten, die wiederum zusätzliche Boards aufnehmen können – ohne festes Limit für die Verschachtelungstiefe. Öffne ein verschachteltes Board, um darin auf einer eigenen Fläche zu arbeiten. Die Breadcrumbs in der Titelleiste zeigen deine aktuelle Position und bringen dich zurück zu einem übergeordneten Board. So kannst du mit einer groben Übersicht beginnen und Details erst bei Bedarf öffnen."
+    },
+    "age": 4
+  },
+  {
+    "application": "Expand",
+    "en": {
+      "name": "How do I arrange and reorganize elements?",
+      "content": "Drag elements freely across the canvas and place related material close together. Expand is intentionally spatial: there is no required row, column, or document order. You can use position, distance, shapes, and connecting lines to express relationships. Moving an element changes its place on the board without changing the content itself."
+    },
+    "de": {
+      "name": "Wie ordne und reorganisiere ich Elemente?",
+      "content": "Ziehe Elemente frei über die Fläche und platziere zusammengehörige Inhalte nah beieinander. Expand ist bewusst räumlich aufgebaut: Es gibt keine vorgeschriebene Zeilen-, Spalten- oder Dokumentreihenfolge. Mit Position, Abstand, Formen und Verbindungslinien kannst du Beziehungen sichtbar machen. Beim Verschieben ändert sich nur der Platz auf dem Board, nicht der Inhalt selbst."
+    },
+    "age": 5
+  },
+  {
+    "application": "Expand",
+    "en": {
+      "name": "Can I format text?",
+      "content": "Yes. Text elements support rich-text formatting, including bold, italic, and underline. Use formatting to create visual hierarchy inside a note, emphasize important details, or distinguish headings from supporting information while keeping everything directly on the board."
+    },
+    "de": {
+      "name": "Kann ich Text formatieren?",
+      "content": "Ja. Textelemente unterstützen Rich-Text-Formatierung, darunter fett, kursiv und unterstrichen. Damit kannst du innerhalb einer Notiz Hierarchien schaffen, wichtige Details hervorheben oder Überschriften von ergänzenden Informationen unterscheiden, ohne das Board zu verlassen."
+    },
+    "age": 6
+  },
+  {
+    "application": "Expand",
+    "en": {
+      "name": "What are connecting lines and Kanban elements for?",
+      "content": "Connecting lines make relationships between elements visible, similar to a mind map. Kanban-style elements are useful when a topic is better organized into stages or columns. Both can live alongside ordinary text, images, files, shapes, and nested boards, so you can combine different ways of thinking within one document."
+    },
+    "de": {
+      "name": "Wofür sind Verbindungslinien und Kanban-Elemente gedacht?",
+      "content": "Verbindungslinien machen Beziehungen zwischen Elementen sichtbar, ähnlich wie bei einer Mindmap. Kanban-Elemente helfen, wenn sich ein Thema besser in Phasen oder Spalten organisieren lässt. Beides kann neben normalem Text, Bildern, Dateien, Formen und verschachtelten Boards liegen, sodass du verschiedene Denk- und Arbeitsweisen in einem Dokument kombinieren kannst."
+    },
+    "age": 7
+  },
+  {
+    "application": "Expand",
+    "en": {
+      "name": "How does full-text search work?",
+      "content": "Use full-text search to find written content across your boards instead of opening nested boards one by one. Search is especially helpful in larger documents with several levels, where the spatial structure provides context but you need to jump directly to a specific term or note."
+    },
+    "de": {
+      "name": "Wie funktioniert die Volltextsuche?",
+      "content": "Mit der Volltextsuche findest du geschriebene Inhalte über deine Boards hinweg, ohne verschachtelte Boards einzeln öffnen zu müssen. Besonders bei größeren Dokumenten mit mehreren Ebenen ist die Suche hilfreich: Die räumliche Struktur liefert den Kontext, während du direkt zu einem bestimmten Begriff oder einer Notiz springen kannst."
+    },
+    "age": 8
+  },
+  {
+    "application": "Expand",
+    "en": {
+      "name": "Where are my Expand documents stored?",
+      "content": "Expand documents are saved as .exd packages in a location you choose. They can remain locally on your Mac or be placed in iCloud Drive if you want them available through your iCloud storage. Expand does not require an account or upload your boards to a separate Expand service."
+    },
+    "de": {
+      "name": "Wo werden meine Expand-Dokumente gespeichert?",
+      "content": "Expand-Dokumente werden als .exd-Pakete an einem von dir gewählten Ort gespeichert. Sie können lokal auf deinem Mac bleiben oder in der iCloud Drive liegen, wenn du sie über deinen iCloud-Speicher verfügbar halten möchtest. Expand erfordert kein Konto und lädt deine Boards nicht zu einem eigenen Expand-Dienst hoch."
+    },
+    "age": 9
+  },
+  {
+    "application": "Expand",
+    "en": {
+      "name": "Can I move or back up an .exd document?",
+      "content": "Yes. An .exd document is a package that should be moved or copied as one complete item in Finder. You can include it in your normal local or iCloud backup routine. Avoid opening the package contents in Finder and changing individual internal files, because those files belong to the document structure managed by Expand."
+    },
+    "de": {
+      "name": "Kann ich ein .exd-Dokument verschieben oder sichern?",
+      "content": "Ja. Ein .exd-Dokument ist ein Paket und sollte im Finder immer als vollständiges Element verschoben oder kopiert werden. Du kannst es in deine normale lokale oder iCloud-Backup-Routine aufnehmen. Öffne möglichst nicht den Paketinhalt im Finder, um einzelne interne Dateien zu verändern, denn diese gehören zur von Expand verwalteten Dokumentstruktur."
+    },
+    "age": 10
+  },
+  {
+    "application": "Expand",
+    "en": {
+      "name": "Does Expand collect personal data or analytics?",
+      "content": "No. Expand does not collect account data or analytics, and no Expand account is required. Your document remains in the storage location you selected. If you save it in iCloud Drive, synchronization is handled by your Apple iCloud account rather than by a separate Expand cloud service."
+    },
+    "de": {
+      "name": "Sammelt Expand persönliche Daten oder Analytics?",
+      "content": "Nein. Expand sammelt weder Kontodaten noch Analytics, und ein Expand-Konto ist nicht erforderlich. Dein Dokument bleibt an dem von dir gewählten Speicherort. Wenn du es in der iCloud Drive speicherst, wird die Synchronisierung über dein Apple-iCloud-Konto abgewickelt und nicht über einen eigenen Expand-Cloud-Dienst."
+    },
+    "age": 11
+  },
+  {
+    "application": "Expand",
+    "en": {
+      "name": "Which macOS version does Expand require?",
+      "content": "Expand requires macOS 26.5 or later. If the Mac App Store does not allow installation, first check the macOS version under Apple menu › About This Mac and install any available system updates that are compatible with your Mac."
+    },
+    "de": {
+      "name": "Welche macOS-Version benötigt Expand?",
+      "content": "Expand benötigt macOS 26.5 oder neuer. Falls der Mac App Store die Installation nicht zulässt, prüfe zuerst deine macOS-Version unter Apple-Menü › Über diesen Mac und installiere alle für deinen Mac verfügbaren Systemupdates."
+    },
+    "age": 12
+  },
+  {
+    "application": "Expand",
+    "en": {
       "name": "Is Expand available on the App Store?",
-      "content": "Yes. Expand is public on the Mac App Store as Expand Board."
+      "content": "Yes. Expand is available on the Mac App Store as Expand Board for a one-time purchase of €7.99. There is no subscription. The store listing provides the current compatibility information and delivers future app updates through the Mac App Store."
     },
     "de": {
       "name": "Ist Expand im App Store verfügbar?",
-      "content": "Ja. Expand ist öffentlich im Mac App Store als Expand Board erhältlich."
+      "content": "Ja. Expand ist im Mac App Store als Expand Board für einmalig 7,99 € erhältlich. Es gibt kein Abonnement. Im Store findest du die aktuellen Kompatibilitätsangaben; zukünftige App-Updates werden über den Mac App Store bereitgestellt."
     },
-    "age": 2
+    "age": 13
   },
   {
     "application": "Runner",
@@ -502,5 +634,89 @@
       "content": "Ja. Linguo ist öffentlich im Mac App Store als Menu Linguo erhältlich."
     },
     "age": 13
+  },
+  {
+    "application": "TopFold",
+    "en": {
+      "name": "What is TopFold?",
+      "content": "TopFold is a native macOS menu bar app without a Dock icon. It pins one to five real folders to the top edge of your screen and makes them usable like a Finder window, without opening Finder."
+    },
+    "de": {
+      "name": "Was ist TopFold?",
+      "content": "TopFold ist eine native macOS-Menüleisten-App ohne Dock-Icon. Sie hängt einen bis fünf echte Ordner an den oberen Bildschirmrand und macht sie wie ein Finder-Fenster bedienbar, ohne den Finder zu öffnen."
+    },
+    "age": 1
+  },
+  {
+    "application": "TopFold",
+    "en": {
+      "name": "How do I open and close the fold?",
+      "content": "Move the pointer to the top of the screen and scroll down to open it. Scrolling up at the top edge closes it again, as does a click outside the fold. You can also turn on hover at the top edge with your own delay, click the menu bar icon to pin or close it, or drag a file to the top edge to open it. Escape closes Quick Look first and the fold second."
+    },
+    "de": {
+      "name": "Wie öffne und schließe ich den Fold?",
+      "content": "Zeiger an den oberen Bildschirmrand bewegen und nach unten scrollen. Scrollen nach oben am oberen Rand schließt wieder, ebenso ein Klick außerhalb. Optional lässt sich Hover an der Oberkante mit eigener Verzögerung einschalten, ein Klick auf das Menüleisten-Icon pinnt oder schließt, und eine Datei an die Oberkante zu ziehen klappt ihn auf. Escape schließt zuerst die Vorschau und dann den Fold."
+    },
+    "age": 2
+  },
+  {
+    "application": "TopFold",
+    "en": {
+      "name": "How many folders can I add?",
+      "content": "One to five. Each folder gets its own column at equal width. You add, swap, remove, and reorder folders in Settings; the first launch without folders opens Settings for you."
+    },
+    "de": {
+      "name": "Wie viele Ordner kann ich hinzufügen?",
+      "content": "Einen bis fünf. Jeder Ordner bekommt eine eigene Spalte mit gleicher Breite. Ordner hinzufügen, tauschen, entfernen und sortieren geht in den Einstellungen; der Erststart ohne Ordner öffnet die Einstellungen direkt."
+    },
+    "age": 3
+  },
+  {
+    "application": "TopFold",
+    "en": {
+      "name": "Are files copied or moved?",
+      "content": "Moved, the way Finder does it. A drop is never a copy, in either direction. Dragging a file to the top edge opens the fold and drops it into the folder under the pointer."
+    },
+    "de": {
+      "name": "Werden Dateien kopiert oder verschoben?",
+      "content": "Verschoben, so wie im Finder. Ein Drop kopiert nie, in keine Richtung. Ziehst du eine Datei an die Oberkante, klappt der Fold auf und legt sie in den Ordner unter dem Zeiger."
+    },
+    "age": 4
+  },
+  {
+    "application": "TopFold",
+    "en": {
+      "name": "Which keys and menu items are there?",
+      "content": "Click selects, double-click opens, dragging moves a file out. Space is Quick Look, the arrows move the selection, Return renames inline, ⌘↓ opens, ⌘⌫ moves to the trash. Right-click on a file gives you Open, Open With, Trash, Rename, Compress, Cut and Copy, Copy Pathname, Quick Look, Show in Finder, Share, and Services. Right-click on empty space gives you New Folder, Paste, Undo and Redo, Copy Pathname, Get Info, sorting, groups, and Import from iPhone."
+    },
+    "de": {
+      "name": "Welche Tasten und Menüpunkte gibt es?",
+      "content": "Klick wählt aus, Doppelklick öffnet, Ziehen verschiebt eine Datei heraus. Leertaste ist Quick Look, die Pfeile bewegen die Auswahl, Return benennt inline um, ⌘↓ öffnet, ⌘⌫ legt in den Papierkorb. Rechtsklick auf eine Datei bietet Open, Open With, Trash, Rename, Compress, Cut und Copy, Copy Pathname, Quick Look, Show in Finder, Share und Services. Rechtsklick ins Leere bietet New Folder, Paste, Undo und Redo, Copy Pathname, Get Info, Sortierung, Groups und Import from iPhone."
+    },
+    "age": 5
+  },
+  {
+    "application": "TopFold",
+    "en": {
+      "name": "Does TopFold store my files or sync them?",
+      "content": "No. TopFold has no storage of its own, no cloud sync, and no account. It points at your local folders through security-scoped bookmarks and moves real files. A folder watcher keeps changes in the file system in sync live."
+    },
+    "de": {
+      "name": "Speichert oder synchronisiert TopFold meine Dateien?",
+      "content": "Nein. TopFold hat keinen eigenen Speicher, keinen Cloud-Sync und kein Konto. Es zeigt über Security-scoped Bookmarks auf deine lokalen Ordner und verschiebt echte Dateien. Ein Ordner-Watcher zieht Änderungen im Dateisystem live mit."
+    },
+    "age": 6
+  },
+  {
+    "application": "TopFold",
+    "en": {
+      "name": "Is TopFold available on the App Store?",
+      "content": "Not yet. TopFold is still being prepared and is not public on the Mac App Store. It will be a one-time purchase at €4.99, and this support page will grow as the app is released."
+    },
+    "de": {
+      "name": "Ist TopFold im App Store verfügbar?",
+      "content": "Noch nicht. TopFold wird vorbereitet und ist noch nicht öffentlich im Mac App Store. Es wird ein Einmalkauf für 4,99 € und diese Support-Seite wird mit der Veröffentlichung weiter ausgebaut."
+    },
+    "age": 7
   }
 ]

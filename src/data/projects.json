@@ -60,6 +60,18 @@
     "on_home": false
   },
   {
+    "slug": "topfold",
+    "name": "TopFold",
+    "category": "macOS utility",
+    "description": "Pins up to five real folders to the top edge of your screen and works like a Finder window.",
+    "description_de": "Hängt bis zu fünf echte Ordner an den oberen Bildschirmrand und lässt sich wie ein Finder-Fenster bedienen.",
+    "status": "Coming soon",
+    "status_de": "Demnächst",
+    "icon": "/assets/images/topfold/topfold.png",
+    "app_store_url": "",
+    "on_home": false
+  },
+  {
     "slug": "bookmer",
     "name": "Bookmer",
     "category": "Bookmark manager",

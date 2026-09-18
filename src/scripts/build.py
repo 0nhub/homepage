@@ -132,8 +132,29 @@ def blog_preview(post, lang):
     intro = blog_text(post, lang, 'intro').strip()
     return intro
 
+def blog_image_credit(figure, lang):
+    photographer = escape((figure or {}).get('photographer', '').strip())
+    creator_url = public_image((figure or {}).get('creator_url', ''))
+    source_url = public_image((figure or {}).get('source_url', ''))
+    if not photographer: return ''
+    creator = f'<a href="{escape(creator_url, quote=True)}" target="_blank" rel="noopener">{photographer}</a>' if creator_url else photographer
+    source = f'<a href="{escape(source_url, quote=True)}" target="_blank" rel="noopener">Unsplash</a>' if source_url else 'Unsplash'
+    prefix = 'Foto von' if lang == 'de' else 'Photo by'
+    connector = 'auf' if lang == 'de' else 'on'
+    return f'<p class="blog-image-credit">{prefix} {creator} {connector} {source}</p>'
+
+def blog_preview_image(post, lang):
+    """A single teaser image per card; falls back to a neutral placeholder."""
+    figure = post.get('preview') or post.get('hero') or {'src': '/images/blog/placeholder-wide.svg', 'alt': 'Placeholder', 'alt_de': 'Platzhalter'}
+    src = figure.get('src', '').strip()
+    if not src: return ''
+    return f'<div class="blog-card__thumb"><img src="{escape(ASSETS + src, quote=True)}" alt="{escape(blog_text(figure, lang, "alt"), quote=True)}" loading="lazy" width="720" height="450"></div>'
 def blog_cards(lang):
-    return '\n'.join(f'<a class="blog-card" href="{escape(blog_href(post, lang), quote=True)}"><p class="blog-card__meta">{escape(blog_date(post, lang))} · {escape(post.get("category", ""))}</p><h2>{escape(blog_text(post, lang, "title"))}</h2><p class="blog-card__preview">{escape(blog_preview(post, lang))}</p></a>' for post in sorted(BLOG, key=lambda item: item.get('date', ''), reverse=True))
+    cards = []
+    for post in sorted(BLOG, key=lambda item: item.get('date', ''), reverse=True):
+        figure = post.get('preview') or post.get('hero') or {}
+        cards.append(f'<article class="blog-card"><a class="blog-card__post" href="{escape(blog_href(post, lang), quote=True)}"><p class="blog-card__meta">{escape(blog_date(post, lang))}</p><h2>{escape(blog_text(post, lang, "title"))}</h2><p class="blog-card__preview">{escape(blog_text(post, lang, "excerpt"))}</p>{blog_preview_image(post, lang)}</a>{blog_image_credit(figure, lang)}</article>')
+    return '\n'.join(cards)
 
 def blog_social_html(copy):
     return f'''<nav class="about-layout__social" aria-label="{escape(copy['social_label'])}">
@@ -143,7 +164,47 @@ def blog_social_html(copy):
       <a href="https://www.producthunt.com/@sgroiga" rel="noopener" aria-label="Product Hunt"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M12 1.5a10.5 10.5 0 1 0 0 21 10.5 10.5 0 0 0 0-21ZM9.5 7h4.1a3.1 3.1 0 0 1 0 6.2H11.3V17H9.5V7Zm1.8 4.4h2.3a1.3 1.3 0 1 0 0-2.6h-2.3v2.6Z"/></svg></a>
     </nav>'''
 
+def blog_figure_html(figure, lang):
+    src = (figure or {}).get('src', '').strip()
+    if not src: return ''
+    alt = escape(blog_text(figure, lang, 'alt'), quote=True)
+    caption = escape(blog_text(figure, lang, 'caption'))
+    width = escape(str(figure.get('width', 720)), quote=True)
+    height = escape(str(figure.get('height', 450)), quote=True)
+    caption_html = f'<figcaption>{caption}</figcaption>' if caption else ''
+    loading = 'eager' if figure.get('eager') else 'lazy'
+    return f'<figure class="blog-figure blog-figure--{escape(figure.get("variant", "wide"), quote=True)}"><img src="{escape(ASSETS + src, quote=True)}" alt="{alt}" loading="{loading}" width="{width}" height="{height}">{caption_html}</figure>'
+def blog_section_media(section, lang):
+    """One image per block, never a gallery."""
+    return blog_figure_html(section.get('figure'), lang)
+def blog_editorial_html(post, lang):
+    """Newsletter-style single column: centered date and title, text blocks separated by figures."""
+    date_label = escape(blog_date(post, lang))
+    category = escape(post.get('category', ''))
+    title = escape(blog_text(post, lang, 'title'))
+    back_url = escape(localized_url('/blog/', lang), quote=True)
+    back_label = escape(I18N[lang]['back_to_blog'])
+    blocks = []
+    for section in post.get('sections', []):
+        heading = escape(blog_text(section, lang, 'title'))
+        body = paragraphs(blog_text(section, lang, 'body'))
+        if section.get('style') == 'chapter':
+            chapter_date = escape(blog_text(section, lang, 'date') or blog_date(post, lang))
+            blocks.append(f'<section class="blog-editorial__chapter"><p class="blog-editorial__meta">{chapter_date}</p><h2>{heading}</h2>{body}{blog_section_media(section, lang)}</section>')
+        else:
+            blocks.append(f'<section class="blog-editorial__section"><h3>{heading}</h3>{body}{blog_section_media(section, lang)}</section>')
+    return f'''<div class="blog-editorial">
+  <header class="blog-editorial__header">
+    <p class="blog-editorial__meta">{date_label}{(" · " + category) if category else ""}</p>
+    <h1 id="blog-heading">{title}</h1>
+  </header>
+  <p class="blog-editorial__intro">{escape(blog_text(post, lang, 'intro'))}</p>
+  {blog_figure_html(post.get('hero'), lang)}
+  {''.join(blocks)}
+  <div class="blog-editorial__footer"><a class="button" href="{back_url}">{back_label}</a></div>
+</div>'''
 def blog_article_html(post, lang):
+    if post.get('layout') == 'editorial': return blog_editorial_html(post, lang)
     sections = ''.join(f'<section class="blog-article__section"><h2>{escape(blog_text(section, lang, "title"))}</h2>{paragraphs(blog_text(section, lang, "body"))}</section>' for section in post.get('sections', []))
     date_label = escape(blog_date(post, lang))
     category = escape(post.get('category', ''))
@@ -152,6 +213,11 @@ def blog_article_html(post, lang):
     back_url = escape(localized_url('/blog/', lang), quote=True)
     back_label = escape(I18N[lang]['back_to_blog'])
     copy = I18N[lang]
+    preview = post.get('preview') or {}
+    preview_src = preview.get('src', '').strip()
+    article_image = ''
+    if preview_src:
+        article_image = f'<figure class="blog-article__hero"><img src="{escape(ASSETS + preview_src, quote=True)}" alt="{escape(blog_text(preview, lang, "alt"), quote=True)}" loading="eager" width="1600" height="900"><figcaption>{blog_image_credit(preview, lang)}</figcaption></figure>'
     return f'''<div class="wrap about-layout">
   <aside class="about-layout__profile">
     <img class="about-layout__photo" src="{ASSETS}/images/aboutme.jpg" alt="Gabriel Sgroi" width="280" height="280">
@@ -160,6 +226,7 @@ def blog_article_html(post, lang):
   </aside>
   <article class="about-layout__body prose blog-article" aria-labelledby="blog-heading">
     <header class="blog-article__header"><p class="eyebrow">{date_label} · {category}</p><h1 id="blog-heading">{title}</h1></header>
+    {article_image}
     <p class="blog-article__intro">{intro}</p>{sections}
     <div class="blog-article__back actions"><a class="button" href="{back_url}">{back_label}</a></div>
   </article>
@@ -211,7 +278,8 @@ def build():
         page('/blog/', copy['blog_title'] + ' — Gabriel Sgroi', copy['blog_desc'], blog_content, lang)
         for post in BLOG:
             article = blog_article_html(post, lang)
-            page('/blog/' + post['slug'] + '/', blog_text(post, lang, 'title') + ' — Gabriel Sgroi', blog_text(post, lang, 'excerpt'), article, lang)
+            preview_src = (post.get('preview') or {}).get('src', '').strip()
+            page('/blog/' + post['slug'] + '/', blog_text(post, lang, 'title') + ' — Gabriel Sgroi', blog_text(post, lang, 'excerpt'), article, lang, ASSETS + preview_src if preview_src else None)
         for name, path, title_key, desc_key in routes:
             source = page_source(name, lang)
             if source.exists(): page(path, copy[title_key] + ' — Gabriel Sgroi', copy[desc_key], Template(source.read_text()).substitute(values), lang, '/assets/images/aboutme.jpg' if name == 'about' else None)

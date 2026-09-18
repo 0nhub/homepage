@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 450" width="720" height="450" role="img" aria-label="Placeholder">
+  <rect width="720" height="450" fill="#f5f5f7"/>
+  <g>
+    <rect x="96" y="66" width="528" height="318" rx="16" fill="#fff" stroke="#e2e2e7" stroke-width="2"/>
+    <rect x="96" y="66" width="528" height="40" rx="16" fill="#fafafc"/>
+    <circle cx="122" cy="86" r="5" fill="#e2e2e7"/>
+    <circle cx="140" cy="86" r="5" fill="#e2e2e7"/>
+    <circle cx="158" cy="86" r="5" fill="#e2e2e7"/>
+    <rect x="124" y="136" width="200" height="12" rx="6" fill="#e9e9ee"/>
+    <rect x="124" y="164" width="330" height="10" rx="5" fill="#eeeef2"/>
+    <rect x="124" y="188" width="280" height="10" rx="5" fill="#eeeef2"/>
+    <rect x="124" y="228" width="140" height="120" rx="12" fill="#eeeef2"/>
+    <rect x="280" y="228" width="140" height="120" rx="12" fill="#f2f2f6"/>
+    <rect x="436" y="228" width="140" height="120" rx="12" fill="#eeeef2"/>
+  </g>
+  <text x="360" y="418" text-anchor="middle" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#b0b0b8" letter-spacing="1.4">PLACEHOLDER</text>
+</svg>
