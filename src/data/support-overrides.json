@@ -327,11 +327,11 @@
     "application": "Expand",
     "en": {
       "name": "Is Expand available on the App Store?",
-      "content": "Yes. Expand is available on the Mac App Store as Expand Board. The store listing provides the current compatibility information and delivers future app updates through the Mac App Store."
+      "content": "Yes. Expand is available on the Mac App Store as Expand Board for a one-time purchase of €7.99. There is no subscription. The store listing provides the current compatibility information and delivers future app updates through the Mac App Store."
     },
     "de": {
       "name": "Ist Expand im App Store verfügbar?",
-      "content": "Ja. Expand ist im Mac App Store als Expand Board verfügbar. Im Store findest du die aktuellen Kompatibilitätsangaben; zukünftige App-Updates werden über den Mac App Store bereitgestellt."
+      "content": "Ja. Expand ist im Mac App Store als Expand Board für einmalig 7,99 € erhältlich. Es gibt kein Abonnement. Im Store findest du die aktuellen Kompatibilitätsangaben; zukünftige App-Updates werden über den Mac App Store bereitgestellt."
     },
     "age": 13
   },
@@ -711,11 +711,11 @@
     "application": "TopFold",
     "en": {
       "name": "Is TopFold available on the App Store?",
-      "content": "Not yet. TopFold is still being prepared and is not public on the Mac App Store. This support page will grow as the app is released."
+      "content": "Not yet. TopFold is still being prepared and is not public on the Mac App Store. It will be a one-time purchase at €4.99, and this support page will grow as the app is released."
     },
     "de": {
       "name": "Ist TopFold im App Store verfügbar?",
-      "content": "Noch nicht. TopFold wird vorbereitet und ist noch nicht öffentlich im Mac App Store. Diese Support-Seite wird mit der Veröffentlichung weiter ausgebaut."
+      "content": "Noch nicht. TopFold wird vorbereitet und ist noch nicht öffentlich im Mac App Store. Es wird ein Einmalkauf für 4,99 € und diese Support-Seite wird mit der Veröffentlichung weiter ausgebaut."
     },
     "age": 7
   }
