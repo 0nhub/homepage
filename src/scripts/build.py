@@ -23,6 +23,7 @@ SUPPORT_OVERRIDES_PATH = SOURCE / 'data/support-overrides.json'
 ORIGIN = SITE['origin'].rstrip('/')
 PHONE = SITE.get('phone', '').strip()
 ASSET_VERSION = hashlib.sha1((SOURCE / 'assets/css/styles.css').read_bytes() + (SOURCE / 'assets/js/main.js').read_bytes()).hexdigest()[:10]
+ICON_VERSION = hashlib.sha1(b''.join(path.read_bytes() for path in sorted((SOURCE / 'assets/images').glob('*/*.png')) if path.is_file())).hexdigest()[:10]
 ASSETS = '/assets'
 LOGO = ASSETS + '/images/logo.png'
 SITEMAP_PATHS = []
@@ -53,7 +54,9 @@ def write(path, content):
 def local_projects(): return [p for p in PROJECTS if not p.get('url')]
 def project_href(project, root): return escape(project.get('url') or f"{root}/apps/{project['slug']}/", quote=True)
 def icon(project, extra=''):
-    if project['icon']: return f'<img class="app-icon {extra}" src="{escape(project["icon"])}" alt="" width="80" height="80">'
+    if project['icon']:
+        src = f'{project["icon"]}?v={ICON_VERSION}' if project['icon'].startswith('/') else project['icon']
+        return f'<img class="app-icon {extra}" src="{escape(src, quote=True)}" alt="" width="256" height="256" loading="eager" decoding="async">'
     return '<span class="app-icon monogram-icon" aria-hidden="true">2FA</span>'
 def public_image(value):
     if not isinstance(value, str): return ''
@@ -272,7 +275,7 @@ def build():
     SITEMAP_PATHS.clear(); ensure_photo_folders(); sync_assets(); clean_legacy_publish_trees(); articles = load_support_articles()
     routes = [('about','/about/','about_title','about_desc'),('legal','/legal/','legal_title','legal_desc'),('imprint','/legal/imprint/','imprint_title','imprint_desc'),('privacy','/legal/privacy/','privacy_title','privacy_desc'),('terms','/legal/terms/','terms_title','terms_desc'),('support','/Support/','support_title','support_desc'),('apps','/apps/','apps_title','apps_desc'),('contact','/contact/','contact_title','contact_desc'),('send-confirmation','/send-confirmation/','confirmation_title','confirmation_desc'),('kanboa','/kanboa/','kanboa_title','kanboa_desc'),('kanboa-project','/kanboa-project/','kanboa_project_title','kanboa_project_desc')]
     for lang in ('en','de'):
-        copy = I18N[lang]; root = locale_root(lang); home = locale_home(lang); values = {'latest_cards': latest_cards(lang, root, copy), 'project_cards': project_cards(lang, root, copy, PROJECTS), 'project_tiles': project_tiles(root), 'contact_email': escape(SITE['email']), 'contact_phone': escape(phone_display()), 'contact_phone_href': escape(phone_href(), quote=True), 'support_cards': dollar(support_cards(lang)), 'support_articles': '', 'root': root, 'home': home, 'assets': ASSETS, 'error_home': escape(copy['error_home']), 'nav_projects': escape(copy['nav_projects']), 'social_label': escape(copy['social_label']), 'price_free': '$0' if lang == 'en' else '0 €'}
+        copy = I18N[lang]; root = locale_root(lang); home = locale_home(lang); values = {'latest_cards': latest_cards(lang, root, copy), 'project_cards': project_cards(lang, root, copy, PROJECTS), 'project_tiles': project_tiles(root), 'contact_email': escape(SITE['email']), 'contact_phone': escape(phone_display()), 'contact_phone_href': escape(phone_href(), quote=True), 'support_cards': dollar(support_cards(lang)), 'support_articles': '', 'root': root, 'home': home, 'assets': ASSETS, 'error_home': escape(copy['error_home']), 'nav_projects': escape(copy['nav_projects']), 'social_label': escape(copy['social_label'])}
         source = page_source('home', lang); page('/', copy['home_title'], copy['home_desc'], Template(source.read_text()).substitute(values), lang, LOGO)
         blog_content = f'<section class="wrap blog-index"><header class="page-intro page-intro-plain"><h1>{escape(copy["blog_title"])}</h1></header><div class="blog-grid">{blog_cards(lang)}</div></section>'
         page('/blog/', copy['blog_title'] + ' — Gabriel Sgroi', copy['blog_desc'], blog_content, lang)
