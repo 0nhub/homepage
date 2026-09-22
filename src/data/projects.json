@@ -65,10 +65,10 @@
     "category": "macOS utility",
     "description": "Pins up to five real folders to the top edge of your screen and works like a Finder window.",
     "description_de": "Hängt bis zu fünf echte Ordner an den oberen Bildschirmrand und lässt sich wie ein Finder-Fenster bedienen.",
-    "status": "Coming soon",
-    "status_de": "Demnächst",
+    "status": "Meet the app",
+    "status_de": "Die App kennenlernen",
     "icon": "/assets/images/topfold/topfold.png",
-    "app_store_url": "",
+    "app_store_url": "https://apps.apple.com/de/app/topfold/id6813547478?l=en-GB&mt=12",
     "on_home": false
   },
   {

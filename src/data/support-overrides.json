@@ -711,11 +711,11 @@
     "application": "TopFold",
     "en": {
       "name": "Is TopFold available on the App Store?",
-      "content": "Not yet. TopFold is still being prepared and is not public on the Mac App Store. It will be a one-time purchase at €4.99, and this support page will grow as the app is released."
+      "content": "Yes. TopFold is now available on the Mac App Store. The store listing provides the current compatibility information and delivers future app updates through the Mac App Store."
     },
     "de": {
       "name": "Ist TopFold im App Store verfügbar?",
-      "content": "Noch nicht. TopFold wird vorbereitet und ist noch nicht öffentlich im Mac App Store. Es wird ein Einmalkauf für 4,99 € und diese Support-Seite wird mit der Veröffentlichung weiter ausgebaut."
+      "content": "Ja. TopFold ist jetzt im Mac App Store verfügbar. Im Store findest du die aktuellen Kompatibilitätsangaben; zukünftige App-Updates werden über den Mac App Store bereitgestellt."
     },
     "age": 7
   }
