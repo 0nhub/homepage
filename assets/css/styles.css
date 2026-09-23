@@ -1175,7 +1175,6 @@ a.support-card:hover { background: #ececf1; }
 }
 
 /* Contact topics */
-.contact-lead { color: var(--subtext-color); margin-top: 14px; }
 .contact-topic-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
 .contact-topic { display: flex; flex-direction: column; gap: 6px; padding: 22px 20px; border-radius: 18px; background: var(--secondary-bg); transition: background .2s, transform .2s; }
 .contact-topic:hover { background: #ededf0; }
