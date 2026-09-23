@@ -392,7 +392,7 @@ a.support-card:hover { background: #ececf1; }
 .empty-state p { color: var(--subtext-color); max-width: 520px; margin: 0 auto 20px; font-size: 18px; }
 
 /* Footer. */
-.site-footer { margin-top: auto; position: relative; z-index: 10; background: var(--footer-bg); border-top: 1px solid var(--border-color); padding: 34px 0; color: var(--subtext-color); }
+.site-footer { margin-top: auto; position: relative; z-index: 10; background: var(--footer-bg); border-top: 1px solid var(--border-color); padding: 34px 0 calc(96px + env(safe-area-inset-bottom, 0px)); color: var(--subtext-color); }
 .footer-top, .footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .footer-top { padding-bottom: 24px; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); }
 .footer-follow { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
