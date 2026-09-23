@@ -4,7 +4,7 @@
     "business": "eb251fec-8c82-4041-96a4-29fc01cfb8c3"
   },
   "topics": [
-    {"slug": "support", "form": "general", "name": "Support", "name_de": "Support", "description": "Help with one of my apps.", "description_de": "Hilfe zu einer meiner Apps."},
+    {"slug": "support", "form": "general", "href": "/Support/", "name": "Support", "name_de": "Support", "description": "Help with one of my apps.", "description_de": "Hilfe zu einer meiner Apps."},
     {"slug": "bug-report", "form": "general", "name": "Bug Report", "name_de": "Fehlerbericht", "description": "Something isn’t working as expected.", "description_de": "Etwas funktioniert nicht wie erwartet."},
     {"slug": "product-feedback", "form": "general", "name": "Product Feedback", "name_de": "Produktfeedback", "description": "Share your experience with one of my apps.", "description_de": "Teile deine Erfahrung mit einer meiner Apps."},
     {"slug": "legal-licensing", "form": "general", "name": "Legal & Licensing", "name_de": "Recht & Lizenzen", "description": "Licenses, rights and legal questions.", "description_de": "Lizenzen, Rechte und rechtliche Fragen."},

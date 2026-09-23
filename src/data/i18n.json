@@ -52,6 +52,8 @@
     "error_home": "Home",
     "confirmation_title": "Message sent — Gabriel Sgroi",
     "confirmation_desc": "Your message has been successfully submitted. We’ll get back to you soon.",
+    "request_confirmation_title": "Request declined",
+    "request_confirmation_desc": "Your request cannot be processed.",
 
     "back_to_blog": "Back to blog",
     "blog_kicker": "Notes from my toolkit",
@@ -117,6 +119,8 @@
     "error_home": "Startseite",
     "confirmation_title": "Nachricht gesendet — Gabriel Sgroi",
     "confirmation_desc": "Deine Nachricht ist erfolgreich übermittelt worden. Wir werden uns bald melden.",
+    "request_confirmation_title": "Anfrage abgelehnt",
+    "request_confirmation_desc": "Deine Anfrage kann nicht bearbeitet werden.",
 
     "back_to_blog": "Zurück zum Blog",
     "blog_kicker": "Notizen aus meinem Toolkit",
