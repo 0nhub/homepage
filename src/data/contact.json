@@ -1,0 +1,16 @@
+{
+  "forms": {
+    "general": "d47406c2-1601-4834-96b4-4d4a5247dc87",
+    "business": "eb251fec-8c82-4041-96a4-29fc01cfb8c3"
+  },
+  "topics": [
+    {"slug": "support", "form": "general", "name": "Support", "name_de": "Support", "description": "Help with one of my apps.", "description_de": "Hilfe zu einer meiner Apps."},
+    {"slug": "bug-report", "form": "general", "name": "Bug Report", "name_de": "Fehlerbericht", "description": "Something isn’t working as expected.", "description_de": "Etwas funktioniert nicht wie erwartet."},
+    {"slug": "product-feedback", "form": "general", "name": "Product Feedback", "name_de": "Produktfeedback", "description": "Share your experience with one of my apps.", "description_de": "Teile deine Erfahrung mit einer meiner Apps."},
+    {"slug": "legal-licensing", "form": "general", "name": "Legal & Licensing", "name_de": "Recht & Lizenzen", "description": "Licenses, rights and legal questions.", "description_de": "Lizenzen, Rechte und rechtliche Fragen."},
+    {"slug": "partnership", "form": "business", "name": "Partnership", "name_de": "Partnerschaft", "description": "Long-term business partnerships.", "description_de": "Langfristige Geschäftspartnerschaften."},
+    {"slug": "collaboration", "form": "business", "name": "Collaboration", "name_de": "Zusammenarbeit", "description": "Build something together.", "description_de": "Gemeinsam etwas bauen."},
+    {"slug": "marketing-offer", "form": "business", "name": "Marketing Offer", "name_de": "Marketingangebot", "description": "Promotion and marketing proposals.", "description_de": "Werbe- und Marketingvorschläge."},
+    {"slug": "place-offer", "form": "business", "name": "Place Offer", "name_de": "Platzierungsangebot", "description": "Offer a placement or listing.", "description_de": "Eine Platzierung oder Listung anbieten."}
+  ]
+}

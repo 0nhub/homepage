@@ -319,7 +319,7 @@ if (supportFeed && supportFeed.getAttribute('data-support-feed')) {
       }
     });
 
-    const safeEmail = escapeHtml(email);
+    const supportHref = `${document.documentElement.lang === 'de' ? '/de' : ''}/contact/support/`;
     return ordered.map(([label, app]) => {
       const items = grouped.get(label) || [];
       const identifier = sectionId(label, app, taken);
@@ -328,8 +328,7 @@ if (supportFeed && supportFeed.getAttribute('data-support-feed')) {
       if (items.length) {
         return `<section class="answer-group" id="${escapeHtml(identifier)}" aria-labelledby="${titleId}"><h2 id="${titleId}">${heading}</h2>${items.map(articleHtml).join('')}</section>`;
       }
-      const subject = encodeURIComponent(`${app ? app.name : label} Support`);
-      return `<section class="answer-group" id="${escapeHtml(identifier)}" aria-labelledby="${titleId}"><h2 id="${titleId}">${heading}</h2><p class="answers-empty">${escapeHtml(emptyLead)} <a href="mailto:${safeEmail}?subject=${subject}">${escapeHtml(send)}</a> ${escapeHtml(mention)}</p></section>`;
+      return `<section class="answer-group" id="${escapeHtml(identifier)}" aria-labelledby="${titleId}"><h2 id="${titleId}">${heading}</h2><p class="answers-empty">${escapeHtml(emptyLead)} <a href="${supportHref}">${escapeHtml(send)}</a> ${escapeHtml(mention)}</p></section>`;
     }).join('');
   };
 
@@ -471,3 +470,52 @@ if (notifyForm) {
     }
   });
 }
+
+(() => {
+  const targets = document.querySelectorAll('[data-protected-email]');
+  if (!targets.length || !window.crypto) return;
+  const alphabet = 'abcdefghijkmnpqrstuvwxyz23456789';
+  const values = crypto.getRandomValues(new Uint32Array(5));
+  const address = `${Array.from(values, (value) => alphabet[value % alphabet.length]).join('')}@contact.sgroi.ga`;
+  const ratio = window.devicePixelRatio || 1;
+  targets.forEach((target) => {
+    const canvas = target.querySelector('canvas');
+    const context = canvas && canvas.getContext('2d');
+    if (!context) return;
+    const style = getComputedStyle(target);
+    const size = parseFloat(style.fontSize) || 16;
+    const font = `500 ${size}px ${style.fontFamily}`;
+    context.font = font;
+    const characters = [...address];
+    const widths = characters.map((character) => context.measureText(character).width);
+    const spacing = size * 0.04;
+    const width = Math.ceil(widths.reduce((sum, value) => sum + value + spacing, 0) + 6);
+    const height = Math.ceil(size * 1.6);
+    canvas.width = width * ratio;
+    canvas.height = height * ratio;
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
+    context.scale(ratio, ratio);
+    context.font = font;
+    context.fillStyle = style.color;
+    context.textBaseline = 'middle';
+    let x = 3;
+    characters.forEach((character, index) => {
+      context.save();
+      context.translate(x + widths[index] / 2, height / 2 + (Math.random() - 0.5) * size * 0.14);
+      context.rotate((Math.random() - 0.5) * 0.16);
+      context.fillText(character, -widths[index] / 2, 0);
+      context.restore();
+      x += widths[index] + spacing;
+    });
+    context.globalAlpha = 0.22;
+    context.strokeStyle = style.color;
+    context.lineWidth = 0.8;
+    for (let line = 0; line < 3; line += 1) {
+      context.beginPath();
+      context.moveTo(0, Math.random() * height);
+      context.bezierCurveTo(width / 3, Math.random() * height, (width * 2) / 3, Math.random() * height, width, Math.random() * height);
+      context.stroke();
+    }
+  });
+})();

@@ -17,6 +17,7 @@ SITE = json.loads((SOURCE / 'data/site.json').read_text())
 PROJECTS = json.loads((SOURCE / 'data/projects.json').read_text())
 LAYOUT = Template((SOURCE / 'templates/layout.html').read_text())
 I18N = json.loads((SOURCE / 'data/i18n.json').read_text())
+CONTACT = json.loads((SOURCE / 'data/contact.json').read_text())
 BLOG = json.loads((SOURCE / 'data/blog.json').read_text()) if (SOURCE / 'data/blog.json').exists() else []
 GALLERY_FEED = SITE.get('gallery_feed', '').strip()
 SUPPORT_OVERRIDES_PATH = SOURCE / 'data/support-overrides.json'
@@ -92,15 +93,14 @@ def support_page_html(project, articles, copy, lang):
         if matched == project or str(row.get('application') or '').strip().casefold() in {project['name'].casefold(), project['slug'].casefold()}:
             rows.append(row)
     rows.sort(key=lambda r: (position_key(r), ((r.get(lang) or r.get('en') or r).get('name') or '').casefold()))
-    email = escape(SITE['email'])
     if rows: answers = ''.join(article_html(r, lang) for r in rows)
-    else: answers = f'<p class="answers-empty">{escape(copy["answers_empty"])} <a href="mailto:{email}?subject={quote(project["name"] + " Support")}">{escape(copy["answers_send"])}</a> {escape(copy["answers_mention"])}</p>'
+    else: answers = f'<p class="answers-empty">{escape(copy["answers_empty"])} <a href="{locale_root(lang)}/contact/support/">{escape(copy["answers_send"])}</a> {escape(copy["answers_mention"])}</p>'
     intro = f'<section class="support-hero product-hero" aria-labelledby="support-product-title">{icon(project)}<h1 id="support-product-title">{escape(project["name"])} Support</h1></section>'
     contact_label = 'Kontakt' if lang == 'de' else 'Contact'
     search_placeholder = 'Suche' if lang == 'de' else 'Search'
     search_label = 'Support durchsuchen' if lang == 'de' else 'Search support'
     search_box = f'<div class="support-search"><label for="support-search">{escape(search_label)}</label><input id="support-search" type="search" placeholder="{search_placeholder}" autocomplete="off" data-support-search></div>'
-    return f'<div class="wrap"><header class="support-page-header">{intro}</header>{search_box}<div class="support-answers"><section class="answer-group is-open" id="{escape(project["slug"])}">{answers}</section></div><div class="support-contact-link"><a class="button" href="{locale_root(lang)}/contact/">{contact_label}</a></div></div>'
+    return f'<div class="wrap"><header class="support-page-header">{intro}</header>{search_box}<div class="support-answers"><section class="answer-group is-open" id="{escape(project["slug"])}">{answers}</section></div><div class="support-contact-link"><a class="button" href="{locale_root(lang)}/contact/support/">{contact_label}</a></div></div>'
 def product_gallery_html(project, lang):
     folder = SOURCE / 'assets/images' / project['slug'] / 'photos'
     images = sorted([p for p in folder.iterdir() if p.is_file() and p.suffix.lower() in PHOTO_EXTS]) if folder.exists() else []
@@ -234,11 +234,31 @@ def blog_article_html(post, lang):
     <div class="blog-article__back actions"><a class="button" href="{back_url}">{back_label}</a></div>
   </article>
 </div>'''
+def contact_topic_cards(lang):
+    return '\n'.join(f'    <a class="contact-topic" href="{locale_root(lang)}/contact/{t["slug"]}/"><span class="contact-topic__name">{escape(text_for(t, lang, "name"))}</span><span class="contact-topic__desc">{escape(text_for(t, lang, "description"))}</span></a>' for t in CONTACT['topics'])
+def contact_topic_page_html(topic, lang):
+    form_id = escape(CONTACT['forms'][topic['form']], quote=True)
+    return f'<div class="wrap contact-page"><header class="page-intro"><h1>{escape(text_for(topic, lang, "name"))}</h1></header><section class="contact-form" aria-label="{escape(text_for(topic, lang, "name"), quote=True)}"><div class="deftform" data-form-id="{form_id}" data-form-width="100%" data-form-align="center" data-form-auto-height="1"></div><script src="https://cdn.deftform.com/embed.js"></script></section></div>'
+EMAIL_SCOPES = {
+    'privacy': ('This address is <strong>only for privacy and data protection requests</strong>.', 'Diese Adresse gilt <strong>ausschließlich für Anfragen zum Datenschutz</strong>.'),
+    'terms': ('This address is <strong>only for questions about these Terms</strong>.', 'Diese Adresse gilt <strong>ausschließlich für Fragen zu diesen Nutzungsbedingungen</strong>.'),
+    'legal': ('This address is <strong>only for legal inquiries</strong>.', 'Diese Adresse gilt <strong>ausschließlich für rechtliche Anfragen</strong>.'),
+}
+def protected_email(lang, scope):
+    de = lang == 'de'; root = locale_root(lang)
+    scope_text = EMAIL_SCOPES[scope][1 if de else 0]
+    if de:
+        rest = f'Für alle anderen Anliegen – insbesondere Support, Fehlerberichte, Feedback, Marketing, Partnerschaften oder Kooperationen – nutze bitte die <a href="{root}/contact/">Kontaktseite</a>. Anfragen dieser Art an die E-Mail-Adresse werden nicht bearbeitet.'
+        label, important, hint, nojs = 'E-Mail-Adresse als Bild', 'Wichtig:', 'Die Adresse bitte abtippen.', 'Bitte JavaScript aktivieren, um die E-Mail-Adresse zu sehen.'
+    else:
+        rest = f'For everything else – in particular support, bug reports, feedback, marketing, partnerships or collaborations – please use the <a href="{root}/contact/">contact page</a>. Such requests sent to this email address will not be handled.'
+        label, important, hint, nojs = 'Email address as image', 'Important:', 'Please type the address manually.', 'Please enable JavaScript to see the email address.'
+    return f'<span class="protected-email" data-protected-email><canvas class="protected-email__canvas" role="img" aria-label="{label}" width="0" height="0"></canvas><noscript>{nojs}</noscript></span><span class="email-notice" role="note"><strong>{important}</strong> {scope_text} {rest} <span class="email-notice__hint">{hint}</span></span>'
 def page(path, title, description, content, lang, image=None):
     copy = I18N[lang]; root = locale_root(lang); home = locale_home(lang); localized = localized_url(path, lang); en_url = localized_url(path, 'en'); de_url = localized_url(path, 'de'); url = ORIGIN + localized
     social = ''
     if image: social = f'<meta property="og:image" content="{escape(ORIGIN + image, quote=True)}"><meta name="twitter:image" content="{escape(ORIGIN + image, quote=True)}">'
-    output = LAYOUT.substitute(html_lang=lang, title=escape(title), description=escape(description), canonical=escape(url), hreflang_en=escape(ORIGIN + en_url), hreflang_de=escape(ORIGIN + de_url), year=escape(SITE['year']), app_store_url=escape(SITE['app_store_url'] or root + '/apps/', quote=True), content=content, social_image=social, twitter_card='summary', projects_current='aria-current="page"' if path == '/apps/' else '', support_current='aria-current="page"' if path == '/Support/' else '', about_current='aria-current="page"' if path == '/about/' else '', blog_url=escape(localized_url('/blog/', lang), quote=True), home=home, root=root, assets=ASSETS, asset_version=ASSET_VERSION, lang_switch_href=escape(de_url if lang == 'en' else en_url, quote=True), lang_switch_label='EN' if lang == 'en' else 'DE', lang_switch_code=lang, lang_switch_aria='Auf Deutsch wechseln' if lang == 'en' else 'Switch to English', skip=escape(copy['skip']), home_label=escape(copy['home_label']), nav_about=escape(copy['nav_about']), nav_projects=escape(copy['nav_projects']), nav_support=escape(copy['nav_support']), nav_blog=escape(copy['nav_blog']), nav_main=escape(copy['nav_main']), nav_legal=escape(copy['nav_legal']), menu=escape(copy['menu']), follow_me=escape(copy['follow_me']), social_label=escape(copy['social_label']), footer_tag=escape(copy['footer_tag']), footer_tag_url=escape(copy['footer_tag_url'], quote=True), back_top=escape(copy['back_top']), imprint=escape(copy['imprint']), privacy=escape(copy['privacy']), terms=escape(copy['terms']))
+    output = LAYOUT.substitute(html_lang=lang, title=escape(title), description=escape(description), canonical=escape(url), hreflang_en=escape(ORIGIN + en_url), hreflang_de=escape(ORIGIN + de_url), year=escape(SITE['year']), app_store_url=escape(SITE['app_store_url'] or root + '/apps/', quote=True), content=content, social_image=social, twitter_card='summary', projects_current='aria-current="page"' if path == '/apps/' else '', support_current='aria-current="page"' if path == '/Support/' else '', about_current='aria-current="page"' if path == '/about/' else '', contact_current='aria-current="page"' if path.startswith('/contact/') else '', nav_contact=escape(copy['nav_contact']), blog_url=escape(localized_url('/blog/', lang), quote=True), home=home, root=root, assets=ASSETS, asset_version=ASSET_VERSION, lang_switch_href=escape(de_url if lang == 'en' else en_url, quote=True), lang_switch_label='EN' if lang == 'en' else 'DE', lang_switch_code=lang, lang_switch_aria='Auf Deutsch wechseln' if lang == 'en' else 'Switch to English', skip=escape(copy['skip']), home_label=escape(copy['home_label']), nav_about=escape(copy['nav_about']), nav_projects=escape(copy['nav_projects']), nav_support=escape(copy['nav_support']), nav_blog=escape(copy['nav_blog']), nav_main=escape(copy['nav_main']), nav_legal=escape(copy['nav_legal']), menu=escape(copy['menu']), follow_me=escape(copy['follow_me']), social_label=escape(copy['social_label']), footer_tag=escape(copy['footer_tag']), footer_tag_url=escape(copy['footer_tag_url'], quote=True), back_top=escape(copy['back_top']), imprint=escape(copy['imprint']), privacy=escape(copy['privacy']), terms=escape(copy['terms']))
     write(output_file(localized), output)
     hidden = localized.endswith('error-page.html') or localized in ('/review/', '/kanboa-project/', '/de/kanboa-project/')
     if localized not in SITEMAP_PATHS and not hidden: SITEMAP_PATHS.append(localized)
@@ -275,7 +295,7 @@ def build():
     SITEMAP_PATHS.clear(); ensure_photo_folders(); sync_assets(); clean_legacy_publish_trees(); articles = load_support_articles()
     routes = [('about','/about/','about_title','about_desc'),('legal','/legal/','legal_title','legal_desc'),('imprint','/legal/imprint/','imprint_title','imprint_desc'),('privacy','/legal/privacy/','privacy_title','privacy_desc'),('terms','/legal/terms/','terms_title','terms_desc'),('support','/Support/','support_title','support_desc'),('apps','/apps/','apps_title','apps_desc'),('contact','/contact/','contact_title','contact_desc'),('send-confirmation','/send-confirmation/','confirmation_title','confirmation_desc'),('kanboa','/kanboa/','kanboa_title','kanboa_desc'),('kanboa-project','/kanboa-project/','kanboa_project_title','kanboa_project_desc')]
     for lang in ('en','de'):
-        copy = I18N[lang]; root = locale_root(lang); home = locale_home(lang); values = {'latest_cards': latest_cards(lang, root, copy), 'project_cards': project_cards(lang, root, copy, PROJECTS), 'project_tiles': project_tiles(root), 'contact_email': escape(SITE['email']), 'contact_phone': escape(phone_display()), 'contact_phone_href': escape(phone_href(), quote=True), 'support_cards': dollar(support_cards(lang)), 'support_articles': '', 'root': root, 'home': home, 'assets': ASSETS, 'error_home': escape(copy['error_home']), 'nav_projects': escape(copy['nav_projects']), 'social_label': escape(copy['social_label'])}
+        copy = I18N[lang]; root = locale_root(lang); home = locale_home(lang); values = {'latest_cards': latest_cards(lang, root, copy), 'project_cards': project_cards(lang, root, copy, PROJECTS), 'project_tiles': project_tiles(root), 'email_privacy': protected_email(lang, 'privacy'), 'email_terms': protected_email(lang, 'terms'), 'email_legal': protected_email(lang, 'legal'), 'contact_phone': escape(phone_display()), 'contact_phone_href': escape(phone_href(), quote=True), 'support_cards': dollar(support_cards(lang)), 'support_articles': '', 'root': root, 'home': home, 'assets': ASSETS, 'error_home': escape(copy['error_home']), 'nav_projects': escape(copy['nav_projects']), 'social_label': escape(copy['social_label']), 'contact_topics': contact_topic_cards(lang)}
         source = page_source('home', lang); page('/', copy['home_title'], copy['home_desc'], Template(source.read_text()).substitute(values), lang, LOGO)
         blog_content = f'<section class="wrap blog-index"><header class="page-intro page-intro-plain"><h1>{escape(copy["blog_title"])}</h1></header><div class="blog-grid">{blog_cards(lang)}</div></section>'
         page('/blog/', copy['blog_title'] + ' — Gabriel Sgroi', copy['blog_desc'], blog_content, lang)
@@ -286,6 +306,8 @@ def build():
         for name, path, title_key, desc_key in routes:
             source = page_source(name, lang)
             if source.exists(): page(path, copy[title_key] + ' — Gabriel Sgroi', copy[desc_key], Template(source.read_text()).substitute(values), lang, '/assets/images/aboutme.jpg' if name == 'about' else None)
+        for topic in CONTACT['topics']:
+            page('/contact/' + topic['slug'] + '/', text_for(topic, lang, 'name') + ' — ' + copy['contact_title'] + ' — Gabriel Sgroi', text_for(topic, lang, 'description'), contact_topic_page_html(topic, lang), lang)
         if lang == 'en':
             review_source = page_source('review', lang)
             if review_source.exists():

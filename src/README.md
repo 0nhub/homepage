@@ -18,6 +18,7 @@ Im Projektordner liegen nur `index.html`, `error-page.html` und der Ordner `src/
 | `/src/legal/privacy/` | Gemeinsame, produktunabhängige Datenschutzseite |
 | `/src/legal/terms/` | Gemeinsame, produktunabhängige Nutzungsbedingungen |
 | `/src/Support/` | Gemeinsamer Kontakt und Hilfeartikel, nach App gruppiert |
+| `/contact/` | Kontakt-Themenübersicht; jedes Thema hat eine eigene Seite `/contact/<thema>/` (Themen und Formular-IDs in `src/data/contact.json`) |
 | `/src/apps/` | Ehrliche Zwischenlösung, bis echte App-Store-URLs vorliegen |
 
 Verzeichnisse mit `index.html` funktionieren auf gewöhnlichem statischem Hosting, ohne clientseitiges Routing. Der Webserver ergänzt bei `/legal/privacy` normalerweise den abschließenden Slash.
