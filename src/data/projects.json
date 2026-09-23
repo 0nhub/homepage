@@ -8,8 +8,7 @@
     "status": "Meet the app",
     "status_de": "Die App kennenlernen",
     "icon": "/assets/images/menu-launcher/launcher.png",
-    "app_store_url": "https://apps.apple.com/app/menu-launcher/id6806591610",
-    "on_home": true
+    "app_store_url": "https://apps.apple.com/app/menu-launcher/id6806591610"
   },
   {
     "slug": "menu-2fa",
@@ -20,8 +19,7 @@
     "status": "Meet the app",
     "status_de": "Die App kennenlernen",
     "icon": "/assets/images/menu-2fa/menu2FA.png",
-    "app_store_url": "https://apps.apple.com/de/app/menu-2fa/id6806774047?l=en-GB&mt=12",
-    "on_home": true
+    "app_store_url": "https://apps.apple.com/de/app/menu-2fa/id6806774047?l=en-GB&mt=12"
   },
   {
     "slug": "menu-linguo",
@@ -32,8 +30,7 @@
     "status": "Meet the app",
     "status_de": "Die App kennenlernen",
     "icon": "/assets/images/menu-linguo/menu-linguo.png",
-    "app_store_url": "https://apps.apple.com/de/app/menu-linguo/id6811692107?l=en-GB&mt=12",
-    "on_home": false
+    "app_store_url": "https://apps.apple.com/de/app/menu-linguo/id6811692107?l=en-GB&mt=12"
   },
   {
     "slug": "menu-runner",
@@ -44,8 +41,7 @@
     "status": "Meet the app",
     "status_de": "Die App kennenlernen",
     "icon": "/assets/images/menu-runner/menu-runner.png",
-    "app_store_url": "https://apps.apple.com/de/app/menu-runner/id6811438145?l=en-GB&mt=12",
-    "on_home": false
+    "app_store_url": "https://apps.apple.com/de/app/menu-runner/id6811438145?l=en-GB&mt=12"
   },
   {
     "slug": "expand",
@@ -56,8 +52,7 @@
     "status": "Meet the app",
     "status_de": "Die App kennenlernen",
     "icon": "/assets/images/expand/expand.png",
-    "app_store_url": "https://apps.apple.com/de/app/expand-board/id6809594353?l=en-GB&mt=12",
-    "on_home": false
+    "app_store_url": "https://apps.apple.com/de/app/expand-board/id6809594353?l=en-GB&mt=12"
   },
   {
     "slug": "topfold",
@@ -68,8 +63,7 @@
     "status": "Meet the app",
     "status_de": "Die App kennenlernen",
     "icon": "/assets/images/topfold/topfold.png",
-    "app_store_url": "https://apps.apple.com/de/app/topfold/id6813547478?l=en-GB&mt=12",
-    "on_home": false
+    "app_store_url": "https://apps.apple.com/de/app/topfold/id6813547478?l=en-GB&mt=12"
   },
   {
     "slug": "bookmer",
