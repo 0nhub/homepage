@@ -83,8 +83,93 @@ Für Apache wird zusätzlich `.htaccess` mit HTTP-301-Weiterleitungen erzeugt. `
 
 Zur Orientierung geprüft: [§ 5 DDG](https://www.gesetze-im-internet.de/ddg/__5.html), [DSGVO](https://eur-lex.europa.eu/eli/reg/2016/679/oj), [Apple-Mindestbedingungen für eigene EULAs](https://www.apple.com/legal/internet-services/itunes/dev/minterms/), [Apple-Standard-EULA](https://www.apple.com/legal/internet-services/itunes/dev/stdeula/). Diese Verweise ersetzen keine individuelle Rechtsprüfung.
 
-## Hosting
+## Hosting und Veröffentlichung
 
-Die vorhandene statische Architektur und Domain bleiben erhalten. Es wurde kein neues Hosting-Projekt angelegt, kein DNS geändert und nichts veröffentlicht. Für den bestehenden Hoster sind `index.html`, `error-page.html`, `src/` und gegebenenfalls `.htaccess` bzw. `_redirects` relevant.
+Die Website wird als statische Website über GitHub Pages im Legacy-Modus veröffentlicht. Das heißt:
+
+- Branch: `main`
+- Auslieferung: Root-Ordner `/`
+- Build: kein GitHub Actions/Workflow
+- Veröffentlichung: ausschließlich durch Pushes auf `main`
+- Keine andere Publikationslogik ist aktiv
+
+Die Website lebt daher nicht aus `src/` oder einem Workflow heraus. Die wirklich veröffentlichte Ausgabe besteht aus den generierten HTML-Dateien im Repository-Root (`index.html`, `blog/...`, `legal/...`, `de/...`, usw.).
+
+### Standard-Workflow für jede Veröffentlichung
+
+1. Änderungen im Quellcode im richtigen Branch machen.
+2. Falls Inhalte, Templates oder Generatorlogik geändert wurden, build ausführen:
+
+```sh
+python3 src/scripts/build.py
+```
+
+3. Danach sicherstellen, dass die generierten HTML-Dateien im Root aktualisiert sind und committed werden. Wichtige Regel: Es reicht nicht, nur `src/` zu committen; die tatsächlichen publizierten Seiten liegen im Root.
+4. `main` aktualisieren:
+
+```sh
+git fetch origin
+```
+
+5. Falls der aktuelle Branch nicht `main` ist, auf `main` wechseln bzw. fast-forward mit `origin/main` und anschließend den Branch in `main` pushen. Der Veröffentlichungsweg ist immer direkt auf `main`, nicht über einen Workflow oder einen separaten Deploy-Branch.
+6. Pushen auf GitHub:
+
+```sh
+git push origin HEAD:main
+git push origin HEAD
+```
+
+7. Nach dem Push warten, bis GitHub Pages den Build fertiggestellt hat.
+
+### Verifikation nach dem Publish
+
+Nach dem Push muss die Seite live geprüft werden. Das ist der einzige Nachweis der Veröffentlichung:
+
+```sh
+gh api repos/0nhub/homepage/pages/builds/latest --jq '.status+" "+.commit[0:7]'
+```
+
+Erwartung: der Status muss auf `built <commit>` laufen. Wenn der Status noch `building` ist, warten. Danach live prüfen:
+
+```sh
+curl -s "https://sgroi.ga/blog/?x=$RANDOM"
+curl -s "https://sgroi.ga/blog/keyboard-shortcuts-the-hidden-superpowers/?x=$RANDOM"
+```
+
+Nur so ist die Veröffentlichung als erfolgreich bestätigt.
+
+### Build- und Commit-Regel
+
+Der komplette, verbindliche Ablauf für Content- und Layout-Änderungen ist:
+
+```sh
+python3 src/scripts/build.py
+
+git add -A
+
+git commit -m "Rebuild static pages" -m "Co-authored-by: Copilot App <223556219+Copilot@users.noreply.github.com>"
+```
+
+Wenn der aktuelle Branch nach `origin/main` noch nicht in `main` liegt, erst fast-forward oder rebase, dann builden und committen, dann auf `main` pushen.
+
+### Absolute Regeln für die Kommunikation
+
+Diese Punkte müssen in allen Gesprächen und Beschreibungen beachtet werden:
+
+- Keine Behauptung wie „es gibt keinen Publish-Weg“ ohne vorherige Prüfung des Repos.
+- Keine Bezugnahme auf einen Workflow, wenn das Repo bewusst keinen Workflow hat.
+- Die tatsächliche Publikation erfolgt immer durch Push auf `main`.
+- Generierte HTML im Root muss bei jeder Veröffentlichung aktuell und committed sein.
+- `src/` allein ist nie die Live-Ausgabe.
+- Ein lokaler Preview ist lediglich eine Validierung; er ersetzt keine Veröffentlichung.
+- Der reale Nachweis der Live-Veröffentlichung ist ein erfolgreiches GitHub Pages Build und ein HTTP-Check auf `https://sgroi.ga` bzw. der Ziel-URL.
+
+### Allgemeine Arbeitsregeln
+
+1. Prüfungen zuerst auf die tatsächliche Repo-Architektur; nicht auf Vermutungen.
+2. Lokale Vorschau nur als Test; nicht als Beweis für Live-Publikation.
+3. Bei Änderungen an Inhalten, CSS, Blog-Posts oder Seiten immer builden und die generierten Root-Dateien mitcommitten.
+4. Publikationsanweisungen immer anhand der realen Hosting-Architektur formulieren.
+5. Wenn eine Änderung live sein soll, muss sie auf `main` publiziert werden; nicht nur in einem Feature-Branch.
 
 Die Originaldateien wurden vor der Umstellung zusätzlich unter `/tmp/sgroi-before-restructure/` gesichert; dieses temporäre Verzeichnis ist kein dauerhaftes Backup.
