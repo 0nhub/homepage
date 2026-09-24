@@ -1,5 +1,74 @@
 [
   {
+    "slug": "keyboard-shortcuts-the-hidden-superpowers",
+    "date": "2026-09-24",
+    "category": "Productivity",
+    "preview": {
+      "src": "/images/blog/unsplash/keyboard-shortcuts.jpg",
+      "alt": "A keyboard and a mouse on a desk",
+      "alt_de": "Eine Tastatur und eine Maus auf einem Schreibtisch",
+      "source_url": "https://unsplash.com/photos/a-keyboard-and-a-mouse-on-a-desk--xCjYkaJqqY",
+      "photographer": "Kübra Arslaner",
+      "creator_url": "https://unsplash.com/@kubraarslaner"
+    },
+    "title": "Keyboard Shortcuts: The Hidden Superpowers",
+    "title_de": "Tastaturkürzel: Die verborgenen Superkräfte",
+    "excerpt": "A few keyboard shortcuts can reduce friction, speed up your workflow, and keep you in the flow.",
+    "excerpt_de": "Ein paar Tastaturkürzel reduzieren Reibung, beschleunigen deinen Workflow und halten dich im Flow.",
+    "intro": "No matter which operating system you use, I believe one of the most fundamental skills you should master is keyboard shortcuts. Small combinations that help you execute interactions quickly and without friction. I want to share a few of the most useful shortcuts that changed the way I work. Some are obvious, but several of them were not obvious to me at first. I hope a few of these will help you work a little faster and with less interruption.",
+    "intro_de": "Egal, welches Betriebssystem du nutzt, glaube ich, dass eine der grundlegendsten Fähigkeiten, die man beherrschen sollte, Tastaturkürzel sind. Kleine Kombinationen, die dabei helfen, Interaktionen schnell und ohne Reibung auszuführen. Ich möchte dir einige der nützlichsten Kürzel zeigen, die meinen Arbeitsalltag verändert haben. Einige sind selbstverständlich, aber einige davon waren für mich am Anfang nicht sofort ersichtlich. Ich hoffe, dass dir ein paar davon helfen, schneller und mit weniger Unterbrechungen zu arbeiten.",
+    "sections": [
+      {
+        "title": "The Ones That Changed My Workflow",
+        "title_de": "Die Kürzel, die meinen Workflow verändert haben",
+        "body": "<p>The best shortcuts are the ones that remove friction from everyday work. They are small, but they matter a lot over time.</p><p><strong>⌥ ⇧ ⌘ V (Paste Without Formatting)</strong><br>Paste without formatting strips styling and keeps the content clean. This is especially useful when copying text from the web or other documents.</p><p><strong>⌥ ⌘ Delete (Delete File Immediately)</strong><br>When you select a file and press Option + Command + Delete, it disappears immediately instead of going to the Trash.</p><p><strong>Return / Enter (Rename)</strong><br>Instead of right-clicking and searching the menu, just select a file and press Return. It renames instantly.</p><p><strong>⌘ W (Close Window)</strong><br>Command + W closes the active window, while Command + Q quits the app entirely.</p><p><strong>⌘ H (Hide Window)</strong><br>Command + H hides the current app window, keeping the exact state intact.</p><p><strong>⌘ F (Search)</strong><br>This is one of the most universal shortcuts and works across apps and browsers.</p><p><strong>Space (Preview)</strong><br>Hover over a file and press Space to preview it without opening the app. Arrow keys let you move through the preview quickly.</p><p><strong>⌘ O (Open Folder)</strong><br>From within apps like Pages or Numbers, Command + O opens the Finder directly in the relevant folder. That saves a lot of navigation overhead.</p>",
+        "body_de": "<p>Die besten Kürzel sind die, die alltägliche Arbeit reibungsloser machen. Sie sind klein, aber im Laufe der Zeit sehr wirksam.</p><p><strong>⌥ ⇧ ⌘ V (Ohne Formatierung einfügen)</strong><br>Beim Einfügen ohne Formatierung bleibt der Inhalt sauber und Styling wird entfernt. Das ist besonders nützlich, wenn du Text aus dem Web oder anderen Dokumenten übernimmst.</p><p><strong>⌥ ⌘ Delete (Datei sofort löschen)</strong><br>Wenn du eine Datei auswählst und Option + Command + Delete drückst, verschwindet sie sofort, ohne im Papierkorb zu landen.</p><p><strong>Return / Enter (Umbenennen)</strong><br>Statt im Kontextmenü nach „Umbenennen“ zu suchen, wählst du einfach die Datei aus und drückst Return.</p><p><strong>⌘ W (Fenster schließen)</strong><br>Command + W schließt das aktive Fenster, während Command + Q die App komplett beendet.</p><p><strong>⌘ H (Fenster ausblenden)</strong><br>Command + H versteckt das aktuelle Fenster, ohne den Zustand zu verlieren.</p><p><strong>⌘ F (Suchen)</strong><br>Das ist eines der universellsten Kürzel und funktioniert in vielen Apps und Browsern.</p><p><strong>Leertaste (Vorschau)</strong><br>Schwebe über eine Datei und drücke die Leertaste, um sie vorzuschauen, ohne die App zu öffnen. Mit den Pfeiltasten kannst du schnell durch die Vorschau navigieren.</p><p><strong>⌘ O (Ordner öffnen)</strong><br>In Apps wie Pages oder Numbers öffnet Command + O direkt den Finder in dem passenden Ordner. Das spart viel Handarbeit.</p>"
+      },
+      {
+        "title": "General Shortcuts",
+        "title_de": "Allgemeine Tastenkürzel",
+        "body": "<table><thead><tr><th>Action</th><th>Shortcut</th></tr></thead><tbody><tr><td>Copy / Paste</td><td>⌘ C / ⌘ V</td></tr><tr><td>Cut</td><td>⌘ X</td></tr><tr><td>Undo / Redo</td><td>⌘ Z / ⇧ ⌘ Z</td></tr><tr><td>Select All</td><td>⌘ A</td></tr><tr><td>Search</td><td>⌘ F</td></tr><tr><td>Close App Window</td><td>⌘ W</td></tr><tr><td>Quit App</td><td>⌘ Q</td></tr><tr><td>Hide App</td><td>⌘ H</td></tr><tr><td>Switch Between Apps</td><td>⌘ Tab</td></tr><tr><td>Switch Between Windows of Same App</td><td>⌘ `</td></tr><tr><td>Open Spotlight</td><td>⌘ Space</td></tr><tr><td>Lock Screen</td><td>Ctrl ⌘ Q</td></tr></tbody></table>",
+        "body_de": "<table><thead><tr><th>Aktion</th><th>Tastenkürzel</th></tr></thead><tbody><tr><td>Kopieren / Einfügen</td><td>⌘ C / ⌘ V</td></tr><tr><td>Ausschneiden</td><td>⌘ X</td></tr><tr><td>Rückgängig / Wiederholen</td><td>⌘ Z / ⇧ ⌘ Z</td></tr><tr><td>Alles markieren</td><td>⌘ A</td></tr><tr><td>Suchen</td><td>⌘ F</td></tr><tr><td>App-Fenster schließen</td><td>⌘ W</td></tr><tr><td>App beenden</td><td>⌘ Q</td></tr><tr><td>App ausblenden</td><td>⌘ H</td></tr><tr><td>Zwischen Apps wechseln</td><td>⌘ Tab</td></tr><tr><td>Zwischen Fenstern derselben App wechseln</td><td>⌘ `</td></tr><tr><td>Spotlight öffnen</td><td>⌘ Space</td></tr><tr><td>Bildschirm sperren</td><td>Ctrl ⌘ Q</td></tr></tbody></table>"
+      },
+      {
+        "title": "Finder and Files",
+        "title_de": "Finder und Dateien",
+        "body": "<table><thead><tr><th>Action</th><th>Shortcut</th></tr></thead><tbody><tr><td>New Finder Tab</td><td>⌘ T</td></tr><tr><td>New Finder Window</td><td>⌘ N</td></tr><tr><td>Open File or Folder</td><td>⌘ O or Return</td></tr><tr><td>Rename File</td><td>Return</td></tr><tr><td>Move File to Trash</td><td>⌘ Delete</td></tr><tr><td>Delete File Immediately</td><td>⌥ ⌘ Delete</td></tr><tr><td>Quick Look</td><td>Space</td></tr><tr><td>Show Info</td><td>⌘ I</td></tr><tr><td>Show/Hide Hidden Files</td><td>⌘ ⇧ .</td></tr><tr><td>Go to Parent Folder</td><td>⌘ ↑</td></tr><tr><td>Go to Home Folder</td><td>⇧ ⌘ H</td></tr><tr><td>Go to Desktop</td><td>⇧ ⌘ D</td></tr><tr><td>Open Downloads</td><td>⌥ ⌘ L</td></tr></tbody></table>",
+        "body_de": "<table><thead><tr><th>Aktion</th><th>Tastenkürzel</th></tr></thead><tbody><tr><td>Neues Finder-Tab</td><td>⌘ T</td></tr><tr><td>Neues Finder-Fenster</td><td>⌘ N</td></tr><tr><td>Datei oder Ordner öffnen</td><td>⌘ O oder Return</td></tr><tr><td>Datei umbenennen</td><td>Return</td></tr><tr><td>Datei in Papierkorb verschieben</td><td>⌘ Delete</td></tr><tr><td>Datei sofort löschen</td><td>⌥ ⌘ Delete</td></tr><tr><td>Schnellansicht</td><td>Leertaste</td></tr><tr><td>Info anzeigen</td><td>⌘ I</td></tr><tr><td>Versteckte Dateien anzeigen/verbergen</td><td>⌘ ⇧ .</td></tr><tr><td>Zum übergeordneten Ordner</td><td>⌘ ↑</td></tr><tr><td>Zum Home-Ordner</td><td>⇧ ⌘ H</td></tr><tr><td>Zum Desktop</td><td>⇧ ⌘ D</td></tr><tr><td>Downloads öffnen</td><td>⌥ ⌘ L</td></tr></tbody></table>"
+      },
+      {
+        "title": "Windows and Workspaces",
+        "title_de": "Fenster und Arbeitsbereiche",
+        "body": "<table><thead><tr><th>Action</th><th>Shortcut</th></tr></thead><tbody><tr><td>Show All Windows</td><td>Ctrl ↑</td></tr><tr><td>Show All Windows of Current App</td><td>Ctrl ↓</td></tr><tr><td>Switch Between Desktops</td><td>Ctrl ← / Ctrl →</td></tr><tr><td>Toggle Fullscreen</td><td>Ctrl ⌘ F</td></tr><tr><td>Minimize Current Window</td><td>⌘ M</td></tr><tr><td>Minimize All Windows of Current App</td><td>⌥ ⌘ M</td></tr><tr><td>Hide Current App</td><td>⌘ H</td></tr><tr><td>Hide Other Apps</td><td>⌥ ⌘ H</td></tr></tbody></table>",
+        "body_de": "<table><thead><tr><th>Aktion</th><th>Tastenkürzel</th></tr></thead><tbody><tr><td>Alle Fenster anzeigen</td><td>Ctrl ↑</td></tr><tr><td>Fenster der aktuellen App anzeigen</td><td>Ctrl ↓</td></tr><tr><td>Zwischen Desktops wechseln</td><td>Ctrl ← / Ctrl →</td></tr><tr><td>Vollbild umschalten</td><td>Ctrl ⌘ F</td></tr><tr><td>Aktuelles Fenster minimieren</td><td>⌘ M</td></tr><tr><td>Alle Fenster der aktuellen App minimieren</td><td>⌥ ⌘ M</td></tr><tr><td>Aktuelle App ausblenden</td><td>⌘ H</td></tr><tr><td>Andere Apps ausblenden</td><td>⌥ ⌘ H</td></tr></tbody></table>"
+      },
+      {
+        "title": "Text Editing",
+        "title_de": "Textbearbeitung",
+        "body": "<table><thead><tr><th>Action</th><th>Shortcut</th></tr></thead><tbody><tr><td>Go to Beginning of Line</td><td>⌘ ←</td></tr><tr><td>Go to End of Line</td><td>⌘ →</td></tr><tr><td>Go to Beginning of Document</td><td>⌘ ↑</td></tr><tr><td>Go to End of Document</td><td>⌘ ↓</td></tr><tr><td>Jump Word by Word</td><td>⌥ ← / ⌥ →</td></tr><tr><td>Delete Word by Word</td><td>⌥ Delete</td></tr><tr><td>Delete to Beginning of Line</td><td>⌘ Delete</td></tr><tr><td>Delete to End of Line</td><td>Ctrl K</td></tr><tr><td>Bold / Italic</td><td>⌘ B / ⌘ I</td></tr><tr><td>Insert Link</td><td>⌘ K</td></tr><tr><td>Find and Next Match</td><td>⌘ F / ⌘ G</td></tr></tbody></table>",
+        "body_de": "<table><thead><tr><th>Aktion</th><th>Tastenkürzel</th></tr></thead><tbody><tr><td>An den Zeilenanfang</td><td>⌘ ←</td></tr><tr><td>An das Zeilenende</td><td>⌘ →</td></tr><tr><td>An den Dokumentanfang</td><td>⌘ ↑</td></tr><tr><td>An das Dokumentende</td><td>⌘ ↓</td></tr><tr><td>Wortweise springen</td><td>⌥ ← / ⌥ →</td></tr><tr><td>Wortweise löschen</td><td>⌥ Delete</td></tr><tr><td>Bis zum Zeilenanfang löschen</td><td>⌘ Delete</td></tr><tr><td>Bis zum Zeilenende löschen</td><td>Ctrl K</td></tr><tr><td>Fett / Kursiv</td><td>⌘ B / ⌘ I</td></tr><tr><td>Link einfügen</td><td>⌘ K</td></tr><tr><td>Suchen und nächstes Ergebnis</td><td>⌘ F / ⌘ G</td></tr></tbody></table>"
+      },
+      {
+        "title": "Screenshots",
+        "title_de": "Screenshots",
+        "body": "<table><thead><tr><th>Action</th><th>Shortcut</th></tr></thead><tbody><tr><td>Capture Entire Screen</td><td>⇧ ⌘ 3</td></tr><tr><td>Select Area</td><td>⇧ ⌘ 4</td></tr><tr><td>Capture Window</td><td>⇧ ⌘ 4, then Space</td></tr><tr><td>Screenshot Menu and Screen Recording</td><td>⇧ ⌘ 5</td></tr><tr><td>Screenshot to Clipboard</td><td>Hold Ctrl additionally</td></tr></tbody></table>",
+        "body_de": "<table><thead><tr><th>Aktion</th><th>Tastenkürzel</th></tr></thead><tbody><tr><td>Gesamten Bildschirm erfassen</td><td>⇧ ⌘ 3</td></tr><tr><td>Bereich auswählen</td><td>⇧ ⌘ 4</td></tr><tr><td>Fenster erfassen</td><td>⇧ ⌘ 4, danach Space</td></tr><tr><td>Screenshot-Menü und Bildschirmaufnahme</td><td>⇧ ⌘ 5</td></tr><tr><td>Screenshot in Zwischenablage</td><td>Ctrl zusätzlich halten</td></tr></tbody></table>"
+      },
+      {
+        "title": "Safari and Browser",
+        "title_de": "Safari und Browser",
+        "body": "<table><thead><tr><th>Action</th><th>Shortcut</th></tr></thead><tbody><tr><td>New Tab</td><td>⌘ T</td></tr><tr><td>Close Tab</td><td>⌘ W</td></tr><tr><td>Reopen Closed Tab</td><td>⇧ ⌘ T</td></tr><tr><td>Switch Between Tabs</td><td>Ctrl Tab or ⌘ ⇧ ] / ⌘ ⇧ [</td></tr><tr><td>Activate Address Bar</td><td>⌘ L</td></tr><tr><td>Reload Page</td><td>⌘ R</td></tr><tr><td>Open History</td><td>⌘ Y</td></tr><tr><td>Show Downloads</td><td>⌥ ⌘ L</td></tr><tr><td>Open Link in New Tab</td><td>⌘-Click</td></tr></tbody></table>",
+        "body_de": "<table><thead><tr><th>Aktion</th><th>Tastenkürzel</th></tr></thead><tbody><tr><td>Neuen Tab öffnen</td><td>⌘ T</td></tr><tr><td>Tab schließen</td><td>⌘ W</td></tr><tr><td>Geschlossenen Tab wieder öffnen</td><td>⇧ ⌘ T</td></tr><tr><td>Zwischen Tabs wechseln</td><td>Ctrl Tab oder ⌘ ⇧ ] / ⌘ ⇧ [</td></tr><tr><td>Adressleiste aktivieren</td><td>⌘ L</td></tr><tr><td>Seite neu laden</td><td>⌘ R</td></tr><tr><td>Verlauf öffnen</td><td>⌘ Y</td></tr><tr><td>Downloads anzeigen</td><td>⌥ ⌘ L</td></tr><tr><td>Link in neuem Tab öffnen</td><td>⌘-Klick</td></tr></tbody></table>"
+      },
+      {
+        "title": "The deeper benefit",
+        "title_de": "Der tiefere Nutzen",
+        "body": "<p>These shortcuts become second nature over time. They are not just about speed — they are about flow. When you do not have to break your concentration to reach for the mouse, you stay in the zone. That matters whether you are a developer, writer, designer, or someone who spends a lot of time on a computer.</p><p>Keyboard shortcuts are not a gimmick. They are one of the highest-leverage skills you can build because they reduce friction in every repeated task. That is why I keep learning them, refining them, and relying on them more and more.</p>",
+        "body_de": "<p>Diese Kürzel werden mit der Zeit zur zweiten Natur. Sie sind nicht nur eine Frage der Geschwindigkeit — sie sind eine Frage des Flows. Wenn du deine Konzentration nicht durch das Greifen nach der Maus unterbrechen musst, bleibst du im Arbeitsrhythmus.</p><p>Tastaturkürzel sind keine Spielerei. Sie sind eine der wirksamsten Fähigkeiten, die du dir aneignen kannst, weil sie in jedem wiederkehrenden Schritt Reibung reduzieren. Genau deshalb lerne und verfeinere ich sie immer weiter.</p>"
+      }
+    ]
+  },
+  {
     "slug": "why-i-despise-subscription-models",
     "date": "2026-09-18",
     "category": "Personal",

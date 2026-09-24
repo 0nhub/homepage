@@ -779,6 +779,33 @@ a.support-card:hover { background: #ececf1; }
 .blog-article__section { padding: 0; border-top: 0; }
 .blog-article__section h2 { margin: 35px 0 16px; }
 .blog-article__section p { margin: 0 0 1em; }
+.blog-article__section table {
+  width: 100%;
+  margin: 0 0 1.5em;
+  border-collapse: collapse;
+  table-layout: fixed;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.blog-article__section thead th,
+.blog-article__section tbody td {
+  padding: 12px 16px;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--border-color);
+  line-height: 1.5;
+}
+.blog-article__section thead th {
+  background: var(--secondary-bg);
+  color: var(--text-color);
+  font-weight: 600;
+}
+.blog-article__section thead th:first-child,
+.blog-article__section tbody td:first-child { width: 58%; }
+.blog-article__section thead th:last-child,
+.blog-article__section tbody td:last-child { width: 42%; }
+.blog-article__section tbody tr:last-child td { border-bottom: none; }
 .blog-article__back { margin: 0; }
 .blog-article__back.actions { justify-content: flex-start; margin-top: 40px; }
 .button--secondary { background: transparent; color: var(--accent-color); }

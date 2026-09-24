@@ -63,7 +63,14 @@ def public_image(value):
     if not isinstance(value, str): return ''
     parsed = urlparse(value.strip())
     return value.strip() if parsed.scheme in ('http', 'https') and parsed.netloc else ''
-def paragraphs(text): return ''.join(f'<p>{escape(chunk.strip()).replace(chr(10), "<br>")}</p>' for chunk in (text or '').split('\n\n') if chunk.strip())
+def paragraphs(text):
+    text = text or ''
+    text = text.strip()
+    if not text:
+        return ''
+    if '<' in text and '>' in text:
+        return text
+    return ''.join(f'<p>{escape(chunk.strip()).replace(chr(10), "<br>")}</p>' for chunk in text.split('\n\n') if chunk.strip())
 def position_key(row):
     try: return (0, float(row.get('position', row.get('age'))))
     except (TypeError, ValueError): return (1, 0)
