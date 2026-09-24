@@ -80,7 +80,7 @@ const bindGalleryControls = (gallery) => {
   let startX = 0;
   let dragged = false;
   gallery.addEventListener('pointerdown', (event) => {
-    if (event.pointerType !== 'mouse' || event.button !== 0) return;
+    if (event.pointerType === 'mouse' && event.button !== 0) return;
     pointerId = event.pointerId;
     startX = event.clientX;
     dragged = false;
@@ -165,6 +165,29 @@ document.querySelectorAll('[data-case-carousel]').forEach((carousel) => {
   };
   previous?.addEventListener('click', () => render(index - 1));
   next?.addEventListener('click', () => render(index + 1));
+  let pointerId = null;
+  let startX = 0;
+  let dragged = false;
+  carousel.addEventListener('pointerdown', (event) => {
+    if (event.pointerType === 'mouse' && event.button !== 0) return;
+    pointerId = event.pointerId;
+    startX = event.clientX;
+    dragged = false;
+    carousel.setPointerCapture?.(event.pointerId);
+  });
+  carousel.addEventListener('pointermove', (event) => {
+    if (pointerId !== event.pointerId) return;
+    if (Math.abs(event.clientX - startX) > 8) dragged = true;
+  });
+  const endDrag = (event) => {
+    if (pointerId !== event.pointerId) return;
+    const delta = event.clientX - startX;
+    pointerId = null;
+    if (Math.abs(delta) > 40) render(index + (delta < 0 ? 1 : -1));
+  };
+  carousel.addEventListener('pointerup', endDrag);
+  carousel.addEventListener('pointercancel', endDrag);
+  carousel.addEventListener('click', (event) => { if (dragged) event.preventDefault(); }, true);
   window.addEventListener('resize', () => { buildDots(); render(index, false); }, { passive: true });
   buildDots(); render(0, false);
 });
