@@ -718,5 +718,125 @@
       "content": "Ja. TopFold ist jetzt im Mac App Store verfügbar. Im Store findest du die aktuellen Kompatibilitätsangaben; zukünftige App-Updates werden über den Mac App Store bereitgestellt."
     },
     "age": 7
+  },
+  {
+    "application": "BDayMap",
+    "en": {
+      "name": "What is BDayMap?",
+      "content": "BDayMap keeps birthdays and reminds you in time. You add your own birthday and other people, then set a reminder for each person. The app runs on iPhone, iPad, Mac, and Apple Watch. There is no account, no ads, and no purchases."
+    },
+    "de": {
+      "name": "Was ist BDayMap?",
+      "content": "BDayMap merkt sich Geburtstage und erinnert dich rechtzeitig. Du trägst deinen eigenen Geburtstag und weitere Personen ein und legst für jede Person eine Erinnerung fest. Die App läuft auf iPhone, iPad, Mac und Apple Watch. Es gibt kein Konto, keine Werbung und keine Käufe."
+    },
+    "age": 1
+  },
+  {
+    "application": "BDayMap",
+    "en": {
+      "name": "How do I add my own birthday?",
+      "content": "On first launch, set the day and month of your own birthday, or skip it. Your own birthday has no photo. You can set it later from the home screen."
+    },
+    "de": {
+      "name": "Wie trage ich meinen eigenen Geburtstag ein?",
+      "content": "Beim ersten Start setzt du Tag und Monat deines eigenen Geburtstags oder überspringst den Schritt. Der eigene Geburtstag hat kein Foto. Du kannst ihn später von der Startseite aus setzen."
+    },
+    "age": 2
+  },
+  {
+    "application": "BDayMap",
+    "en": {
+      "name": "How do I add another person?",
+      "content": "Add a person with a name, a photo, and a date. The year is optional. Open that person to change the name, photo, date, or reminders. The date is changed from the date row."
+    },
+    "de": {
+      "name": "Wie füge ich eine andere Person hinzu?",
+      "content": "Füge eine Person mit Name, Foto und Datum hinzu. Das Jahr ist optional. Öffne die Person, um Name, Foto, Datum oder Erinnerungen zu ändern. Das Datum änderst du über die Datumszeile."
+    },
+    "age": 3
+  },
+  {
+    "application": "BDayMap",
+    "en": {
+      "name": "How do reminders work?",
+      "content": "For each person you can remind yourself on the day, one day before, three days before, one week before, or a custom number of days. Each reminder has its own time. Notifications are optional and are sent only after you create a reminder. The system asks for notification permission at that point."
+    },
+    "de": {
+      "name": "Wie funktionieren die Erinnerungen?",
+      "content": "Für jede Person kannst du dich am Tag selbst, einen Tag vorher, drei Tage vorher, eine Woche vorher oder eine eigene Anzahl Tage vorher erinnern lassen. Jede Erinnerung hat eine eigene Uhrzeit. Mitteilungen sind freiwillig und kommen erst, nachdem du eine Erinnerung angelegt hast. Das System fragt dann nach der Mitteilungserlaubnis."
+    },
+    "age": 4
+  },
+  {
+    "application": "BDayMap",
+    "en": {
+      "name": "How do the Home Screen widgets work?",
+      "content": "The Birthday widget shows one person you choose, together with a color. The Upcoming birthdays widget shows the next four birthdays and a color. A tap on either widget opens the app."
+    },
+    "de": {
+      "name": "Wie funktionieren die Widgets auf dem Home-Bildschirm?",
+      "content": "Das Widget „Geburtstag“ zeigt eine von dir gewählte Person und eine Farbe. Das Widget „Nächste Geburtstage“ zeigt die vier nächsten Termine und eine Farbe. Ein Tipp auf eines der Widgets öffnet die App."
+    },
+    "age": 5
+  },
+  {
+    "application": "BDayMap",
+    "en": {
+      "name": "What does the Apple Watch show?",
+      "content": "The Apple Watch shows the same list as the app. Your own birthday is at the top and has no photo. Other people can show a photo."
+    },
+    "de": {
+      "name": "Was zeigt die Apple Watch?",
+      "content": "Die Apple Watch zeigt dieselbe Liste wie die App. Dein eigener Geburtstag steht oben und hat kein Foto. Bei anderen Personen kann ein Foto erscheinen."
+    },
+    "age": 6
+  },
+  {
+    "application": "BDayMap",
+    "en": {
+      "name": "How does iCloud sync work?",
+      "content": "iCloud sync is off until you turn it on in Settings. When it is on, birthdays, photos, and reminders stay the same across devices signed in with the same Apple ID. BDayMap uses your private iCloud database. The app has no account of its own, and the developer does not read that data."
+    },
+    "de": {
+      "name": "Wie funktioniert die iCloud-Synchronisation?",
+      "content": "Die iCloud-Synchronisation ist aus, bis du sie in den Einstellungen einschaltest. Danach bleiben Geburtstage, Fotos und Erinnerungen auf Geräten mit derselben Apple-ID gleich. BDayMap nutzt deine private iCloud-Datenbank. Die App hat kein eigenes Konto, und der Entwickler liest diese Daten nicht."
+    },
+    "age": 7
+  },
+  {
+    "application": "BDayMap",
+    "en": {
+      "name": "Can I import birthdays from Contacts?",
+      "content": "On the Mac, Settings can import birthdays from Contacts. Only contacts that already have a birthday are offered. Name, date, and photo stay on the device. The import is optional, and it is not available as a required step on iPhone or iPad."
+    },
+    "de": {
+      "name": "Kann ich Geburtstage aus Kontakten übernehmen?",
+      "content": "Auf dem Mac kannst du in den Einstellungen Geburtstage aus Kontakten übernehmen. Angeboten werden nur Kontakte, die schon ein Geburtsdatum haben. Name, Datum und Foto bleiben auf dem Gerät. Der Import ist freiwillig und auf iPhone und iPad kein Pflichtschritt."
+    },
+    "age": 8
+  },
+  {
+    "application": "BDayMap",
+    "en": {
+      "name": "Does BDayMap use location, ads, or a map?",
+      "content": "No. BDayMap has no ads, no purchases, no location, and no map. Birthdays, names, photos, and reminders stay on your device unless you turn on iCloud sync."
+    },
+    "de": {
+      "name": "Nutzt BDayMap Standort, Werbung oder eine Karte?",
+      "content": "Nein. BDayMap hat keine Werbung, keine Käufe, keinen Standort und keine Karte. Geburtstage, Namen, Fotos und Erinnerungen bleiben auf deinem Gerät, solange du die iCloud-Synchronisation nicht einschaltest."
+    },
+    "age": 9
+  },
+  {
+    "application": "BDayMap",
+    "en": {
+      "name": "Is BDayMap available on the App Store?",
+      "content": "Not yet. BDayMap is being prepared and is not public on the App Store. It will be free. This support page will be updated when the app is released."
+    },
+    "de": {
+      "name": "Ist BDayMap im App Store verfügbar?",
+      "content": "Noch nicht. BDayMap wird vorbereitet und ist noch nicht öffentlich im App Store. Die App wird kostenlos sein. Diese Support-Seite wird mit der Veröffentlichung aktualisiert."
+    },
+    "age": 10
   }
 ]
