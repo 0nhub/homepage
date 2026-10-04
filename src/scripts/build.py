@@ -125,10 +125,17 @@ def product_gallery_html(project, lang):
     label_previous = 'Previous preview' if lang == 'en' else 'Vorherige Vorschau'
     label_next = 'Next preview' if lang == 'en' else 'Nächste Vorschau'
     return f'<section class="product-gallery-section" aria-label="{escape(project["name"] + " previews", quote=True)}"><div class="media-frame"><button class="gallery-nav" type="button" data-gallery-prev aria-label="{label_previous}">‹</button><div class="media-gallery" data-gallery-local><div class="media-gallery__track">{"".join(cards)}</div><div class="media-gallery__dots" role="tablist" aria-label="Preview images"></div></div><button class="gallery-nav" type="button" data-gallery-next aria-label="{label_next}">›</button></div></section>'
-def ribbon(label): return f'<span class="project-ribbon">{escape(label)}</span>' if label else ''
+def badge_label(badges, slug, lang):
+    value = (badges or {}).get(slug)
+    if isinstance(value, dict): return value.get(lang) or value.get('en') or ''
+    return value or ''
+def ribbon(label):
+    if not label: return ''
+    long = ' project-ribbon--long' if len(label) > 4 else ''
+    return f'<span class="project-ribbon{long}">{escape(label)}</span>'
 def project_cards(lang, root, copy, projects=None, badges=None):
     badges = badges or {}
-    return '\n'.join(f'<a class="project-card" href="{project_href(p, root)}">{ribbon(badges.get(p["slug"]))}<div class="project-info"><h3>{escape(p["name"])}</h3><p>{escape(text_for(p, lang, "description"))}</p><span class="text-link">{escape(copy["learn_more"])} <span aria-hidden="true">›</span></span></div><div class="project-art project-art--{escape(p["slug"])}">{icon(p)}</div></a>' for p in (projects if projects is not None else local_projects()))
+    return '\n'.join(f'<a class="project-card" href="{project_href(p, root)}">{ribbon(badge_label(badges, p["slug"], lang))}<div class="project-info"><h3>{escape(p["name"])}</h3><p>{escape(text_for(p, lang, "description"))}</p><span class="text-link">{escape(copy["learn_more"])} <span aria-hidden="true">›</span></span></div><div class="project-art project-art--{escape(p["slug"])}">{icon(p)}</div></a>' for p in (projects if projects is not None else local_projects()))
 def latest_cards(lang, root, copy): return project_cards(lang, root, copy, [next(p for p in PROJECTS if p['slug'] == slug) for slug in SITE['home_apps']], SITE.get('home_badges'))
 def project_tiles(root): return '\n'.join(f'<a class="apps-tile" href="{project_href(p, root)}">{icon(p)}<h2>{escape(p["name"])}</h2></a>' for p in PROJECTS)
 def blog_href(post, lang): return localized_url('/blog/' + post['slug'] + '/', lang)

@@ -7,7 +7,10 @@
   "year": "2026",
   "support_feed": "https://v1.appbackend.io/v1/rows/pYoON3ZjxEHx",
   "gallery_feed": "https://v1.appbackend.io/v1/rows/iYnXTQrXVQk9",
-  "home_apps": ["topfold", "menu-linguo", "menu-runner", "expand", "menu-launcher", "menu-2fa"],
-  "home_badges": {"topfold": "NEW"},
+  "home_apps": ["bdaymap", "topfold", "menu-linguo", "expand", "menu-launcher", "menu-2fa"],
+  "home_badges": {
+    "bdaymap": {"en": "COMING SOON", "de": "DEMNÄCHST"},
+    "topfold": {"en": "NEW", "de": "NEU"}
+  },
   "blog_url": "https://medium.com/@sgroiga"
 }
