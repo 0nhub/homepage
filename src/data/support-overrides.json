@@ -831,11 +831,11 @@
     "application": "BDayMap",
     "en": {
       "name": "Is BDayMap available on the App Store?",
-      "content": "Not yet. BDayMap is being prepared and is not public on the App Store. It will be free. This support page will be updated when the app is released."
+      "content": "Yes. BDayMap is available on the App Store and is free. The store listing provides the current compatibility information and delivers future app updates through the App Store."
     },
     "de": {
       "name": "Ist BDayMap im App Store verfügbar?",
-      "content": "Noch nicht. BDayMap wird vorbereitet und ist noch nicht öffentlich im App Store. Die App wird kostenlos sein. Diese Support-Seite wird mit der Veröffentlichung aktualisiert."
+      "content": "Ja. BDayMap ist im App Store verfügbar und kostenlos. Im Store findest du die aktuellen Kompatibilitätsangaben; zukünftige App-Updates werden über den App Store bereitgestellt."
     },
     "age": 10
   }

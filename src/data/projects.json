@@ -71,10 +71,10 @@
     "category": "Birthday reminders",
     "description": "Keeps birthdays and reminds you in time.",
     "description_de": "Merkt sich Geburtstage und erinnert dich rechtzeitig.",
-    "status": "Coming soon",
-    "status_de": "Demnächst",
+    "status": "Meet the app",
+    "status_de": "Die App kennenlernen",
     "icon": "/assets/images/bdaymap/bdaymap.png",
-    "app_store_url": ""
+    "app_store_url": "https://apps.apple.com/de/app/bdaymap/id6809798928?l=en-GB"
   },
   {
     "slug": "bookmer",
